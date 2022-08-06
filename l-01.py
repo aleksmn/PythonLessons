@@ -1,6 +1,10 @@
 
 print("Hello world!")
 
+name = input("- Как тебя зовут?\n- ")
+
+print("Привет,", name, "!")
+
 
 a = 7
 print('Периметр квадрата', a * 4)
