@@ -10,10 +10,10 @@ print('Площадь квадрата:', s)
 
 
 with open('my-file.txt', 'a') as f:
-    f.write('--------------------' + "\n")
     f.write('Сторона квадрата: ' + str(side) + "\n")
     f.write('Периметр квадрата: ' + str(p) + "\n")
     f.write('Площадь квадрата: ' + str(s) + "\n")
+    f.write('--------------------' + "\n")
 
 
 # with open('my-file.txt', 'r') as f:
@@ -21,4 +21,3 @@ with open('my-file.txt', 'a') as f:
 #         print(line, end='')
 
 
-# https://www.youtube.com/watch?v=Uh2ebFW8OYM
