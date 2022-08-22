@@ -2,7 +2,11 @@ name = input("- Как тебя зовут?\n- ")
 
 year = input(f'- Привет {name}! Введи год твоего рождения\n- ')
 
-year = int(year)
+try:
+    year = int(year)
+except:
+    print("Неверный ввод")
+    quit()
 
 
 age = 2022 - year
