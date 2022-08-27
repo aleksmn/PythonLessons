@@ -30,19 +30,19 @@
 
 # Cпособ 2
 
-string = "доход"
+# string = "доход"
 
-reversed = ""
-
-
-for i in string:
-    reversed = i + reversed
+# reversed = ""
 
 
-if (reversed == string):
-    print(1)
-else:
-    print(0)
+# for i in string:
+#     reversed = i + reversed
+
+
+# if (reversed == string):
+#     print(1)
+# else:
+#     print(0)
 
 
 # Cпособ 3
@@ -54,3 +54,22 @@ else:
 #     print(1)
 # else:
 #     print(0)
+
+
+# Программа получает на вход целое число a. Если это число является
+# целочисленным полным квадратом, тогда выведи следующий целочисленный
+# полный квадрат, иначе выведи −1.
+
+
+a = 10
+
+# print(a ** (1/2))
+# print(2.0 % 1 == 0)
+# print(2.1 % 1 == 0)
+
+
+if (a ** (1/2)) % 1 == 0:
+    print('1')
+
+else:
+    print("-1")
