@@ -14,8 +14,16 @@ if playerChoice == "1":
     print("Сфинкс спрашивает, какое число он задумал, от 1 до 10?")
 
     player_number = input("Введи число: ")
-
+    player_number = int(player_number)
     sphinx_number = random.randint(1, 6)
+
+    if player_number == sphinx_number:
+        print("Сфинкс разочарован... Он должен тебя отпустить с сокровищами!")
+        print("* Конец игры! Ты выиграл! *")
+    else:
+        print("Ты не угадал число и попал Сфинксу на обед! ")
+        print("* Конец игры! Ты проиграл! *")
+
     
 
 elif playerChoice == "2":
