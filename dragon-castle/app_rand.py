@@ -11,7 +11,7 @@ playerChoice = input("Твой выбор: 1, 2 или 3...\n")
 
 if playerChoice == "1":
     print("Ты вошел в комнату со Сфинксом!")
-    print("Сфинкс спрашивает, какое число он задумал, от 1 до 10?")
+    print("Сфинкс спрашивает, какое число он задумал, от 1 до 6?")
 
     player_number = input("Введи число: ")
     player_number = int(player_number)
