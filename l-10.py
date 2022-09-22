@@ -79,15 +79,32 @@
 # чисел от 1 до number, которые делятся на 3. 
 # number является положительным целым числом.
 
-number = int(input("Введите число: "))
+# number = int(input("Введите число: "))
+
+# summa = 0
+
+# for x in range(1, number + 1):
+#     if x % 3 == 0:
+#         print(x)
+#         summa = summa + x
+
+# print("---------")
+# print("Сумма равна:", summa)
 
 
-summa = 0
+# 5
+# 1 2 3 4 5
 
-for x in range(1, number + 1):
-    if x % 3 == 0:
-        print(x)
-        summa = summa + x
+# 1 / 2 / 3 / 4 / 5
 
-print("---------")
-print("Сумма равна:", summa)
+
+# n = 5 
+
+# res = 1
+
+
+# for x in range(1, n+1):
+#     res = res / x
+
+
+# print(res)
