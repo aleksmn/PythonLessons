@@ -10,6 +10,20 @@
 #     print(1)
 
 
+# pin = input("Введите PIN  ")
+
+# if pin.isnumeric() == False:
+#     print("NOT OK")
+
+# else:
+#     pin = int(pin)
+#     if pin > 999 and pin <= 9999:
+#         print("OK")
+
+#     else:
+#         print("NOT OK")
+
+
 # Дана строка a. Если данная строка является палиндромом, то выведи 1, иначе — 0.
 
 
