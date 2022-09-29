@@ -1,5 +1,6 @@
 import os
 
+# Через 30 сек на Windows:
 # os.system("shutdown /s /t 30")
 
 minutes = input('Через сколько минут выключить компьютер?\n')
