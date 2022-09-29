@@ -1,19 +1,45 @@
+letters = ['п', 'р', 'и', 'в', 'е', 'т']
+
+mystring = "*".join(letters)
+
+print(mystring)
+
+
+print(list(mystring))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Дано целое положительное число N. 
 # Выведи все числа Фибоначчи до числа, большего N. 
 # Вывод чисел запиши через пробел.
 
 
-n = 13
+# n = 13
 
-# 1 1 2 3 5
+# # 1 1 2 3 5
 
-a = 1
-b = 1
+# a = 1
+# b = 1
 
-print(1)
+# print(1)
 
-while a <= n:
-    temp = a
-    a = b
-    b = temp + b
-    print(a)
+# while a <= n:
+#     temp = a
+#     a = b
+#     b = temp + b
+#     print(a)
