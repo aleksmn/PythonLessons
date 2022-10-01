@@ -12,8 +12,10 @@ arr = data.split(" ")
 nums = []
 
 for n in arr:
-    if n.isnumeric():
-     nums.append(int(n))
+    try:
+        nums.append(int(n))
+    except:
+        pass
 
 
 print(nums)
