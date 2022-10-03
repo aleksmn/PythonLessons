@@ -9,3 +9,6 @@ minutes = input('Через сколько минут выключить ком�
 
 
 os.system("shutdown " + str(minutes))
+
+# Отменить:
+# shutdown / a
