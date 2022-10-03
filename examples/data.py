@@ -1,4 +1,4 @@
-print("* Программа обработки данных *")
+print("\n* Программа обработки данных *\n")
 
 data = input("Введите список чисел через пробел: ")
 
@@ -15,27 +15,47 @@ for n in arr:
     except:
         pass
 
-# Короткая запись:
-# nums = [int(n) for n in arr]
 
 print(nums)
 
 
-smallest = None
 
-for x in nums:
-    if smallest is None or x < smallest:
-        smallest = x
-    # print(x, smallest)
+
+
+summa = 0
+
+for n in nums:
+    summa = summa + n
+
+print("Сумма: ")
+print(summa)
+
+print("Среднее арифметическое: ")
+print(summa / len(nums))
+
+
+
+# # Короткая запись:
+# # nums = [int(n) for n in arr]
+
+# print(nums)
+
+
+# smallest = None
+
+# for x in nums:
+#     if smallest is None or x < smallest:
+#         smallest = x
+#     # print(x, smallest)
     
-print("Минимум:", smallest)
+# print("Минимум:", smallest)
 
 
-biggest = None
+# biggest = None
 
-for x in nums:
-    if biggest is None or x > biggest:
-        biggest = x
-    # print(x, biggest)
+# for x in nums:
+#     if biggest is None or x > biggest:
+#         biggest = x
+#     # print(x, biggest)
 
-print("Максимум:", biggest)
+# print("Максимум:", biggest)
