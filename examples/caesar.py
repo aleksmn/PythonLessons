@@ -1,11 +1,12 @@
-alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+print("\n* Шифр Цезаря *\n")
 
-toEncrypt = input("Enter a message: ")
+alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
 
+toEncrypt = input("Введите сообщение: ")
 
 toEncrypt = toEncrypt.upper()
 
-shift = int(input("Enter a key (1-25): "))
+shift = int(input("Введите ключ (1-32): "))
 
 encrypted = ""
 
@@ -18,6 +19,31 @@ for char in toEncrypt:
         encrypted = encrypted + char
 
 
-print("Your encrypted message is", encrypted)
+print("Резултат шифровки: ", encrypted)
 
 
+
+
+# # English Version
+
+# alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+# toEncrypt = input("Enter a message: ")
+
+
+# toEncrypt = toEncrypt.upper()
+
+# shift = int(input("Enter a key (1-25): "))
+
+# encrypted = ""
+
+# for char in toEncrypt:
+#     position = alphabet.find(char)
+#     newPosition = position + shift
+#     if char in alphabet:
+#         encrypted = encrypted + alphabet[newPosition]
+#     else:
+#         encrypted = encrypted + char
+
+
+# print("Your encrypted message is", encrypted)
