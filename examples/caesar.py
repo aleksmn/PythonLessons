@@ -1,6 +1,3 @@
-from turtle import position
-
-
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 toEncrypt = input("Enter a message: ")
