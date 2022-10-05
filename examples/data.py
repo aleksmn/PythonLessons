@@ -59,3 +59,41 @@ print(summa / len(nums))
 #     # print(x, biggest)
 
 # print("Максимум:", biggest)
+
+
+
+# Функции
+
+
+# def getCount(arr):
+#     count = 0
+#     for x in arr:
+#         count = count + 1
+#     return count
+
+
+# def getSum(arr):
+#     sum = 0
+#     for x in arr:
+#         try:
+#             x = int(x)
+#         except:
+#             x = 1
+#         sum = sum + x
+#     return sum
+
+
+# def minNumber(arr):
+#     smallest = None
+#     arr = [int(x) for x in arr]
+#     print(arr)
+#     for i in arr:
+#         if smallest is None or i < smallest:
+#             smallest = i
+#         #print(i, smallest)
+#     print("Минимум:", smallest)
+
+
+# inputArr = input("Введите числа через пробел: ").split(" ")
+
+# minNumber(inputArr)
