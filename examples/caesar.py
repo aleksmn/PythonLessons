@@ -19,7 +19,7 @@ for char in toEncrypt:
         encrypted = encrypted + char
 
 
-print("Резултат шифровки: ", encrypted)
+print("Результат шифровки: ", encrypted)
 
 
 
