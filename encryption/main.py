@@ -2,8 +2,11 @@ print("\n* Шифровщик Цезаря *\n")
 
 alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
 
-toEncrypt = input("Введите сообщение: ")
-shift = int(input("Введите ключ (1-32): "))
+# toEncrypt = input("Введите сообщение: ")
+shift = int(input("\nВведите ключ (1-32): "))
+
+
+
 
 
 def encrypt(toEncrypt, shift):
@@ -17,10 +20,34 @@ def encrypt(toEncrypt, shift):
         else:
             encrypted = encrypted + char
 
-    print(encrypted)
+    return encrypted
 
 
 
 
 # Вызываем функцию шифровки
-encrypt(toEncrypt, shift)
+# encrypt(toEncrypt, shift)
+
+
+file = input("Введите название файла: ")
+
+lines=[]
+
+with open(file, 'r', encoding='utf-8') as f:
+    for line in f:
+        lines.append(line)
+
+print(lines)
+
+
+encrypted_lines = []
+
+
+for l in lines:
+    #  encrypt(l, shift)
+
+     encrypted_lines.append(encrypt(l, shift))
+
+
+
+print(encrypted_lines)
