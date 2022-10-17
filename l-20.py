@@ -1,3 +1,4 @@
+from unittest import result
 import skysmart
 
 skysmart.printTitle("Привет!")
@@ -5,17 +6,21 @@ skysmart.printTitle("Привет!")
 
 
 
+# Глобальная переменная
+x = 55
+
+print(x)
 
 
 
 
 
+def sum_numbers(a:int, b:int):
+    # Локальная переменная
+    res = a + b
+    print(x)
 
 
-
-
-# def sum_numbers(a:int, b:int):
-#     print(a + b)
-
-
-# sum_numbers(4, 78)
+sum_numbers(4, 78)
+res = "привет"
+print(res)
