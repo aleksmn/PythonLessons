@@ -1,3 +1,28 @@
+# print("Форматируем номер телефона")
+
+# number = input("Введите номер телефона: ")
+
+# username = input("Введите имя: ")
+
+# # +7 (912) 345-67-89
+
+# new_number = "+7 (" + number[1:4] + ") " + number[4:7] + "-" + number[7:9] + "-" + number[9:]
+
+
+# print(new_number)
+
+
+
+
+# with open("mynumbers.txt", "a", encoding="utf-8") as f:
+#     f.write(username + " : " + new_number + "\n")
+
+
+
+
+
+
+
 # s = "81005557889"
 
 # # +7 (100) 555-78-89
