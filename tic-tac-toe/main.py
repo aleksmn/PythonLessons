@@ -51,10 +51,11 @@ while not is_win:
 
     player_answer = input(f'Куда ставим {player_token}?: ')
 
-    player_answer = int(player_answer)
+    # Получаем ход от игрока, делаем поправку "-1" для учета индексации с 0.
+    player_answer = int(player_answer) - 1
 
-    if str(board[player_answer - 1]) not in 'XO':
-        board[player_answer - 1] = player_token
+    if str(board[player_answer]) not in 'XO':
+        board[player_answer] = player_token
     else:
         print('Эта ячейка уже занята!')
         continue
@@ -70,10 +71,10 @@ while not is_win:
 
         if is_win:
             draw_board()
-            print(f'Победил {player_token}')
+            print(f'* Победил {player_token}!  Поздравляем! *\n')
             break
 
     if counter == 9:
         draw_board()
-        print('Победила дружба :)')
+        print('Победила дружба :)\n')
         break
