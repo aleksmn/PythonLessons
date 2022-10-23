@@ -1,4 +1,49 @@
 
+# Цикл FOR
+
+# 1, 3, 5 
+
+# for x in range(1, 50, 2):
+
+#     print(f"Число {x} в квадрате:  {x ** 2}")
+
+
+
+n = 5
+
+res = 0
+
+for x in range(1, n+1):
+    res = res + x
+    print(res)
+
+print("Итог")
+print(res)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # a = int(input("Число 1: "))
 # b = int(input("Число 2: "))
 
