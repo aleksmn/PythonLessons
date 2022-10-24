@@ -1,14 +1,18 @@
+import time
+
 file = 'todo.txt'
 
 def print_todo():
     print("\n*  Твои задачи  *\n")
     with open(file, 'r', encoding='utf-8') as f:
         for num, line in enumerate(f):
+            time.sleep(1)
             print(num+1, line, end='')
     print("-"*9)
 
 
 print("\n* Список задач *\n")
+time.sleep(1)
 
 print_todo()
 
@@ -16,11 +20,12 @@ user_choice = input("Добавить новую задачу (1)\nУдалит�
 
 if user_choice == "1":
     new_task = input("Напишите задачу:\n")
-    with open(file, 'a') as f:
+    with open(file, 'a', encoding='utf-8') as f:
         f.write(new_task + "\n")
 
 
 if user_choice == "2":
+
     while True:
         to_delete = input("Введите номер задачи, чтобы удалить (0 - удалить все, q - выход)\n")
 
