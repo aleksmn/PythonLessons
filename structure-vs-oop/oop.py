@@ -1,13 +1,13 @@
 class Coffee:
-       # Constructor
+       # Конструктор
         def __init__(self, name, price):
                 self.name = name
                 self.price = float(price)
 
         def check_budget(self, budget):
-               # Check if the budget is valid
+               # Проверяем количество денег
                 if not isinstance(budget, (int, float)):
-                    print('Enter float or int')
+                    print('Введите целое или дробное число')
                     exit()
                 if budget < 0:
                     print('Sorry you don\'t have money')
