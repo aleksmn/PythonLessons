@@ -3,12 +3,14 @@ from PIL import Image
 # Install:
 # pip install pillow
 
-
 image = Image.open('dog.jpg')
 
 w, h = image.size
 
-new_w, new_h = w/2, h/2
+# Во сколько раз уменьшить изображение
+factor = 10
+
+new_w, new_h = w/factor, h/factor
 
 new_w = int(new_w)
 new_h = int(new_h)
