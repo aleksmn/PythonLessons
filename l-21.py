@@ -1,25 +1,48 @@
 
-
-# def greet_people(*args):
-#     for name in args:
-#         print("Привет " + name + "!")
-
-
-# greet_people("Андрей", "Николай", "Мария", "Юлия")
+def greet_people(*args):
+    for name in args:
+        print("Привет " + name + "!")
 
 
-# def convertTemp(temp, scale):
-
-#     if scale == 'f':
-#         res = (temp - 32) / 1.8
-#     elif scale == 'c':
-#         res = temp * 1.8 + 32
-
-#     print(res)
+greet_people("Андрей", "Николай", "Мария", "Юлия", "Олег")
 
 
-# convertTemp(32, 'f')
-# convertTemp(0, 'c')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def convertTemp(temp, scale):
+
+    if scale == 'f':
+        return (temp - 32) / 1.8
+
+    if scale == 'c':
+        return temp * 1.8 + 32
+
+    return "Неверный ввод"
+
+
+
+
+
+# print(convertTemp(32, 'f'))
+
+# print(convertTemp(0, 'c'))
+
+# print(convertTemp(' ', ' '))
+
 
 
 # def convertTemp(temp, scale="c"):
