@@ -8,7 +8,10 @@ image = Image.open('dog.jpg')
 w, h = image.size
 
 # Во сколько раз уменьшить изображение
-factor = 10
+try:
+    factor = int(input("Во сколько раз уменьшить изображение: "))
+except:
+    factor = 10
 
 new_w, new_h = w/factor, h/factor
 
