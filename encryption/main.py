@@ -54,7 +54,7 @@ for l in lines:
 
 encrypted_file = file + "_encrypted.txt"
 
-with open(encrypted_file, "a", encoding='utf-8') as f:
+with open(encrypted_file, "w", encoding='utf-8') as f:
     f.writelines(encrypted_lines)
 
 
