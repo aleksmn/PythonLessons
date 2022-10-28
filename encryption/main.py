@@ -29,15 +29,15 @@ def encrypt(toEncrypt, shift):
 # encrypt(toEncrypt, shift)
 
 
-file = input("Введите название файла: ")
+file = input("Введите название файла (без .txt): ")
 
 lines=[]
 
-with open(file, 'r', encoding='utf-8') as f:
+with open(file+".txt", 'r', encoding='utf-8') as f:
     for line in f:
         lines.append(line)
 
-print(lines)
+# print(lines)
 
 
 encrypted_lines = []
@@ -45,9 +45,19 @@ encrypted_lines = []
 
 for l in lines:
     #  encrypt(l, shift)
-
      encrypted_lines.append(encrypt(l, shift))
 
 
+# print(encrypted_lines)
 
-print(encrypted_lines)
+# Записываем шифровку в файл
+
+encrypted_file = file + "_encrypted.txt"
+
+with open(encrypted_file, "a", encoding='utf-8') as f:
+    f.writelines(encrypted_lines)
+
+
+print("\nШифровка записана в файл " + encrypted_file)
+
+print("\n* Спасибо за пользование нашей программой! *\n")
