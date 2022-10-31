@@ -1,26 +1,37 @@
 from bs4 import BeautifulSoup
+import requests
 
-with open("index.html", "r") as f:
-    doc = BeautifulSoup(f, "html.parser")
+url = "https://www.ucheba.ru/for-abiturients/olympiads"
+
+
+source = requests.get(url)
+
+doc = BeautifulSoup(source.text, 'html.parser')
 
 
 # print(doc.prettify())
 
-# Выбираем один элемент по тегу (только первый)
-tag = doc.h1
-print(tag.string)
+
+olimpiads = doc.find_all('div', class_="olympiads__content")
+
+# print(olimpiads[1].h2.text.strip())
+
+# for o in olimpiads:
+#     title = o.h2.text.strip()
+#     base_link = "https://www.ucheba.ru/"
+#     link = base_link + o.h2.a['href']
+#     classes = o.find(class_='class__value').text.strip()
+#     print(title, end=" ")
+#     print(link, end=" ")
+#     print("Классы:", classes)
 
 
-
-# Выбираем несколько элементов по тегу
-tags = doc.find_all("a")
-# print(tags)
-
-links = []
-
-for t in tags:
-    print(t)
-    # Выбираем ссылки
-    # print(t.attrs['href'])
-    # links.append(t.attrs['href'])
+with open('olimpiads.txt', 'w', encoding="utf-8") as f:
+    for o in olimpiads:
+        title = o.h2.text.strip()
+        base_link = "https://www.ucheba.ru/"
+        link = base_link + o.h2.a['href']
+        classes = o.find(class_='class__value').text.strip()
+        line = f'{title}; {classes}; {link}\n'
+        f.write(line)
 
