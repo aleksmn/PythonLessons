@@ -8,3 +8,9 @@ name = "Михаил"
 change_name()
 
 print(name)
+
+
+
+
+
+
