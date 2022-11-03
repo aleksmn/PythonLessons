@@ -39,19 +39,20 @@ print(rus_eng)
 # и возвращает её пару.
 
 
-# def DNA_reverse(dna: str):
-#     new_dna = ""
-#     pairs = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
+def DNA_reverse(dna: str):
+    new_dna = ""
+    pairs = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
 
-#     for key in dna:
-#         new_dna += pairs[key]
+    for key in dna:
+        new_dna += pairs[key]
     
-#     return new_dna
+    return new_dna
 
 
-# test1 = "ATCG"
-# test2 = "ACTAGCGTCAGCTAGCTCGGTCAATTCGCTATGCGATCGCGCTTTAAC"
+test1 = "ATCG"
+test2 = "ACTAGCGTCAGCTAGCTCGGTCAATTCGCTATGCGATCGCGCTTTAAC"
 
-# print(DNA_reverse(test1))
+print(DNA_reverse(test1))
+print(DNA_reverse(test2))
 
-# print(DNA_reverse(test2))
+
