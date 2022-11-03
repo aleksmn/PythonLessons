@@ -7,7 +7,7 @@ class Coffee:
         def check_budget(self, budget):
                # Проверяем количество денег
                 if not isinstance(budget, (int, float)):
-                    print('Введите целое или дробное число')
+                    print('Enter float or int number')
                     exit()
                 if budget < 0:
                     print('Sorry you don\'t have money')
