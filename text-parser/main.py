@@ -60,13 +60,13 @@ res = count_words(text)[:5]
 #     print(k, v)
 
 
-# Фильтруем слова - оставляем только те, где 3+ букв
+#### Фильтруем слова - оставляем только те, где 3+ букв
 
 
-chart = count_words(text)[:100]
+# chart = count_words(text)[:100]
 
 
-filtered_chart = []
+# filtered_chart = []
 
 # for w in chart:
 #     # print(w[1])
@@ -83,3 +83,28 @@ filtered_chart = []
 
 # for k, v in filtered_chart:
 #     print(k, v)
+
+
+
+## Фильтруем результат с использованием стоп листа
+
+with open('stoplist.txt', 'r') as f:
+    stoplist = f.read().split()
+
+
+# print(stoplist)
+
+# Вносим поправки в стоплист
+
+my_stop = 'иль ним пред меж сей свой'
+
+
+stoplist = stoplist + my_stop.split()
+
+chart = count_words(text)
+
+filtered_chart = [w for w in chart if len(w[1]) > 2 and w[1] not in stoplist ]
+
+for k, v in filtered_chart[:40]:
+    print(k, v)
+
