@@ -1,19 +1,19 @@
 
 
-def count_letters(word):
-    letters = {}
+# def count_letters(word):
+#     letters = {}
 
-    for l in word:
-        if l not in letters:
-            letters[l] = 1
+#     for l in word:
+#         if l not in letters:
+#             letters[l] = 1
 
-        else:
-            letters[l] += 1
+#         else:
+#             letters[l] += 1
 
-    return letters 
+#     return letters 
 
 
-print(count_letters("Wonderland"))
+# print(count_letters("Wonderland"))
 
 
 
@@ -38,3 +38,8 @@ print(count_letters("Wonderland"))
 # а значения — их количество.
 
 # text = "Напиши функцию, которая будет принимать аргументом текст и возвращать словарь, где ключи — это отдельные слова в тексте, а значения — их количество."
+
+
+value = print(1)
+
+print(value)
