@@ -1,4 +1,5 @@
 import string
+import time
 
 
 with open("mytext.txt", 'r', encoding="utf-8") as f:
@@ -39,7 +40,6 @@ def count_words(text):
     for word in text.split():
         d[word] = d.get(word, 0) + 1
 
-
     # Составляем рейтинг слов
 
     word_chart = []
@@ -60,7 +60,7 @@ res = count_words(text)[:5]
 #     print(k, v)
 
 
-#### Фильтруем слова - оставляем только те, где 3+ букв
+# Фильтруем слова - оставляем только те, где 3+ букв
 
 
 # chart = count_words(text)[:100]
@@ -74,7 +74,6 @@ res = count_words(text)[:5]
 #         filtered_chart.append(w)
 
 
-
 # Более удобный способ (Генератор списков)
 # filtered_chart = [w for w in chart if len(w[1]) > 2]
 
@@ -85,8 +84,7 @@ res = count_words(text)[:5]
 #     print(k, v)
 
 
-
-## Фильтруем результат с использованием стоп листа
+# Фильтруем результат с использованием стоп листа
 
 with open('stoplist.txt', 'r') as f:
     stoplist = f.read().split()
@@ -96,15 +94,24 @@ with open('stoplist.txt', 'r') as f:
 
 # Вносим поправки в стоплист
 
-my_stop = 'иль ним пред меж сей свой'
-
+my_stop = 'иль ним пред меж сей свой моей'
 
 stoplist = stoplist + my_stop.split()
 
 chart = count_words(text)
 
-filtered_chart = [w for w in chart if len(w[1]) > 2 and w[1] not in stoplist ]
+filtered_chart = [w for w in chart if len(w[1]) > 2 and w[1] not in stoplist]
 
-for k, v in filtered_chart[:40]:
-    print(k, v)
 
+
+title = "Результат частотного анализа\n"
+print(len(title) * "=")
+print(title)
+
+for k, v in filtered_chart[:10]:
+    h = "*" * round(k / 10)
+    time.sleep(0.1)
+    print(h, k, v)
+
+
+print(len(title) * "=")
