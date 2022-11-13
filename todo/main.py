@@ -6,13 +6,12 @@ def print_todo():
     print("\n*  Твои задачи  *\n")
     with open(file, 'r', encoding='utf-8') as f:
         for num, line in enumerate(f):
-            time.sleep(1)
+            time.sleep(0.2)
             print(num+1, line, end='')
     print("-"*9)
 
 
 print("\n* Список задач *\n")
-time.sleep(1)
 
 print_todo()
 

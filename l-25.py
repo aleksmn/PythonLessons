@@ -1,3 +1,5 @@
+
+
 # Список:
 # users = ['Дима', 'Юра', 'Ваня']
 
@@ -6,53 +8,79 @@
 
 # 'ключ':'значение',
 
-# user = {'name': 'Михаил', 'tel': '81235467654', 'status': 'учитель'}
+user = {'name': 'Михаил', 'tel': '81235467654', 'status': 'учитель'}
+
+user['email'] = "example@gmail.com"
 
 
-rus_eng = {'one': 'один'}
+# for k, v in user.items():
+#     print(k + " : "  + v)
 
-rus_eng['четыре'] = 'four'
 
-print(rus_eng)
+phonebook = []
+
+# phonebook.append(user)
 
 
 while True:
-    key = input("Введите слово на русском\n")
-    value = input("Введите перевод на английском\n")
-    if(key=='' or  value ==''):
+    user = {}
+    user['name'] = input("Введите имя: ")
+    user['tel'] = input("Введите телефон: ")
+
+    phonebook.append(user)
+
+    exit = input("Продолжить? (Д/н) ")
+
+    if exit.lower() == 'н' or exit.lower() == 'нет':
         break
-    rus_eng[key] = value
-    print(rus_eng)
 
 
-print(rus_eng)
+# print(phonebook)
+
+for p in phonebook:
+    print(p['name'] + " " + p['tel'])
 
 
+# rus_eng = {'one': 'один'}
+
+# rus_eng['четыре'] = 'four'
+
+# print(rus_eng)
 
 
-# Цепочка ДНК состоит из двух рядов нуклеотидов, соединённых вместе. 
-# Интересно, что нуклеотид A может соединяться только с нуклеотидом T, C с G 
-# и наоборот. Получается, зная содержимое одной стороны цепочки ДНК, 
+# while True:
+#     key = input("Введите слово на русском\n")
+#     value = input("Введите перевод на английском\n")
+#     if(key=='' or  value ==''):
+#         break
+#     rus_eng[key] = value
+#     print(rus_eng)
+
+
+# print(rus_eng)
+
+
+# Цепочка ДНК состоит из двух рядов нуклеотидов, соединённых вместе.
+# Интересно, что нуклеотид A может соединяться только с нуклеотидом T, C с G
+# и наоборот. Получается, зная содержимое одной стороны цепочки ДНК,
 # всегда можно воссоздать и вторую.
 
-# Напиши функцию, которая принимает аргументом цепочку ДНК в виде строки 
+# Напиши функцию, которая принимает аргументом цепочку ДНК в виде строки
 # и возвращает её пару.
 
 
-def DNA_reverse(dna: str):
-    new_dna = ""
-    pairs = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
+# def DNA_reverse(dna: str):
+#     new_dna = ""
+#     pairs = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
 
-    for key in dna:
-        new_dna += pairs[key]
-    
-    return new_dna
+#     for key in dna:
+#         new_dna += pairs[key]
 
-
-test1 = "ATCG"
-test2 = "ACTAGCGTCAGCTAGCTCGGTCAATTCGCTATGCGATCGCGCTTTAAC"
-
-print(DNA_reverse(test1))
-print(DNA_reverse(test2))
+#     return new_dna
 
 
+# test1 = "ATCG"
+# test2 = "ACTAGCGTCAGCTAGCTCGGTCAATTCGCTATGCGATCGCGCTTTAAC"
+
+# print(DNA_reverse(test1))
+# print(DNA_reverse(test2))
