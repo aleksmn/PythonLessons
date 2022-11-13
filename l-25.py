@@ -8,37 +8,37 @@
 
 # 'ключ':'значение',
 
-user = {'name': 'Михаил', 'tel': '81235467654', 'status': 'учитель'}
+# user = {'name': 'Михаил', 'tel': '81235467654', 'status': 'учитель'}
 
-user['email'] = "example@gmail.com"
+# user['email'] = "example@gmail.com"
 
 
 # for k, v in user.items():
 #     print(k + " : "  + v)
 
 
-phonebook = []
+# phonebook = []
 
-# phonebook.append(user)
-
-
-while True:
-    user = {}
-    user['name'] = input("Введите имя: ")
-    user['tel'] = input("Введите телефон: ")
-
-    phonebook.append(user)
-
-    exit = input("Продолжить? (Д/н) ")
-
-    if exit.lower() == 'н' or exit.lower() == 'нет':
-        break
+# # phonebook.append(user)
 
 
-# print(phonebook)
+# while True:
+#     user = {}
+#     user['name'] = input("Введите имя: ")
+#     user['tel'] = input("Введите телефон: ")
 
-for p in phonebook:
-    print(p['name'] + " " + p['tel'])
+#     phonebook.append(user)
+
+#     exit = input("Продолжить? (Д/н) ")
+
+#     if exit.lower() == 'н' or exit.lower() == 'нет':
+#         break
+
+
+# # print(phonebook)
+
+# for p in phonebook:
+#     print(p['name'] + " " + p['tel'])
 
 
 # rus_eng = {'one': 'один'}
@@ -58,6 +58,12 @@ for p in phonebook:
 
 
 # print(rus_eng)
+
+
+
+
+
+
 
 
 # Цепочка ДНК состоит из двух рядов нуклеотидов, соединённых вместе.
