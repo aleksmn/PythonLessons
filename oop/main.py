@@ -20,7 +20,7 @@ class Cat():
         print(
             f"I am a cat. My name is {self.name}. I am {self.age} years old.")
 
-    def make_sound(self):
+    def speak(self):
         print("Meow")
 
 
@@ -39,7 +39,7 @@ class Dog():
         print(
             f"I am a dog. My name is {self.name}. I am {self.age} years old.")
 
-    def make_sound(self):
+    def speak(self):
         print("Bark")
 
 
@@ -59,6 +59,6 @@ print(dog1)
 
 
 # for animal in (cat1, dog1):
-#     animal.make_sound()
+#     animal.speak()
 #     animal.info()
-#     animal.make_sound()
+#     animal.speak()
