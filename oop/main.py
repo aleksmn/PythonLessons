@@ -1,13 +1,13 @@
 class Animal:
     def run(self):
-        print("I can run")
+        print("I run")
 
     def sleep(self):
-        print("I can sleep")
+        print("I sleep")
 
 
 
-class Cat(Animal):
+class Cat():
     def __init__(self, name, age):
         self.name = name
         self.age = age
@@ -26,7 +26,7 @@ class Cat(Animal):
 
 
 
-class Dog(Animal):
+class Dog():
     def __init__(self, name, age):
         self.name = name
         self.age = age
@@ -34,6 +34,7 @@ class Dog(Animal):
     def __str__(self) -> str:
         return f"Dog with name {self.name}"
 
+    # Полиморфизм
     def info(self):
         print(
             f"I am a dog. My name is {self.name}. I am {self.age} years old.")
