@@ -1,8 +1,21 @@
-class Cat:
+class Animal:
+    def run(self):
+        print("I can run")
+
+    def sleep(self):
+        print("I can sleep")
+
+
+
+class Cat(Animal):
     def __init__(self, name, age):
         self.name = name
         self.age = age
+    # Магический метод
+    def __str__(self) -> str:
+        return f"Cat with name {self.name}"
 
+    # Полиморфизм
     def info(self):
         print(
             f"I am a cat. My name is {self.name}. I am {self.age} years old.")
@@ -11,10 +24,15 @@ class Cat:
         print("Meow")
 
 
-class Dog:
+
+
+class Dog(Animal):
     def __init__(self, name, age):
         self.name = name
         self.age = age
+
+    def __str__(self) -> str:
+        return f"Dog with name {self.name}"
 
     def info(self):
         print(
@@ -27,7 +45,19 @@ class Dog:
 cat1 = Cat("Kitty", 2.5)
 dog1 = Dog("Fluffy", 4)
 
-for animal in (cat1, dog1):
-    animal.make_sound()
-    animal.info()
-    animal.make_sound()
+
+
+print(cat1)
+print(dog1)
+
+
+
+
+
+
+
+
+# for animal in (cat1, dog1):
+#     animal.make_sound()
+#     animal.info()
+#     animal.make_sound()
