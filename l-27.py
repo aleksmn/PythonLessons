@@ -1,4 +1,4 @@
-# Объек
+# Объект
 class Cat:
     
     def __init__(self, name):
