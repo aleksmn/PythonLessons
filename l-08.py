@@ -75,42 +75,82 @@
 #     print(1, "Ход возможен")
 
 
-
-
-
-
-
-
-
-
 # Даны две различные клетки шахматного поля, каждая из которых задаётся двумя числами, — координата по xx, координата по yy. Выведи 11, если шахматный ферзь сможет перейти с первой клетки на вторую одним ходом, иначе выведи 00.
 
 
-try:
-    x1 = int(input("x1 = "))
-    y1 = int(input("y1 = "))
+# try:
+#     x1 = int(input("x1 = "))
+#     y1 = int(input("y1 = "))
 
-    x2 = int(input("x2 = "))
-    y2 = int(input("y2 = "))
+#     x2 = int(input("x2 = "))
+#     y2 = int(input("y2 = "))
 
-except:
-    print("Неверный ввод координат")
-    quit()
-
-
-
-diff_x = abs(x1 - x2)
-diff_y = abs(y1 - y2)
+# except:
+#     print("Неверный ввод координат")
+#     quit()
 
 
-# print(diff_x, diff_y)
+# diff_x = abs(x1 - x2)
+# diff_y = abs(y1 - y2)
 
 
-if diff_x == diff_y:
-    print(1)
+# # print(diff_x, diff_y)
 
-elif diff_y == 0 or diff_x == 0:
-    print(1)
+
+# if diff_x == diff_y:
+#     print(1)
+
+# elif diff_y == 0 or diff_x == 0:
+#     print(1)
+
+# else:
+#     print(0)
+
+
+# Даны год, месяц и день рождения 2-ух людей. Необходимо определить, кто из них старше.
+
+
+y1, m1, d1 = 1996, 11, 31
+y2, m2, d2 = 1998, 9, 31
+
+
+# if y1 > y2:
+#     print(2)
+# elif y1 < y2:
+#     print(1)
+# else:
+#     if m1 < m2:
+#        print(1)
+#     elif m1 > m2:
+#         print(2)
+#     else:
+#         if d1 < d2:
+#             print(1)
+#         elif d1 > d2:
+#             print(2)
+#         else:
+#             print("возраста равны")
+
+
+# Способ 2
+
+if y1 == y2 and m1 == m2 and d1 == d2:
+    print("возраста равны")
+
+if y1 == y2 and m1 == m2:
+    if d1 > d2:
+        print(2)
+    else:
+        print(1)
+
+if y1 == y2:
+    if m1 > m2:
+        print(2)
+    else:
+        print(1)
 
 else:
-    print(0)
+    if y1 > y2:
+        print(2)
+    else:
+        print(1)
