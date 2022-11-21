@@ -4,18 +4,25 @@
 
 # username = input("Введите имя: ")
 
-# # +7 (912) 345-67-89
+# # # +7 (912) 345-67-89
 
-# new_number = "+7 (" + number[1:4] + ") " + number[4:7] + "-" + number[7:9] + "-" + number[9:]
+# # new_number = "+7 (" + number[1:4] + ") " + number[4:7] + "-" + number[7:9] + "-" + number[9:]
 
+# new_number = f'+7 ({number[1:4]}) {number[4:7]}-{number[7:9]}-{number[9:]}'
 
-# print(new_number)
+# print(username, new_number)
 
 
 
 
 # with open("mynumbers.txt", "a", encoding="utf-8") as f:
 #     f.write(username + " : " + new_number + "\n")
+
+
+
+
+
+
 
 
 
@@ -36,35 +43,35 @@
 # Калькулятор
 
 
-num1 = input("Первое число: ")
-num2 = input("Второе число: ")
+# num1 = input("Первое число: ")
+# num2 = input("Второе число: ")
 
-# выбираем оператор
-operation = input("Введите действие (+, -, *, /): ")
+# # выбираем оператор
+# operation = input("Введите действие (+, -, *, /): ")
 
-try:
-    num1 = float(num1)
-    num2 = float(num2)
+# try:
+#     num1 = float(num1)
+#     num2 = float(num2)
 
-except:
-    print("Неверный ввод")
-    quit()
+# except:
+#     print("Неверный ввод")
+#     quit()
 
 
-if operation == "+":
-    print(f'{num1} + {num2} = {num1 + num2}')
+# if operation == "+":
+#     print(f'{num1} + {num2} = {num1 + num2}')
 
-elif operation == "-":
-    print(f'{num1} - {num2} = {num1 - num2}')
+# elif operation == "-":
+#     print(f'{num1} - {num2} = {num1 - num2}')
 
-elif operation == "*":
-    print(f'{num1} * {num2} = {num1 * num2}')
+# elif operation == "*":
+#     print(f'{num1} * {num2} = {num1 * num2}')
 
-elif operation == "/":
-    print(f'{num1} / {num2} = {num1 / num2}')
+# elif operation == "/":
+#     print(f'{num1} / {num2} = {num1 / num2}')
 
-else:
-    print("Неправильный ввод")
+# else:
+#     print("Неправильный ввод")
 
 
 
