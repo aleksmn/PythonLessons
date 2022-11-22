@@ -6,21 +6,35 @@ with open("index.html", "r") as f:
 
 # print(doc.prettify())
 
+
 # Выбираем один элемент по тегу (только первый)
-tag = doc.h1
-print(tag.string)
+    
+# print(doc.h1.string)
+
+# print(doc.head.title.string)
 
 
 
 # Выбираем несколько элементов по тегу
-tags = doc.find_all("a")
+# tags = doc.find_all("a")
+
+# # print(tags)
+
+# links = []
+
+# for t in tags:
+#     links.append(t.attrs['href'])
+
+
+# print(links)
+
+# Выбор по классу
+
+tags = doc.find_all('div', class_="article")
+
 # print(tags)
 
-links = []
-
 for t in tags:
-    print(t)
-    # Выбираем ссылки
-    # print(t.attrs['href'])
-    # links.append(t.attrs['href'])
+    print(t.p)
+
 
