@@ -40,37 +40,37 @@ olimpiads = doc.find_all('div', class_="olympiads__content")
 # IMAGES
 
 
-images = doc.find_all('a', class_="olympiads__img")
+# images = doc.find_all('a', class_="olympiads__img")
 
 
-# print(images)
+# # print(images)
 
-img_links = []
+# img_links = []
 
-for i in images:
-    back_img = i.attrs['style']
-    # print(back_img.split('\'')[1])
-    link = back_img.split('\'')[1]
-    img_links.append(link)
-
-
-# print(img_links)
-
-# TEST for 1 image
-
-image_name = img_links[0].split('/')[-1]
-image_file = requests.get(img_links[0]).content
-
-with open('images/'+image_name, "wb+") as f:
-    f.write(image_file)
+# for i in images:
+#     back_img = i.attrs['style']
+#     # print(back_img.split('\'')[1])
+#     link = back_img.split('\'')[1]
+#     img_links.append(link)
 
 
+# # print(img_links)
 
-# Download Images
+# # TEST for 1 image
 
-for link in img_links:
-    image_name = link.split('/')[-1]
-    image_file = requests.get(link).content
+# image_name = img_links[0].split('/')[-1]
+# image_file = requests.get(img_links[0]).content
 
-    with open('images/'+image_name, "wb+") as f:
-        f.write(image_file)
+# with open('images/'+image_name, "wb+") as f:
+#     f.write(image_file)
+
+
+
+# # Download Images
+
+# for link in img_links:
+#     image_name = link.split('/')[-1]
+#     image_file = requests.get(link).content
+
+#     with open('images/'+image_name, "wb+") as f:
+#         f.write(image_file)
