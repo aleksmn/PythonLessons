@@ -28,18 +28,18 @@
 # 1**1 - 2**2 + 3**3 - 4** 4 + ... + N
 
 
-# n = 7
+n = 7
 
-# res = 0
+res = 0
 
-# for x in range(1, n + 1):
+for x in range(1, n + 1):
 
-#     if x % 2 == 0:
-#         res -= x**x
-#     else:
-#         res += x**x
+    if x % 2 == 0:
+        res -= x**x
+    else:
+        res += x**x
 
-# print(res)
+print(res)
 
 
 
@@ -53,16 +53,29 @@
 # 1! + 2! + ... + n!
 
 
-# n = 5
+# Нахождение факториала числа
+n = 5
+
+res = 1
+
+for x in range(1, n+1):
+    res = res * x
+
+print(f"Факториал числа {n}: {res}")
 
 
-# fact = 1
 
 
-# for i in range(1, n+1):
-#     fact = fact * i
 
-# print(f"Факториал числа {n}: {fact}")
+
+
+
+
+
+
+
+
+
 
 
 # fact_sum = 0
