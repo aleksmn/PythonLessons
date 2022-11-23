@@ -28,20 +28,18 @@
 # 1**1 - 2**2 + 3**3 - 4** 4 + ... + N
 
 
-n = 7
+# n = 7
 
-res = 0
+# res = 0
 
-for x in range(1, n + 1):
+# for x in range(1, n + 1):
 
-    if x % 2 == 0:
-        res -= x**x
-    else:
-        res += x**x
+#     if x % 2 == 0:
+#         res -= x**x
+#     else:
+#         res += x**x
 
-print(res)
-
-
+# print(res)
 
 
 
@@ -50,26 +48,9 @@ print(res)
 
 
 
+# Дано натуральное число N. Вычисли:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 1! + 2! + ... + n!
 
 
 # n = 5
@@ -96,6 +77,6 @@ print(res)
 #     fact_sum += fact
 #     print(f"Факториал числа {n}: {fact}.  Сумма факториалов: {fact_sum}")
     
-    
+
 
 
