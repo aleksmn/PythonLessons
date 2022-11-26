@@ -103,15 +103,14 @@ chart = count_words(text)
 filtered_chart = [w for w in chart if len(w[1]) > 2 and w[1] not in stoplist]
 
 
-
 title = "Результат частотного анализа\n"
 print(len(title) * "=")
 print(title)
 
-for k, v in filtered_chart[:10]:
-    h = "*" * round(k / 10)
-    time.sleep(0.1)
-    print(h, k, v)
+for count, word in filtered_chart[:10]:
+    h = "#" * round(count / 10)
+    # time.sleep(0.1)
+    print(h, count, word)
 
 
 print(len(title) * "=")
