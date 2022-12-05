@@ -13,7 +13,7 @@ s = 'бвгджзйклмнпрстфхцчшщ'
 g_count = 0
 s_count = 0
 
-for letter in word:
+for letter in word.lower():
     if letter in g:
         g_count += 1
 
