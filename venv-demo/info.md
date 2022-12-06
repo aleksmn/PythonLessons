@@ -1,11 +1,13 @@
 
 ## Create a virtual env 
 
-python -m venv ./venv
+python -m venv .venv
 
 ## Activate
+### Mac, Linux
 source venv/bin/activate
-
+### Windows
+\venv\Scripts\activate
 
 ## “Freezing” Environment
 
