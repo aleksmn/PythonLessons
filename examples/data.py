@@ -5,13 +5,13 @@ data = input("Введите список чисел через пробел: ")
 # print(data)
 
 # Получаем список из строки
-arr = data.split(" ")
+a = data.split()
 
 nums = []
 
-for n in arr:
+for n in a:
     try:
-        nums.append(int(n))
+        nums.append(float(n))
     except:
         pass
 
@@ -22,16 +22,22 @@ print(nums)
 
 
 
-summa = 0
 
-for n in nums:
-    summa = summa + n
 
-print("Сумма: ")
-print(summa)
 
-print("Среднее арифметическое: ")
-print(summa / len(nums))
+
+
+
+# summa = 0
+
+# for n in nums:
+#     summa = summa + n
+
+# print("Сумма: ")
+# print(summa)
+
+# print("Среднее арифметическое: ")
+# print(summa / len(nums))
 
 
 
