@@ -87,8 +87,28 @@ print('--------------------')
 if len(nums) > 0:
 
     print(nums)
+
+    avg = sum(nums) / len(nums)
+
     print('Среднее значение: ')
-    print(sum(nums) / len(nums))
+    print(avg)
+    print('Больше среднего значения:')
+
+    # new_nums = [x for x in nums if ]
+
+    # print(new_nums)
+
+
+
 
 else:
     print('Неверный ввод')
+
+
+# Генератор списков
+
+# nums = [3, 6, 8, 0, 1, 2, 4, 5]
+
+# new_nums = [x for x in nums if x > 5]
+
+# print(new_nums)
