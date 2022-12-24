@@ -94,9 +94,9 @@ if len(nums) > 0:
     print(avg)
     print('Больше среднего значения:')
 
-    # new_nums = [x for x in nums if ]
+    new_nums = [x for x in nums if x > avg]
 
-    # print(new_nums)
+    print(new_nums)
 
 
 
