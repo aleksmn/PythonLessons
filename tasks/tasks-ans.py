@@ -66,43 +66,43 @@
 # Индикатором окончания ввода будет служить ввод пустой строки.
 
 
-nums = []
+# nums = []
 
-while True:
+# while True:
 
-    user_input = input('Введите число: ')
+#     user_input = input('Введите число: ')
 
-    if user_input == '':
-        break
+#     if user_input == '':
+#         break
 
-    try:
-        user_input = float(user_input)
-        nums.append(user_input)
-    except:
-        pass
+#     try:
+#         user_input = float(user_input)
+#         nums.append(user_input)
+#     except:
+#         pass
 
     
-print('--------------------')
+# print('--------------------')
 
-if len(nums) > 0:
+# if len(nums) > 0:
 
-    print(nums)
+#     print(nums)
 
-    avg = sum(nums) / len(nums)
+#     avg = sum(nums) / len(nums)
 
-    print('Среднее значение: ')
-    print(avg)
-    print('Больше среднего значения:')
+#     print('Среднее значение: ')
+#     print(avg)
+#     print('Больше среднего значения:')
 
-    new_nums = [x for x in nums if x > avg]
+#     new_nums = [x for x in nums if x > avg]
 
-    print(new_nums)
-
-
+#     print(new_nums)
 
 
-else:
-    print('Неверный ввод')
+
+
+# else:
+#     print('Неверный ввод')
 
 
 # Генератор списков
@@ -112,3 +112,42 @@ else:
 # new_nums = [x for x in nums if x > 5]
 
 # print(new_nums)
+
+
+# Задача 7
+
+# Рассчитаем наибольший общий делитель для двух целых чисел с использованием цикла
+# #
+# # Запрашиваем у пользователя два целых числа
+# n = int(input("Введите первое целое число: "))
+# m = int(input("Введите второе целое число: "))
+
+# # Присваиваем d наименьшее из n и m
+
+# d = m if m < n else n
+
+# # В цикле находим наибольший общий делитель для двух чисел
+# while n % d != 0 or m % d != 0:
+#     d = d - 1
+# # Выводим результат
+# print("Наибольший общий делитель для", n, "и", m, "равен", d)
+
+
+# Задача 8
+##
+# Вывести таблицу умножения от 1 до 10
+# #
+MIN = 1
+MAX = 10
+# Строка заголовков
+print("    ", end = "")
+for i in range(MIN, MAX + 1):
+    print(f'{i:4}', end="")
+print()
+
+# Выводим таблицу
+for i in range(MIN, MAX + 1):
+    print(f'{i:4}', end="")
+    for j in range(MIN, MAX + 1):
+        print(f'{(i * j):4}', end="")
+    print()
