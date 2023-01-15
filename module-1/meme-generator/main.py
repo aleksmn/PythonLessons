@@ -15,6 +15,7 @@ images = requests.get(
 
 
 print('Список доступных мемов')
+
 count = 1
 
 for img in images:
@@ -40,20 +41,25 @@ params = {
     'text1': text1
 }
 
+
+
 response = requests.request('POST', URL, params=params).json()
 
 # print(response)
 
-
 if response['success']:
     image_url = response['data']['url']
-    image_name = images[id-1]['name']+'.jpg'
     print('Готово! Картинка доступна по ссылке:')
     print(image_url)
 
 else:
     print('Что-то пошло не так...')
     quit()
+
+
+
+
+
 
 
 
@@ -64,5 +70,7 @@ user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Ge
 opener = urllib.request.URLopener()
 
 opener.addheader('User-Agent', user_agent)
+
+image_name = images[id-1]['name']+'.jpg'
 
 opener.retrieve(image_url, image_name)
