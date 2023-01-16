@@ -21,10 +21,14 @@ turtle.setup(700, 700)
 turtle.title("Random Rectangles")
 turtle.speed(0)
 turtle.hideturtle()
+
 n = 100
+
 for i in range(n):
-    draw_rectangle(random.randint(-300, 300), random.randint(-300, 300),
-                  random.randint(5, 100), random.randint(5, 100),
+    draw_rectangle(random.randint(-300, 300), 
+                   random.randint(-300, 300),
+                   random.randint(5, 100), 
+                   random.randint(5, 100),
                   (random.random(), random.random(), random.random()))
 
 
