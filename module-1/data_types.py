@@ -56,7 +56,11 @@
 
 # my_list = [234, 0, 'Привет', True, False, None]
 
-# print(my_list)
+# for item in my_list:
+#     print(item)
+
+
+# print(my_list[1:4])
 
 # my_list[0] = 'До свидания!'
 
@@ -67,8 +71,11 @@
 
 # my_tuple = (234, 0, 'Привет', True, False, None)
 
-# print(my_tuple)
+# print(type(my_tuple))
 
+# print(my_tuple[0])
+
+# # Кортеж нельзя изменять
 # my_tuple[0] = 'Пока!'    #TypeError
 
 
@@ -85,4 +92,10 @@
 # print(my_dictionary)
 # print(type(my_dictionary))
 
-# print(my_dictionary['один'])
+# word = input("Введите слово для перевода: ")
+
+# if word in my_dictionary:
+#     print(my_dictionary[word])
+# else:
+#     print('Слово не найдено')
+
