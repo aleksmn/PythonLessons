@@ -25,7 +25,7 @@ n = 100
 for i in range(n):
     draw_rectangle(random.randint(-300, 300), random.randint(-300, 300),
                   random.randint(5, 100), random.randint(5, 100),
-                  (random.uniform(0, 1), random.uniform(0, 1), random.uniform(0, 1)))
+                  (random.random(), random.random(), random.random()))
 
 
 turtle.mainloop()
