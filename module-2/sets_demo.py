@@ -42,3 +42,11 @@ lang = {'Python', 'Java','Go', 'CSS', 'Rust'}
 
 # print('Symmetric difference:', my_stack_1)
 # print('Symmetric difference:', my_stack_2)
+
+
+
+
+# Update
+# print(prog)
+# prog.update(lang)
+# print(prog)
