@@ -69,26 +69,30 @@ y2, m2, d2 = 1995, 8, 18
 
 # Способ 2
 
-# if y1 == y2 and m1 == m2 and d1 == d2:
-#     print("возраста равны")
 
-# elif y1 == y2 and m1 == m2:
-#     if d1 > d2:
-#         print(2)
-#     else:
-#         print(1)
+y1, m1, d1 = 1994, 8, 17
+y2, m2, d2 = 1995, 7, 18
 
-# elif y1 == y2:
-#     if m1 > m2:
-#         print(2)
-#     else:
-#         print(1)
+if y1 == y2 and m1 == m2 and d1 == d2:
+    print(0)
 
-# else:
-#     if y1 > y2:
-#         print(2)
-#     else:
-#         print(1)
+elif y1 == y2 and m1 == m2:
+    if d1 > d2:
+        print(2)
+    else:
+        print(1)
+
+elif y1 == y2:
+    if m1 > m2:
+        print(2)
+    else:
+        print(1)
+
+else:
+    if y1 > y2:
+        print(2)
+    else:
+        print(1)
 
 
 
