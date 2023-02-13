@@ -157,18 +157,30 @@
 # Задача 9
 
 
-# import random
+import random
 
 
+results = []
 
-# my_list = []
+# Выполняем 20 экспериментов
+for i in range(20):
 
-# for x in range(20):
-#     my_list.append(random.choice(['orel', 'reshka']))
+    my_list = []
 
-#     if len(my_list) > 2:
-#         if my_list[-1] == my_list[-2] == my_list[-3]:
-#             break
+    while True:
+        my_list.append(random.choice(['O', 'R']))
+
+        if len(my_list) > 2:
+            if my_list[-1] == my_list[-2] == my_list[-3]:
+                break
 
 
-# print(my_list)
+    print(my_list, 'попыток', len(my_list))
+
+    results.append(len(my_list))
+
+
+# Выводим список, сколько понадобилось попыток, чтобы выбросить 3 одинаковых значения
+print(results)
+
+print('Среднее значение', sum(results) / len(results))
