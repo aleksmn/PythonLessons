@@ -137,17 +137,38 @@
 ##
 # Вывести таблицу умножения от 1 до 10
 # #
-MIN = 1
-MAX = 10
-# Строка заголовков
-print("    ", end = "")
-for i in range(MIN, MAX + 1):
-    print(f'{i:4}', end="")
-print()
+# MIN = 1
+# MAX = 10
+# # Строка заголовков
+# print("    ", end = "")
+# for i in range(MIN, MAX + 1):
+#     print(f'{i:4}', end="")
+# print()
 
-# Выводим таблицу
-for i in range(MIN, MAX + 1):
-    print(f'{i:4}', end="")
-    for j in range(MIN, MAX + 1):
-        print(f'{(i * j):4}', end="")
-    print()
+# # Выводим таблицу
+# for i in range(MIN, MAX + 1):
+#     print(f'{i:4}', end="")
+#     for j in range(MIN, MAX + 1):
+#         print(f'{(i * j):4}', end="")
+#     print()
+
+
+
+# Задача 9
+
+
+# import random
+
+
+
+# my_list = []
+
+# for x in range(20):
+#     my_list.append(random.choice(['orel', 'reshka']))
+
+#     if len(my_list) > 2:
+#         if my_list[-1] == my_list[-2] == my_list[-3]:
+#             break
+
+
+# print(my_list)
