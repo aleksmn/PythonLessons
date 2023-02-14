@@ -47,26 +47,25 @@ elif action == '2':
     
     if name in book_phones:
         print("Контакт существует")
-        quit()
-
-    phone = input('Телефон: ')
-    book_phones[name] = phone
-    # Вывод телефонной книги
-    for k, v in book_phones.items():
-        print(f'{k}: {v}')
+    else:
+        phone = input('Телефон: ')
+        book_phones[name] = phone
+        # Вывод телефонной книги
+        for k, v in book_phones.items():
+            print(f'{k}: {v}')
 
 # Изменение номера
 elif action == '3':
     name = input('Имя: ')
     if name not in book_phones:
         print("Контакта нет в книге")
-        quit()
-    phone = input('Телефон: ')
-    book_phones[name] = phone
+    else:
+        phone = input('Телефон: ')
+        book_phones[name] = phone
 
-    # Вывод телефонной книги
-    for k, v in book_phones.items():
-        print(f'{k}: {v}')
+        # Вывод телефонной книги
+        for k, v in book_phones.items():
+            print(f'{k}: {v}')
 
 
 elif action == '4':
