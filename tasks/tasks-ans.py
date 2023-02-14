@@ -157,30 +157,72 @@
 # Задача 9
 
 
-import random
+# import random
 
 
-results = []
+# results = []
 
-# Выполняем 20 экспериментов
-for i in range(20):
+# # Выполняем 20 экспериментов
+# for i in range(20):
 
-    my_list = []
+#     my_list = []
 
-    while True:
-        my_list.append(random.choice(['O', 'R']))
+#     while True:
+#         my_list.append(random.choice(['O', 'R']))
 
-        if len(my_list) > 2:
-            if my_list[-1] == my_list[-2] == my_list[-3]:
-                break
-
-
-    print(my_list, 'попыток', len(my_list))
-
-    results.append(len(my_list))
+#         if len(my_list) > 2:
+#             if my_list[-1] == my_list[-2] == my_list[-3]:
+#                 break
 
 
-# Выводим список, сколько понадобилось попыток, чтобы выбросить 3 одинаковых значения
-print(results)
+#     print(my_list, 'попыток', len(my_list))
 
-print('Среднее значение', sum(results) / len(results))
+#     results.append(len(my_list))
+
+
+# # Выводим список, сколько понадобилось попыток, чтобы выбросить 3 одинаковых значения
+# print(results)
+
+# print('Среднее значение', sum(results) / len(results))
+
+
+
+
+
+##
+# Создаем колоду карт и перетасовываем ее
+#
+from random import randrange
+## Генерируем стандартную колоду карт с четырьмя мастями и 13 номиналами в каждой
+def createDeck():
+    # Создаем список для хранения карт
+    cards = []
+    # Проходим по всем мастям и номиналам
+    for suit in ["s", "h", "d", "c"]:
+        for value in ["2", "3", "4", "5", "6", "7", "8", "9", \
+            "T", "J", "Q", "K", "A"]:
+            # Генерируем карту и добавляем ее в колоду
+            cards.append(value + suit)
+    # Возвращаем целую колоду
+    return cards
+
+# print(createDeck())
+
+def shuffle(cards):
+    # Проходим по картам
+    for i in range(0, len(cards)):
+        # Выбираем случайный индекс между текущим индексом и концом списка
+        other_pos = randrange(i, len(cards))
+        # Меняем местами текущую карту со случайно выбранной
+        temp = cards[i]
+        cards[i] = cards[other_pos]
+        cards[other_pos] = temp
+
+
+cards = createDeck()
+
+print(cards)
+
+shuffle(cards)
+
+print(cards)
