@@ -1,12 +1,20 @@
-# items = []
-# temp = []
-# while True:
-#     temp = [input('Товар: \n')]
-#     if temp == ['']:
-#         break
-#     else:
-#         items.append(*temp)
-# print(items)
+
+items = []
+
+while True:
+    # Принимаем название товара от пользователя
+    user_input = input("Введите товар: ")
+
+    if user_input == '':
+        break
+
+    # Добавляем товар в список покупок
+    items.append(user_input)
+
+
+print(items)
+
+
 
 
 # deals = [
@@ -33,20 +41,20 @@
 
 
 
-months = [
-'январь', 'февраль', 'март', 'апрель',
-'май', 'июнь', 'июль', 'август',
-'сентябрь', 'октябрь', 'ноябрь', 'декабрь'
-]
+# months = [
+# 'январь', 'февраль', 'март', 'апрель',
+# 'май', 'июнь', 'июль', 'август',
+# 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'
+# ]
 
-# Напиши решение ниже:
-winter = [months[-1], months[0], months[1]]
-spring = months[2:5]
-summer = months[5:8]
-autumn = months[8:11]
+# # Напиши решение ниже:
+# winter = [months[-1], months[0], months[1]]
+# spring = months[2:5]
+# summer = months[5:8]
+# autumn = months[8:11], months[1]
 
 
-print('Зима:', winter)
-print('Весна:', spring)
-print('Лето:', summer)
-print('Осень:', autumn)
+# print('Зима:', winter)
+# print('Весна:', spring)
+# print('Лето:', summer)
+# print('Осень:', autumn)
