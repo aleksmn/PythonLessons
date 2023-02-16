@@ -3,6 +3,14 @@ import os
 import time
 
 
+# Объявляем цвета
+
+colorama.init()
+white = colorama.Fore.WHITE
+green = colorama.Fore.GREEN
+red = colorama.Fore.RED
+blue = colorama.Fore.BLUE
+
 
 
 board = list(range(1, 10))
@@ -27,11 +35,15 @@ win_coords = (
 )
 
 
+
+
+
 def draw_board():
     '''Отрисовка поля в консоли'''
 
     os.system('clear')
 
+    print(green + "\n* Игра Крестики-нолики *\n")
     for i in range(3):
         shift = i * 3
         print(spaces * ' ', end="")
@@ -44,7 +56,7 @@ def draw_board():
     print('-' * dashes + "\n")
 
 
-print("\n* Игра Крестики-нолики *\n")
+
 
 
 # Игровой цикл
@@ -58,20 +70,20 @@ while not is_win:
     else:
         player_token = 'O'
 
-    player_answer = input(f'Куда ставим {player_token}?: ')
+    player_answer = input(f'{white}Куда ставим {player_token}?: ')
 
     # Получаем ход от игрока, делаем поправку "-1" для учета индексации с 0.
     try:
         player_answer = int(player_answer) - 1
     except:
-        print('Неверный ввод')
+        print(red + 'Неверный ввод')
         time.sleep(0.6)
         continue
 
     if str(board[player_answer]) not in 'XO':
         board[player_answer] = player_token
     else:
-        print('Эта ячейка уже занята!')
+        print(red + 'Эта ячейка уже занята!' + white)
         time.sleep(0.6)
         continue
 
@@ -86,10 +98,10 @@ while not is_win:
 
         if is_win:
             draw_board()
-            print(f'* Победил {player_token}!  Поздравляем! *\n')
+            print(blue + f'* Победил {player_token}!  Поздравляем! *\n')
             break
 
     if counter == 9:
         draw_board()
-        print('Победила дружба :)\n')
+        print(blue + 'Победила дружба :)\n')
         break
