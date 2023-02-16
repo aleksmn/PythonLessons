@@ -43,7 +43,7 @@ def draw_board():
 
     os.system('clear')
 
-    print(green + "\n* Игра Крестики-нолики *\n")
+    print(green + "\n* Игра Крестики-нолики *\n"+blue)
     for i in range(3):
         shift = i * 3
         print(spaces * ' ', end="")
