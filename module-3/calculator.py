@@ -1,4 +1,4 @@
-from my_lib import divide_nums
+from operators import divide_nums
 
 while True:
     choice = input('Введите действие: ')
