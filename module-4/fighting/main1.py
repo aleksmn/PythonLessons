@@ -56,7 +56,9 @@ def init_person(name: str, is_enemy: bool = False):
     else:
         while True:
             choice = input('Введите класс: 1-Воин, 2-Лучник, 3-Маг\n')
-            person = {'класс': role[choice]}
+            if is_valid(text=choice, is_role=True):
+                break
+        person = {'класс': role[choice]}
 
     person.update({'характеристики': classes[person['класс']]})
     person.update({'имя': name})
