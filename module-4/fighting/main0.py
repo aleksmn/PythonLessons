@@ -42,13 +42,19 @@ def init_person(name: str, is_enemy: bool = False):
     if is_enemy:
         person = {'класс': role[random.choice(list(role.keys()))]}
     else:
-        person = {'класс': role[input('Введите класс: 1-Воин, 2-Лучник, 3-Маг\n')]}
+        choice = input('Введите класс: 1-Воин, 2-Лучник, 3-Маг\n')
+        person = {'класс': role[choice]}
 
     person.update({'характеристики': classes[person['класс']]})
     person.update({'имя': name})
 
     print(f"{person['имя']} - {person['класс']}, имеет характеристики: {person['характеристики']}")
     return person
+
+
+
+
+
 
 
 player = init_person(input('Введите имя игрока: '))
