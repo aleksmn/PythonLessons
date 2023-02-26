@@ -4,7 +4,6 @@
 # и согласных букв в слове
 
 
-
 # word = input('Введите слово\n')
 
 # g = 'аоуыиэеёюя'
@@ -21,13 +20,6 @@
 # print('Гласные:', g_count)
 
 # print('Согласные:', s_count)
-
-
-
-
-
-
-
 
 
 # Задача 2
@@ -51,7 +43,6 @@
 #     quit()
 
 
-
 # print(x, y)
 
 # if (x + y) % 2 == 0:
@@ -62,7 +53,7 @@
 
 # Задача 4
 # Написать программу для подсчета
-# среднего значения всех введенных пользователем чисел. 
+# среднего значения всех введенных пользователем чисел.
 # Индикатором окончания ввода будет служить ввод пустой строки.
 
 
@@ -81,7 +72,7 @@
 #     except:
 #         pass
 
-    
+
 # print('--------------------')
 
 # if len(nums) > 0:
@@ -97,8 +88,6 @@
 #     new_nums = [x for x in nums if x > avg]
 
 #     print(new_nums)
-
-
 
 
 # else:
@@ -153,7 +142,6 @@
 #     print()
 
 
-
 # Задача 9
 
 
@@ -186,37 +174,40 @@
 # print('Среднее значение', sum(results) / len(results))
 
 
+from random import randrange
+import random
 
 
 def create_deck():
     deck = []
 
-    nominals = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
-    suits = ['s', 'h', 'd', 'c']
+    nominals = ["2", "3", "4", "5", "6", "7",
+                "8", "9", "10", "В", "Д", "К", "Т"]
+    suits = ["п", "ч", "б", "т"]
 
     for s in suits:
         for n in nominals:
             deck.append(n + s)
 
     return deck
-    
+
 
 cards = create_deck()
 
 print(cards)
 
 
-import random
-
 def shuffle(cards):
 
     for card_index in range(len(cards)):
-        rand_index = random.randint(0, len(cards)-1)
-        print(rand_index)
+        # Выбираем случайный индекс между текущим индексом и концом списка
+        rand_index = random.randint(card_index, len(cards)-1)
+        # print(rand_index)
 
         temp = cards[card_index]
         cards[card_index] = cards[rand_index]
         cards[rand_index] = temp
+
 
 shuffle(cards)
 
@@ -225,20 +216,22 @@ print(cards)
 # ##
 # # Создаем колоду карт и перетасовываем ее
 # #
-# from random import randrange
-# ## Генерируем стандартную колоду карт с четырьмя мастями и 13 номиналами в каждой
+# Генерируем стандартную колоду карт с четырьмя мастями и 13 номиналами в каждой
+
+
 # def createDeck():
 #     # Создаем список для хранения карт
 #     cards = []
 #     # Проходим по всем мастям и номиналам
-#     for suit in ["s", "h", "d", "c"]:
-#         for value in ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"]:
+#     for suit in ["п", "ч", "б", "т"]:
+#         for value in ["2", "3", "4", "5", "6", "7", "8", "9", "10", "В", "Д", "К", "Т"]:
 #             # Генерируем карту и добавляем ее в колоду
 #             cards.append(value + suit)
 #     # Возвращаем целую колоду
 #     return cards
 
 # # print(createDeck())
+
 
 # def shuffle(cards):
 #     # Проходим по картам
