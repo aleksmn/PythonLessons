@@ -1,20 +1,26 @@
 import turtle
-from random import randint
+import random
 
-turtle.screensize(500, 500)
+turtle.setup(900, 900)
 turtle.shape("turtle")
-turtle.pencolor("blue")
-turtle.fillcolor("blue")
+turtle.color("#E96479")
+turtle.bgcolor('#4D455D')
+
 
 for i in range(10):
-    turtle.goto(randint(-250, 250), randint(-250, 250))
-    side = randint(10, 100)
+    turtle.goto(random.randint(-350, 350), random.randint(-350, 350))
 
     turtle.begin_fill()
-    for j in range(4):
+
+    side = random.randint(10, 100)
+    for i in range(4):
         turtle.forward(side)
-        turtle.right(90)
+        turtle.left(90)
 
     turtle.end_fill()
+
+
+
+
 
 turtle.mainloop()
