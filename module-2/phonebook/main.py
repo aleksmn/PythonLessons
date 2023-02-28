@@ -1,8 +1,8 @@
 # Телефонная книга
 
-import os
+# import os
 
-os.system('clear')
+# os.system('clear')
 
 # book_phones = {'Алексей': 23345, 'Дмитрий': 456433, 'Юлия': 3732345}
 
@@ -12,7 +12,7 @@ os.system('clear')
 
 # with open('book.txt', 'r', encoding='utf-8') as f:
 #     lines = f.readlines()
-    
+
 # for line in lines:
 #     line = line.split(';')
 #     name = line[0].strip()
@@ -22,16 +22,16 @@ os.system('clear')
 # print(book_phones)
 
 book_phones = {
-  'Квам-Дамн': '-79899899889',
-  'Лук Скамворкер': '112',
-  'Петард Вейпер': '1',
-  'Лия Моргала': '+09998765432',
-  'Эдуард Скамворкер': '0'
+    'Квам-Дамн': '-79899899889',
+    'Лук Скамворкер': '112',
+    'Петард Вейпер': '1',
+    'Лия Моргала': '+09998765432',
+    'Эдуард Скамворкер': '0'
 }
 
 
 action = input(
-    "Выбери действие: 1 — показать, 2 — добавить, 3 — изменить, 4 — удалить\n")
+    "Выбери действие: 1 — показать, 2 — добавить, 3 — изменить, 4 — удалить,  5 — Показать все имена в книге, 6 — Показать все номера в книге \n")
 
 
 if action == '1':
@@ -44,7 +44,7 @@ if action == '1':
 # Добавление номера
 elif action == '2':
     name = input('Имя: ')
-    
+
     if name in book_phones:
         print("Контакт существует")
     else:
@@ -81,8 +81,19 @@ elif action == '4':
 
 
 
+elif action == '5':
+    print('Список имен')
+    # Выводим все ключи словаря
+    for name, phone in book_phones.items():
+        print(name)
+    
 
 
+
+elif action == '6':
+    print('Список номеров')
+    for name, phone in book_phones.items():
+        print(phone)
 
 
 
@@ -90,6 +101,6 @@ elif action == '4':
 
 # Переписываем файл
 
-with open('book.txt', 'w', encoding='utf-8') as f:
-    for name, number in book_phones.items():
-        f.write(f'{name}; {number}\n')
+# with open('book.txt', 'w', encoding='utf-8') as f:
+#     for name, number in book_phones.items():
+#         f.write(f'{name}; {number}\n')
