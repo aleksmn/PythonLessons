@@ -96,7 +96,8 @@ elif action == '6':
         print(phone)
 
 
-
+else:
+    print('Такого действия нет')
 
 
 # Переписываем файл
