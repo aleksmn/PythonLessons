@@ -79,16 +79,12 @@ elif action == '4':
         print("Нет в телефонной книге")
 
 
-
-
 elif action == '5':
     print('Список имен')
     # Выводим все ключи словаря
     for name, phone in book_phones.items():
         print(name)
     
-
-
 
 elif action == '6':
     print('Список номеров')
@@ -98,6 +94,13 @@ elif action == '6':
 
 else:
     print('Такого действия нет')
+
+
+
+
+
+
+
 
 
 # Переписываем файл
