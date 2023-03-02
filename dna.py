@@ -22,16 +22,16 @@ print(DNA_reverse(test2))
 # и использовать подсказки типов.
 
 
-dna = "ATCG"
-input_dna = input("Введите ДНК ")
+# dna = "ATCG"
+# input_dna = input("Введите ДНК ")
 
 
-def check_dna(dna_for_test: str):
-    for s in input_dna.upper():
-        if s in dna:
-            return False
+# def check_dna(dna_for_test: str):
+#     for s in input_dna.upper():
+#         if s not in dna:
+#             return False
 
-    return True
+#     return True
 
 
-print(check_dna(input_dna))
+# print(check_dna(input_dna))
