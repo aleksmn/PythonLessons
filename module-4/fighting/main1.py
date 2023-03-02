@@ -67,12 +67,13 @@ def init_person(name: str, is_enemy: bool = False):
     return person
 
 
+def get_player_name() -> str:
+    while True:
+        player_name = input(f'Как зовут твоего героя?\n')
+        if is_valid(player_name):
+            break
+    return player_name
 
 
-
-
-
-
-
-player = init_person(input('Введите имя игрока: '))
+player = init_person(get_player_name())
 enemy = init_person('Враг', True)
