@@ -1,4 +1,3 @@
-from unittest import result
 import skysmart
 
 skysmart.printTitle("Привет!")
