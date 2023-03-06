@@ -1,20 +1,20 @@
-# 1 1 2 3 5 8 13 21
+# # 1 1 2 3 5 8 13 21
 
-n = int(input("Введите число: "))
+# n = int(input("Введите число: "))
 
-fib1 = 1
-fib2 = 1
+# fib1 = 1
+# fib2 = 1
 
-while fib1 <= n:
-    print(fib1)
-    temp = fib1
-    fib1 = fib2
-    fib2 = temp + fib2
+# while fib1 <= n:
+#     print(fib1)
+#     temp = fib1
+#     fib1 = fib2
+#     fib2 = temp + fib2
 
-print(fib1)
-temp = fib1
-fib1 = fib2
-fib2 = temp + fib2
+# print(fib1)
+# temp = fib1
+# fib1 = fib2
+# fib2 = temp + fib2
 
 
 
@@ -70,3 +70,28 @@ fib2 = temp + fib2
 # else:
 #     print("Число не простое")
 #     print("Количество делителей: ", k + 2)
+
+
+
+
+# Перевернуть число используя // и %
+
+
+
+n = 321
+
+# нужно получить 123
+
+# 100 + 20 + 3
+
+res = 0
+
+while n > 0:
+    remainder = n % 10
+    res = (res * 10) + remainder
+    print(remainder)
+    n = n // 10
+
+
+
+print('Перевернутое число:', res)
