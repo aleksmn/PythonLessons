@@ -81,7 +81,6 @@
 n = 321
 
 # нужно получить 123
-
 # 100 + 20 + 3
 
 res = 0
@@ -89,9 +88,6 @@ res = 0
 while n > 0:
     remainder = n % 10
     res = (res * 10) + remainder
-    print(remainder)
     n = n // 10
-
-
 
 print('Перевернутое число:', res)
