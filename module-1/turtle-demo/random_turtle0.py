@@ -1,11 +1,14 @@
 import turtle
 import random
 
+# from svg_turtle import SvgTurtle
+
+# turtle = SvgTurtle(900, 900)
+
 turtle.setup(900, 900)
 turtle.hideturtle()
 
 turtle.color("black")
-# turtle.bgcolor('#4D455D')
 turtle.bgcolor("#E8E2E2")
 turtle.shape('turtle')
 turtle.speed(20)
@@ -36,12 +39,10 @@ for i in range(30):
     # Начинаем заливку
     turtle.begin_fill()
 
-    
-
 
     n = 4
-    #turtle.left(random.randint(1, 360))
-    turtle.setheading(15)
+    # turtle.left(random.randint(1, 360))
+    turtle.setheading(-15)
     for i in range(n):
         
         turtle.forward(size)
@@ -53,8 +54,8 @@ for i in range(30):
 
 
 
-
-
-
 # Последняя строка
-turtle.mainloop()
+# turtle.mainloop()
+
+# Сохранение в файл
+# turtle.save_as('example.svg')
