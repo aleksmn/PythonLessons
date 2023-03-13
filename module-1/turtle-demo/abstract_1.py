@@ -2,9 +2,10 @@ import turtle
 import random
 
 turtle.setup(900, 900)
-turtle.shape("turtle")
+turtle.shape("classic")
 turtle.color("#E96479")
 turtle.bgcolor('#4D455D')
+turtle.width(2)
 
 # Перемещаемся на случайную точку для начала рисунка
 turtle.penup()
