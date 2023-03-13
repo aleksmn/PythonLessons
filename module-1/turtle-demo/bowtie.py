@@ -1,12 +1,13 @@
 import turtle
 
 
-turtle.color('red')
-turtle.bgcolor('black')
+turtle.color("#E96479")
+turtle.bgcolor('#4D455D')
+
 turtle.speed(2)
 turtle.shape('classic')
 
-turtle.fillcolor("red")
+
 
 turtle.begin_fill()
 
