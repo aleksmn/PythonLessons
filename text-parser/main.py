@@ -108,8 +108,8 @@ print(len(title) * "=")
 print(title)
 
 for count, word in filtered_chart[:10]:
-    h = "#" * round(count / 10)
-    # time.sleep(0.1)
+    h = "#" * (count // 10)
+    time.sleep(0.1)
     print(h, count, word)
 
 
