@@ -61,7 +61,7 @@ res = 1
 for x in range(1, n+1):
     res = res * x
 
-print(f"Факториал числа {n}: {res}")
+print(res)
 
 
 
@@ -76,19 +76,25 @@ print(f"Факториал числа {n}: {res}")
 
 
 
+x = int(input('Введите число: '))
+
+fact_sum = 0
 
 
-# fact_sum = 0
+for n in range(1, x+1):
 
-# for n in range(1, 8):
+    fact = 1
+    # Вложенный цикл
+    for i in range(1, n+1):
+        fact = fact * i
 
-#     fact = 1
+    fact_sum += fact
 
-#     for i in range(1, n+1):
-#         fact = fact * i
 
-#     fact_sum += fact
-#     print(f"Факториал числа {n}: {fact}.  Сумма факториалов: {fact_sum}")
+print(fact_sum)
+
+
+
     
 
 
