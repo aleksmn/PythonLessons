@@ -174,44 +174,44 @@
 # print('Среднее значение', sum(results) / len(results))
 
 
-from random import randrange
-import random
+# from random import randrange
+# import random
 
 
-def create_deck():
-    deck = []
+# def create_deck():
+#     deck = []
 
-    nominals = ["2", "3", "4", "5", "6", "7",
-                "8", "9", "10", "В", "Д", "К", "Т"]
-    suits = ["п", "ч", "б", "т"]
+#     nominals = ["2", "3", "4", "5", "6", "7",
+#                 "8", "9", "10", "В", "Д", "К", "Т"]
+#     suits = ["п", "ч", "б", "т"]
 
-    for s in suits:
-        for n in nominals:
-            deck.append(n + s)
+#     for s in suits:
+#         for n in nominals:
+#             deck.append(n + s)
 
-    return deck
-
-
-cards = create_deck()
-
-print(cards)
+#     return deck
 
 
-def shuffle(cards):
+# cards = create_deck()
 
-    for card_index in range(len(cards)):
-        # Выбираем случайный индекс между текущим индексом и концом списка
-        rand_index = random.randint(card_index, len(cards)-1)
-        # print(rand_index)
-
-        temp = cards[card_index]
-        cards[card_index] = cards[rand_index]
-        cards[rand_index] = temp
+# print(cards)
 
 
-shuffle(cards)
+# def shuffle(cards):
 
-print(cards)
+#     for card_index in range(len(cards)):
+#         # Выбираем случайный индекс между текущим индексом и концом списка
+#         rand_index = random.randint(card_index, len(cards)-1)
+#         # print(rand_index)
+
+#         temp = cards[card_index]
+#         cards[card_index] = cards[rand_index]
+#         cards[rand_index] = temp
+
+
+# shuffle(cards)
+
+# print(cards)
 
 # ##
 # # Создаем колоду карт и перетасовываем ее
@@ -251,3 +251,35 @@ print(cards)
 # shuffle(cards)
 
 # print(cards)
+
+
+# Задача 11
+
+
+# def is_sublist(larger, smaller):
+#     n = len(larger)
+#     m = len(smaller)
+    
+#     if m > n:
+#         return False
+    
+#     for i in range(n - m + 1):
+#         if larger[i:i+m] == smaller:
+#             return True
+        
+#     return False
+
+
+
+# Задача 12
+
+# def max_sum_subarray(arr):
+#     n = len(arr)
+#     max_sum = arr[0]
+#     current_sum = arr[0]
+    
+#     for i in range(1, n):
+#         current_sum = max(arr[i], current_sum + arr[i])
+#         max_sum = max(max_sum, current_sum)
+        
+#     return max_sum
