@@ -78,7 +78,7 @@ def get_random_name() -> str:
 
 
 def clear():
-    return os.system('clear')
+    return os.system('cls')
 
 
 def enter_to_continue():
