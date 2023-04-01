@@ -6,7 +6,7 @@ import time
 # Объявляем цвета
 
 colorama.init()
-white = colorama.Fore.WHITE
+white = colorama.Fore.CYAN
 green = colorama.Fore.GREEN
 red = colorama.Fore.RED
 blue = colorama.Fore.BLUE
@@ -41,7 +41,7 @@ win_coords = (
 def draw_board():
     '''Отрисовка поля в консоли'''
 
-    os.system('clear')
+    os.system('cls||clear')
 
     print(green + "\n* Игра Крестики-нолики *\n"+blue)
     for i in range(3):
