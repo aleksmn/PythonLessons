@@ -1,18 +1,42 @@
 white_list = set()
 answers = set()
 
-white_request = 1
-request = 1
 
-while white_request:
+while True:
     white_request = input('Разрешенный запрос:')
-    if white_request:
-        white_list.add(white_request)
 
-while request:
+    # Если введена пустая строка - выходим из цикла
+    if white_request == '':
+        break
+
+    # Добавляем строку в белый список
+    white_list.add(white_request)
+
+
+
+# Проверка белого списка
+# print(white_list)
+
+
+# Ввод запросов от пользователя
+
+while True:
     request = input('Запрос: ')
-    if request:
-        answers.add(request)
+
+    if request == '':
+        break
+
+    answers.add(request)
+
+
+
+
+
+
+
+
+
+
 
 
 # Используем пересечения
