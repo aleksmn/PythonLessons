@@ -3,8 +3,8 @@ import random
 
 
 # Очищаем консоль:
-# os.system('cls')
-os.system('clear')
+
+os.system('clear || cls')
 
 
 print('Привет! Я загадал слово, твоя задача - угадать его по буквам.')
