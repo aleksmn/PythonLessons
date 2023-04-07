@@ -1,28 +1,33 @@
 
 
-# username = 'User'
+username = 'User'
 
-# # Глобальная переменная
-# res = 0
+# Глобальная переменная
+res = 0
 
-# def summa(a, b):
-#     # Глобальная переменная доступна для чтения внутри функции
-#     print(username)
+def summa(a, b):
+    # Глобальная переменная доступна для чтения внутри функции
+    print(username)
 
-#     #username = 'Василий'  # ошибка, для изменения переменная не доступна
+    #username = 'Василий'  # ошибка, для изменения переменная не доступна
 
-#     # Локальная переменная
-#     example = 6
+    # Локальная переменная
+    example = 6
 
-#     # Изменяем глобальную переменную внутри функции
-#     global res
-#     res = a + b
+    # Изменяем глобальную переменную внутри функции
+    global res
+    res = a + b
+
+    print(locals())
+    print(globals())
+    # Глобальное пространство имен
+    print(dir(__builtins__))
     
 
 
-# summa(5, 8)
+summa(5, 8)
 
-# print(res)
+print(res)
 
 
 
@@ -36,7 +41,8 @@
 
 
 
-def multiply_range(start, end):
+def multiply_range(start:int, end:int) -> int:
+    '''Перемножаем числа от start до end'''
 
     if start > end:
         start, end = end, start
@@ -52,3 +58,4 @@ def multiply_range(start, end):
 
 # Вызов функции
 print(multiply_range(10, 5))
+
