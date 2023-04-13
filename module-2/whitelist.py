@@ -1,5 +1,5 @@
 white_list = set()
-answers = set()
+user_requests = set()
 
 
 while True:
@@ -15,7 +15,7 @@ while True:
 
 
 # Проверка белого списка
-# print(white_list)
+print(white_list)
 
 
 # Ввод запросов от пользователя
@@ -26,21 +26,12 @@ while True:
     if request == '':
         break
 
-    answers.add(request)
-
-
-
-
-
-
-
-
-
+    user_requests.add(request)
 
 
 
 # Используем пересечения
-# print(white_list & answers)
+# print(white_list &  user_requests)
 
-for a in white_list & answers:
+for a in white_list & user_requests:
     print(a)
