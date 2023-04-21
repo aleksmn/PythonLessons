@@ -27,6 +27,9 @@ data["accounts"].append({
 print(data)
 
 
+
+
+
 # Сохраняем обратно в файл
 
 with open("client_info.json", "w", encoding="utf-8") as json_file:
@@ -35,3 +38,11 @@ with open("client_info.json", "w", encoding="utf-8") as json_file:
 
 
     
+
+# Выводим транзакции
+for transaction in data['transactions']:
+    print("Аккаунт: ", transaction['account'])
+    print("Тип: ", transaction['type'])
+    print("Дата: ", transaction['date']['year'], transaction['date']['month'])
+    print("Сумма: ", transaction['amount'])
+    print('--------------------------------------')

@@ -56,6 +56,22 @@
             "type": "дебетовая",
             "balance": 25000,
             "validity period": "09/2024"
+        },
+        {
+            "name": "На путешествие",
+            "system": "MasterCard Mass",
+            "number": "5555 0000 5555 0000",
+            "type": "дебетовая",
+            "balance": 25000,
+            "validity period": "09/2024"
+        },
+        {
+            "name": "На путешествие",
+            "system": "MasterCard Mass",
+            "number": "5555 0000 5555 0000",
+            "type": "дебетовая",
+            "balance": 25000,
+            "validity period": "09/2024"
         }
     ],
     "transactions": [
