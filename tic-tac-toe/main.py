@@ -54,14 +54,17 @@ while not is_win:
     # Получаем ход от игрока, делаем поправку "-1" для учета индексации с 0.
     player_answer = int(player_answer) - 1
 
+
     if str(board[player_answer]) not in 'XO':
         board[player_answer] = player_token
     else:
         print('Эта ячейка уже занята!')
         continue
 
+    # Увеличиваем ход на 1
     counter += 1
 
+    # Проверяем на выигрыш
     if counter > 4:
         for each in win_coords:
             # Проверяем наличие выигрышной комбинации (для X или O)
@@ -74,6 +77,7 @@ while not is_win:
             print(f'* Победил {player_token}!  Поздравляем! *\n')
             break
 
+    # Проверяем на ничью
     if counter == 9:
         draw_board()
         print('Победила дружба :)\n')

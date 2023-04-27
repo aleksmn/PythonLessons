@@ -6,7 +6,7 @@ import time
 # Объявляем цвета
 
 colorama.init()
-white = colorama.Fore.CYAN
+white = colorama.Fore.WHITE
 green = colorama.Fore.GREEN
 red = colorama.Fore.RED
 blue = colorama.Fore.BLUE
@@ -43,7 +43,7 @@ def draw_board():
 
     os.system('cls||clear')
 
-    print(green + "\n* Игра Крестики-нолики *\n"+blue)
+    print(green + "\n* Игра Крестики-нолики *\n"+white)
     for i in range(3):
         shift = i * 3
         print(spaces * ' ', end="")
@@ -66,9 +66,9 @@ while not is_win:
     draw_board()
 
     if counter % 2 == 0:
-        player_token = 'X'
+        player_token = red + 'X' + white
     else:
-        player_token = 'O'
+        player_token = green + 'O' + white
 
     player_answer = input(f'{white}Куда ставим {player_token}?: ')
 
@@ -98,7 +98,7 @@ while not is_win:
 
         if is_win:
             draw_board()
-            print(blue + f'* Победил {player_token}!  Поздравляем! *\n')
+            print(blue + f'* Победил {player_token + blue}!  Поздравляем! *\n')
             break
 
     if counter == 9:
