@@ -80,7 +80,7 @@ while not is_win:
         time.sleep(0.6)
         continue
 
-    if str(board[player_answer]) not in 'XO':
+    if str(board[player_answer]) not in [red + 'X' + white, green + 'O' + white]:
         board[player_answer] = player_token
     else:
         print(red + 'Эта ячейка уже занята!' + white)
