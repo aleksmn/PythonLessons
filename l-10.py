@@ -1,6 +1,7 @@
 
 # Цикл FOR
 
+
 # 1, 3, 5 
 
 # for x in range(1, 50, 2):
@@ -9,18 +10,16 @@
 
 
 
-n = 5
+# n = 5
 
-res = 0
+# res = 0
 
-for x in range(1, n+1):
-    res = res + x
-    print(res)
+# for x in range(1, n+1):
+#     res = res + x
+#     print(res)
 
-print("Итог")
-print(res)
-
-
+# print("Итог")
+# print(res)
 
 
 
@@ -30,6 +29,28 @@ print(res)
 
 
 
+
+
+
+# n = int(input("Введите число: "))
+
+# print("Таблица квадратов до", n, "включительно")
+
+# # создаем переменную "копилку"
+# summa = 0
+
+# for x in range(1, n+1):
+
+#     print(f'{x}² = {x**2}', end=' ')
+
+#     summa = summa + x**2
+
+#     if x % 5 == 0:
+#         print()
+
+
+
+# print("Сумма квадратов:", summa)
 
 
 
