@@ -15,18 +15,22 @@ d = input("Введите цифру: ")
 
 # Переменные-счетчики количества цифр d и номера самой левой цифры d
 count_of_d = 0
-position_of_leftmost_d = -1
+position_of_left = -1
+
+# Переменная-индекс для перебора символов числа N справа налево
+i = len(N)-1
 
 # Перебор всех цифр числа N, начиная с конца
-for i in range(len(N)-1, -1, -1):
+while i >= 0:
     if N[i] == d:
         count_of_d += 1
-        if position_of_leftmost_d == -1:
-            position_of_leftmost_d = i
+        if position_of_left == -1:
+            position_of_left = i
+    i -= 1
 
 # Вывод результатов поиска цифры d на экран
 if count_of_d > 0:
-    print("Цифра", d, "встречается в числе", N, "на позиции", len(N)-position_of_leftmost_d)
-    print("Количеств�� цифр", d, "в числе", N, "равно", count_of_d)
+    print("Цифра", d, "встречается в числе", N, "на позиции", position_of_left)
+    print("Количество цифр", d, "в числе", N, "равно", count_of_d)
 else:
     print("Цифра", d, "не встречается в числе", N)
