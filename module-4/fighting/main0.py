@@ -40,7 +40,7 @@ classes = {
 
 def init_person(name: str, is_enemy: bool = False):
     if is_enemy:
-        person = {'класс': role[random.choice(list(role.keys()))]}
+        person = {'класс': random.choice(list(role.values()))}
     else:
         choice = input('Введите класс: 1-Воин, 2-Лучник, 3-Маг\n')
         person = {'класс': role[choice]}

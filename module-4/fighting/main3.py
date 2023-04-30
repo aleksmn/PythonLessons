@@ -89,7 +89,7 @@ def enter_to_continue():
 
 def init_person(name: str, is_enemy: bool = False) -> dict:
     if is_enemy:
-        person = {'класс': role[random.choice(list(role.keys()))]}
+        person = {'класс': random.choice(list(role.values()))}
     else:
         while True:
             choice = input('Введите класс: 1-Воин, 2-Лучник, 3-Маг\n')
