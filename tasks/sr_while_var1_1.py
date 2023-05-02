@@ -14,20 +14,22 @@
 n = int(input("Введите число: "))
 d = int(input("Введите цифру: "))
 count = 0
-position = -1
+position = 0
 num_digits = 0
-temp = n
-while temp > 0:
-    temp = temp // 10
-    num_digits += 1
+
 while n > 0:
     digit = n % 10
-    position += 1
-    if digit == d and position == -1:
-        position = 0
+    
     if digit == d:
+        position = num_digits
         count += 1
+
     n = n // 10
+    num_digits += 1
+    
+
+print('Длина числа', num_digits)
+
 if count == 0:
     print(f"Цифра {d} не найдена")
 else:
