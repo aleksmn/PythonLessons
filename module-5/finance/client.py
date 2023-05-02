@@ -51,9 +51,41 @@ def predict():
     return expenses, income
 
 
-load()
 
-show_info()
+# Создание транзакции
+
+def make_transaction():
+    global client_info
+    print("Доступные счета")
+    i = 1
+    for account in client_info["accounts"]:
+        print(i, account["name"], account["number"])
+        i += 1
+
+    try:
+        account_num = int(input("Введите счет: "))
+    except:
+        print("Ошибка вводаю Прерываем транзакци...")
+        return
+    
+    for i in range(len(client_info["accounts"])):
+        if i + 1 == account_num:
+            account = client_info["accounts"][i]["number"]
+            break
+    else:
+        print("Такого счета не существует. Прерываю транзакцию...")
+        return
+    
+    new_data = {"account": account}
+
+    print(new_data)
+
+
+load()
+# show_info()
+
+make_transaction()
+
 
 # # Выводим транзакции
 # for transaction in client_info['transactions']:
