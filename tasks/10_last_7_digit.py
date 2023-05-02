@@ -29,7 +29,7 @@ while n > 0:
 # print('Длина числа', num_digits)
 
 if count == 0:
-    print(f"Цифра {d} не найдена")
+    print("Цифра",d, "не найдена")
 else:
-    print(f"Цифра {d} найдена в позиции {num_digits-position}")
-    print(f"Всего цифр {d} в числе: {count}")
+    print("Цифра", d, "найдена в позиции", num_digits-position)
+    print("Всего цифр", d, "в числе:", count)
