@@ -1,5 +1,6 @@
 import json
 
+
 client_info = {}
 
 
@@ -14,7 +15,7 @@ def save():
     """Сохраняем данные о пользователе в файл"""
     global client_info
     with open('client_info.json', "r", encoding='utf-8') as json_file:
-        json.dump(client_info, json_file)
+        json.dump(client_info, json_file, ensure_ascii=False)
 
 
 def show_info():
@@ -65,7 +66,7 @@ def make_transaction():
     try:
         account_num = int(input("Введите счет: "))
     except:
-        print("Ошибка вводаю Прерываем транзакци...")
+        print("Ошибка ввода. Прерываю транзакцию...")
         return
     
     for i in range(len(client_info["accounts"])):
@@ -76,8 +77,43 @@ def make_transaction():
         print("Такого счета не существует. Прерываю транзакцию...")
         return
     
-    new_data = {"account": account}
+    # new_data = {"account": account}
 
+    # print(new_data)
+
+    print("Типы транзакций:")
+    print("1 - списание")
+    print("2 - зачисление")
+    transaction_type = input("Выберите тип транзакции: ")
+    if transaction_type == "1":
+        transaction_type = "списание"
+    elif transaction_type == "2":
+        transaction_type = "зачисление"
+    else:
+        print("Такого типа не существует. Прерываю транзакцию...")
+        return
+    
+    new_data = {"account": account,
+    		"type": transaction_type}
+    
+
+    print("Дата транзакции")
+
+    try:
+        year = int(input("Введите год: "))
+        month = int(input("Введите месяц: "))
+    except:
+        print("Ошибка ввода. Прерываю транзакцию....")
+
+    if int(year) > 2022 or int(month) > 12 or int(month) < 1:
+        print("Неверная дата. Прерываю транзакци...")
+        return
+    new_data = {"account": account,
+    		"type": transaction_type,
+            "date": {"year": year, "month": month}}
+    
+
+    
     print(new_data)
 
 

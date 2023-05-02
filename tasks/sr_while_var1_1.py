@@ -15,18 +15,23 @@ n = int(input("Введите число: "))
 d = int(input("Введите цифру: "))
 count = 0
 position = -1
+num_digits = 0
+temp = n
+while temp > 0:
+    temp = temp // 10
+    num_digits += 1
 while n > 0:
     digit = n % 10
     position += 1
+    if digit == d and position == -1:
+        position = 0
     if digit == d:
         count += 1
-        if position == -1:
-            position = 0
     n = n // 10
 if count == 0:
     print(f"Цифра {d} не найдена")
 else:
-    print(f"Цифра {d} найдена в позиции {position+1}")
+    print(f"Цифра {d} найдена в позиции {num_digits-position}")
     print(f"Всего цифр {d} в числе: {count}")
 
 
