@@ -108,12 +108,24 @@ def make_transaction():
     if int(year) > 2022 or int(month) > 12 or int(month) < 1:
         print("Неверная дата. Прерываю транзакци...")
         return
-    new_data = {"account": account,
-    		"type": transaction_type,
-            "date": {"year": year, "month": month}}
+
+
+    try:
+        amount = int(input("Введите сумму: "))
+    except:
+        print("Ошибка ввода. Прерываю транзакци....")
+
+    if amount < 1:
+        print("Сумма не может быть меньше 1. Прерываю транзакцию...")
+        return
     
 
-    
+    # Делаем запись:
+    new_data = {"account": account,
+        "type": transaction_type,
+        "date": {"year": year, "month": month},
+        "amount": amount}
+
     print(new_data)
 
 
