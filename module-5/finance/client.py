@@ -14,7 +14,7 @@ def load():
 def save():
     """Сохраняем данные о пользователе в файл"""
     global client_info
-    with open('client_info.json', "r", encoding='utf-8') as json_file:
+    with open('client_info.json', "w", encoding='utf-8') as json_file:
         json.dump(client_info, json_file, ensure_ascii=False)
 
 
@@ -46,8 +46,8 @@ def predict():
         if transaction["date"] not in months:
             months.append(transaction["date"])
 
-        print("Предполагаемые расходы в следующем месяце:", expenses/len(months))
-        print("Предполагаемые доходы в следующем месяце:", income/len(months))
+    print("Предполагаемые расходы в следующем месяце:", expenses/len(months))
+    print("Предполагаемые доходы в следующем месяце:", income/len(months))
 
     return expenses, income
 
@@ -120,25 +120,38 @@ def make_transaction():
         return
     
 
-    # Делаем запись:
+
+    if transaction_type == "списание":
+        client_info["accounts"][account_num-1]["balance"] -= amount
+    elif transaction_type == "зачисление":
+        client_info["accounts"][account_num-1]["balance"] += amount
+
+
+
     new_data = {"account": account,
         "type": transaction_type,
         "date": {"year": year, "month": month},
         "amount": amount}
 
-    print(new_data)
+    # print(new_data)
+
+    # Добавляем транзакцию
+    client_info["transactions"].append(new_data)
+
+    print(client_info['transactions'][-1])
+    print("Транзакция записана. Текущий баланс:", client_info["accounts"][account_num-1]["balance"])
 
 
-load()
-# show_info()
-
-make_transaction()
 
 
-# # Выводим транзакции
-# for transaction in client_info['transactions']:
-#     print("Аккаунт: ", transaction['account'])
-#     print("Тип: ", transaction['type'])
-#     print("Дата: ", transaction['date']['year'], transaction['date']['month'])
-#     print("Сумма: ", transaction['amount'])
-#     print('--------------------------------------')
+if __name__ == "__main__":
+
+    load()
+    # show_info()
+
+    make_transaction()
+
+    save()
+
+
+

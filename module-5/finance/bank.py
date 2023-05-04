@@ -5,5 +5,13 @@ def suggestions():
 
     print(text)
 
+def complain():
+    print("Оставить жалобу")
 
-suggestions()
+
+
+
+
+if __name__ == "__main__":
+
+    suggestions()
