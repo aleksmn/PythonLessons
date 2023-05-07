@@ -115,8 +115,7 @@ def attack_enemy(enemy1: dict, enemy2: dict) -> None:
 
     apply_skill(enemy2)
 
-    damage = enemy1['характеристики']['атака'] - \
-        enemy2['характеристики']['защита']
+    damage = enemy1['характеристики']['атака'] - enemy2['характеристики']['защита']
     if damage < 0:
         damage = 1
 
