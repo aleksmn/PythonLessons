@@ -1,5 +1,7 @@
 import json
+import os
 
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
 client_info = {}
 
@@ -7,14 +9,14 @@ client_info = {}
 def load():
     """Загружаем информацию о пользователе из файла"""
     global client_info
-    with open('client_info.json', "r", encoding='utf-8') as json_file:
+    with open(script_dir + '/client_info.json', "r", encoding='utf-8') as json_file:
         client_info = json.load(json_file)
 
 
 def save():
     """Сохраняем данные о пользователе в файл"""
     global client_info
-    with open('client_info.json', "w", encoding='utf-8') as json_file:
+    with open(script_dir + '/client_info.json', "w", encoding='utf-8') as json_file:
         json.dump(client_info, json_file, ensure_ascii=False)
 
 
