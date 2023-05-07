@@ -78,7 +78,7 @@ def get_random_name() -> str:
 
 
 def clear():
-    return os.system('cls')
+    return os.system('cls||clear')
 
 
 def enter_to_continue():
@@ -125,8 +125,7 @@ def attack_enemy(enemy1: dict, enemy2: dict) -> None:
 
     apply_skill(enemy2)
 
-    damage = enemy1['характеристики']['атака'] - \
-        enemy2['характеристики']['защита']
+    damage = enemy1['характеристики']['атака'] - enemy2['характеристики']['защита']
     if damage < 0:
         damage = 1
 
@@ -135,24 +134,30 @@ def attack_enemy(enemy1: dict, enemy2: dict) -> None:
 
 
 
-def fight(attacker: dict, defender:dict) -> bool:
+def fight(attacker: dict, defender:dict) -> None:
     while True:
-        time.sleep(2)
-        clear()
+        time.sleep(1)
 
         if attacker['характеристики']['здоровье'] > 0:
             attack_enemy(attacker, defender)
         else:
             print(f"{attacker['имя']} потерпел поражение!")
-            return False
+            return
         
         if defender['характеристики']['здоровье'] > 0:
             attack_enemy(defender, attacker)
         else:
             print(f"{defender['имя']} потерпел поражение!")
-            return True
+            return
+        
+        
+        
+        clear()
     
-        enter_to_continue()
+        # enter_to_continue()
+
+
+
 
 
 
@@ -163,9 +168,5 @@ clear()
 player = init_person(get_player_name())
 enemy = init_person(get_random_name(), is_enemy=True)
 
-enter_to_continue()
-clear()
-
-# attack_enemy(player, enemy)
 
 fight(player, enemy)
