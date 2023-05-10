@@ -1,40 +1,17 @@
-
-n = 7
-res = 0
-for i in range (1, n+1):
-    res += i
-print(res)
+import json
 
 
-
-# Рекурсия
-def recursion(n):
-	if n == 1:
-		return 1
-	return n + recursion(n - 1)
+with open("games.json", "r", encoding="utf-8") as json_file:
+    data = json.load(json_file)
 
 
-print(recursion(7))
+# game1 = data['games'][0]
+
+# print("Название игры ", game1["name"])
+# print("Дата выхода ", game1["release_date"])
+# print("Создатель ", game1["creator"])
 
 
-
-
-
-# def factorial(n):
-# 	if n == 0:
-# 		return 1
-# 	else:
-# 		return n * factorial(n - 1)
-	
-
-# print(factorial(5))
-
-
-# Число Фибоначчи
-# def fib(n):
-#     if n == 0:
-#         return 0
-#     elif n == 1:
-#         return 1
-#     else:
-#         return fib(n-1) + fib(n-2)
+# Перебираем циклом все игры
+for game in data['games']:
+    print(game['name'])
