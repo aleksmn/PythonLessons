@@ -5,10 +5,9 @@ def receipt():
             print(line.strip())
 
 
-
 def restaurant_data():
     restaurant = {"details": []}
-    with open("restaurant.txt", 'r', encoding='utf-8') as f:
+    with open("receipt.txt", 'r', encoding='utf-8') as f:
         for item in f.read().split('***\n'):
             item_list = item.split('\n')
 
@@ -24,4 +23,8 @@ def restaurant_data():
     return restaurant
 
 
-print(restaurant_data())
+
+if __name__ == "__main__":
+    receipt()
+
+    # print(restaurant_data()) 
