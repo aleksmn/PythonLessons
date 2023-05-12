@@ -52,7 +52,22 @@
 
 # 2
 
+lesson = int(input("Введите номер урока: "))
+
+h = 0
+m = 0
 
 
+total_m = 45 * lesson + 10 * (lesson - 1)
+
+h = 9 + total_m // 60
+
+m = total_m % 60
 
 
+print("Урок закончится:")
+print("Часы: ", h)
+print("Минуты: ", m)
+
+# Красивый вывод
+# print(f'{h:02d}:{m:02d}')
