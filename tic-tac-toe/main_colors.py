@@ -68,7 +68,7 @@ while not is_win:
     if counter % 2 == 0:
         player_token = red + 'X' + white
     else:
-        player_token = green + 'O' + white
+        player_token = blue + 'O' + white
 
     player_answer = input(f'{white}Куда ставим {player_token}?: ')
 
