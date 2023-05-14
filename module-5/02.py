@@ -94,7 +94,12 @@ print(plane3.engines)
 
 
 
-
+# class Car:
+#     def __init__(self, color, brand, speed):
+#         self.color = color
+#         self.brand = brand
+#         self.speed = speed
+#         print('Автомобиль готов!')
 
 
 
