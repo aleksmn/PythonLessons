@@ -105,3 +105,12 @@ print(plane3.engines)
 
 
 
+# class Cat:
+#     def __init__(self, name, breed, coat_color, character):
+#       self.name = name
+#       self.breed = breed
+#       self.coat_color = coat_color
+#       self.character = character
+#       print('Котик родился!')
+#       print(f'Теперь его зовут {self.name}!')
+
