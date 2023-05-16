@@ -34,7 +34,7 @@ def show_info():
 
 
 def predict():
-    global client_info
+
     expenses = 0
     income = 0
     months = []
@@ -149,7 +149,8 @@ def make_transaction():
 if __name__ == "__main__":
 
     load()
-    # show_info()
+    show_info()
+    predict()
 
     make_transaction()
 
