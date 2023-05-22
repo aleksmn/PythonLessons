@@ -21,7 +21,7 @@ def show_food():
 
 def restaurant_data():
     restaurant = {"details": []}
-    with open("receipt.txt", 'r', encoding='utf-8') as f:
+    with open("restaurant.txt", 'r', encoding='utf-8') as f:
         for item in f.read().split('***\n'):
             item_list = item.split('\n')
 
@@ -36,6 +36,6 @@ def restaurant_data():
     # Вывод словаря
     return restaurant
 
-
+print(restaurant_data())
 
 
