@@ -2,9 +2,11 @@ def receipt():
     summa = 0
     with open('receipt.txt', 'r', encoding='utf-8') as f:
         for line in f:
-            print(line.strip())
+            price = line.strip().split()[1]
+            summa = summa + int(price)
+    print('Итого:', summa)
 
-
+# receipt()
 
 def show_food():
     food = []
@@ -15,8 +17,6 @@ def show_food():
             food.append(line.split()[0])
 
     print(food) 
-
-
 
 
 def restaurant_data():
@@ -36,6 +36,6 @@ def restaurant_data():
     # Вывод словаря
     return restaurant
 
-print(restaurant_data())
+# print(restaurant_data())
 
 
