@@ -1,5 +1,8 @@
 import json
 import os
+import datetime
+
+currentYear = datetime.datetime.now().year
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -107,8 +110,8 @@ def make_transaction():
     except:
         print("Ошибка ввода. Прерываю транзакцию....")
 
-    if int(year) > 2022 or int(month) > 12 or int(month) < 1:
-        print("Неверная дата. Прерываю транзакци...")
+    if year > currentYear or month > 12 or month < 1:
+        print("Неверная дата. Прерываю транзакцию...")
         return
 
 
