@@ -9,11 +9,11 @@ class Utils:
         input('Нажмите Enter, чтобы продолжить')
         self.clear()
 
-    def is_valid(self, other, data_range=''):
-        if len(other) == 0:
+    def is_valid(self, user_input, data_range=''):
+        if len(user_input) == 0:
             print('Ошибка ввода. Вы ввели пустую строку.')
             return False
-        elif (other not in data_range and (data_range != '')) or (other == data_range):
+        elif data_range != '' and (int(user_input) < data_range[0] or int(user_input) > data_range[1]):
             print(f'Ошибка ввода. Введите числа от {data_range[0]} до {data_range[-1]}.')
             return False
         else:

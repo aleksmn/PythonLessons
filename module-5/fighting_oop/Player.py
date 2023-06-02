@@ -33,7 +33,7 @@ class Player(Person):
     def set_person_class(self):
         while True:
             choice = input(f"Введи роль: 1-Воин, 2-Лучник, 3-Маг\n")
-            if Utils.is_valid(choice, '123'):
+            if Utils.is_valid(choice, (1, 3)):
                 break
         self.person_class = role[choice]
 
