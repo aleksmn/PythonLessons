@@ -1,16 +1,14 @@
 import random
 
 from Person import Person
-from Utils import Utils
 from Constants import role
-Utils = Utils()
 
 
 class Enemy(Person):
     def __init__(self):
         super().__init__()
         self.set_name()
-        self.person_class = role[random.choice(list(role.keys()))]
+        self.person_class = random.choice(list(role.values()))
         self.set_class_properties()
 
     def set_name(self):
@@ -20,3 +18,14 @@ class Enemy(Person):
         second_names = ['слесарь', 'мухомор', 'лемур', 'шаман', 'пельмень', 'слизень',
                         'алхимик', 'крот', 'фикус', 'господин', 'кролик', 'танцор', 'пингвин', 'викинг', 'паук', 'плащ']
         self.name = f"{random.choice(first_names)} {random.choice(second_names)}"
+
+
+
+
+# Проверка
+# enemy = Enemy()
+# print(enemy.name)
+# print(enemy.person_class)
+# enemy2 = Enemy()
+# print(enemy2.name)
+# print(enemy2.person_class)
