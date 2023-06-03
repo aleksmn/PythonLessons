@@ -57,7 +57,6 @@ def predict():
     return expenses, income
 
 
-
 # Создание транзакции
 
 def make_transaction():
@@ -73,7 +72,7 @@ def make_transaction():
     except:
         print("Ошибка ввода. Прерываю транзакцию...")
         return
-    
+
     for i in range(len(client_info["accounts"])):
         if i + 1 == account_num:
             account = client_info["accounts"][i]["number"]
@@ -81,7 +80,7 @@ def make_transaction():
     else:
         print("Такого счета не существует. Прерываю транзакцию...")
         return
-    
+
     # new_data = {"account": account}
 
     # print(new_data)
@@ -97,10 +96,9 @@ def make_transaction():
     else:
         print("Такого типа не существует. Прерываю транзакцию...")
         return
-    
+
     new_data = {"account": account,
-    		"type": transaction_type}
-    
+                "type": transaction_type}
 
     print("Дата транзакции")
 
@@ -114,29 +112,29 @@ def make_transaction():
         print("Неверная дата. Прерываю транзакцию...")
         return
 
-
+    # Спрашиваем сумму
     try:
         amount = int(input("Введите сумму: "))
     except:
-        print("Ошибка ввода. Прерываю транзакци....")
+        print("Ошибка ввода. Прерываю транзакцию...")
 
     if amount < 1:
         print("Сумма не может быть меньше 1. Прерываю транзакцию...")
         return
-    
 
-
+    # Изменяем баланс на счете
     if transaction_type == "списание":
         client_info["accounts"][account_num-1]["balance"] -= amount
     elif transaction_type == "зачисление":
         client_info["accounts"][account_num-1]["balance"] += amount
 
-
-
-    new_data = {"account": account,
+    # Формируем транзакцию
+    new_data = {
+        "account": account,
         "type": transaction_type,
         "date": {"year": year, "month": month},
-        "amount": amount}
+        "amount": amount
+    }
 
     # print(new_data)
 
@@ -144,7 +142,9 @@ def make_transaction():
     client_info["transactions"].append(new_data)
 
     print(client_info['transactions'][-1])
-    print("Транзакция записана. Текущий баланс:", client_info["accounts"][account_num-1]["balance"])
+    print("Транзакция записана. Текущий баланс:",
+          client_info["accounts"][account_num-1]["balance"])
+
 
 
 
@@ -158,6 +158,3 @@ if __name__ == "__main__":
     make_transaction()
 
     save()
-
-
-
