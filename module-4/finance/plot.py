@@ -3,9 +3,6 @@ import datetime
 import yfinance as yf
 import pandas_datareader.data as pdr
 
-
-
-
 # Простой пример
 # Возраст / рост
 
@@ -21,11 +18,18 @@ import pandas_datareader.data as pdr
 # https://pandas-datareader.readthedocs.io/en/latest/
 
 
+
 def plot_rub_usd():
     yf.pdr_override()
     df = pdr.DataReader("USDRUB=X", datetime.datetime.today() - datetime.timedelta(days=365))
-    # print(df)
-    plt.plot(df.index, df["Close"], color='green')
+
+    # print(df[df['Close'] > 110])
+
+    df = df[df['Close'] > 10]
+    df = df[df['Close'] < 110]
+
+    plt.plot(df.index, df.Close, color='green')
+
     plt.title("Курс рубля к доллару")
     plt.show()
 
@@ -49,6 +53,6 @@ if __name__ == "__main__":
 
     # тесты
     plot_rub_usd()
-    plot_usd_btc()
+    # plot_usd_btc()
 
 
