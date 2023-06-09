@@ -1,4 +1,4 @@
-# Вот тебе код для экспериментов
+
 class Kettle:
     def turn_on(self):
         print('Чайник включился')
