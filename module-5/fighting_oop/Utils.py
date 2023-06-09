@@ -13,7 +13,10 @@ class Utils:
         if len(user_input) == 0:
             print('Ошибка ввода. Вы ввели пустую строку.')
             return False
-        elif data_range != '' and (int(user_input) < data_range[0] or int(user_input) > data_range[1]):
+        elif data_range and not user_input.isdecimal():
+            print(f'Ошибка ввода. Нужно ввести число')
+            return False
+        elif data_range and (int(user_input) < data_range[0] or int(user_input) > data_range[1]):            
             print(f'Ошибка ввода. Введите числа от {data_range[0]} до {data_range[-1]}.')
             return False
         else:
