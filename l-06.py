@@ -6,13 +6,13 @@
 
 # pin = '1234'
 
-# if pin.isnumeric() and len(pin) == 4:
+# if pin.isdigit() and len(pin) == 4:
 #     print(1)
 
 
 # pin = input("Введите PIN  ")
 
-# if pin.isnumeric() == False:
+# if pin.isgigit() == False:
 #     print("NOT OK")
 
 # else:
