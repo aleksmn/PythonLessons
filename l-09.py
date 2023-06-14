@@ -83,13 +83,13 @@
 # if len(p) < 8:
 #     print("Очень слабый пароль")
 
-# elif p.isnumeric() == False and p.isalpha() == False and p.islower() == False and p.isupper() == False:
+# elif p.isdigit() == False and p.isalpha() == False and p.islower() == False and p.isupper() == False:
 #     print("Хороший!")
 
-# elif p.isalpha() == False and p.isnumeric() == False:
+# elif p.isalpha() == False and p.isdigit() == False:
 #     print("Средний")
 
-# elif p.isalpha() == True or p.isnumeric() == True:
+# elif p.isalpha() == True or p.isdigit() == True:
 #     print('Слабый')
 
 
