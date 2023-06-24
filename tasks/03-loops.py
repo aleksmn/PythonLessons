@@ -117,3 +117,40 @@ Steps: 5
     1
 
 '''
+
+
+
+# Пирамида
+
+# n = int(input("Введите число: "))
+
+# for i in range(1, n+1):
+#     for j in range(n - i):
+#         print(' ', end='')
+#     for k in range(2 * i - 1):
+#         print('*', end='')
+#     print()
+
+
+
+
+size = 5
+
+'''
+    1
+   123
+  12345
+ 1234567
+123456789
+'''
+
+for i in range(1, size + 1):
+
+    # пробелы
+    print(" " * (size - i), end="")
+
+    for k in range(1, 2 * i):
+        print(k, end="")
+
+    print()
+
