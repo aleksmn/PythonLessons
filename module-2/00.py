@@ -1,3 +1,38 @@
+
+# Методы списка
+
+authors = ['Chekhov', 'Dostoevski', 'Tolstoy', 'Nekrasov', 'Bulgakov', 'Pushkin', 'Esenin', 'Blok']
+
+# Изменяем элемент
+authors[3] = "Gogol"
+
+# Добавляем элемент
+authors.append('Turgenev')
+
+# Вырезаем элемент
+element = authors.pop(1)
+print("Удален:", element)
+
+# Удаление
+del authors[0]
+
+# Получаем индекс элемента
+print(authors.index("Tolstoy"))
+
+for a in authors:
+    print(a)
+
+
+
+
+
+
+
+
+
+
+
+
 food = ['чебурек', 'огурец', 'сосиска']
 
 # Можем изменять список
