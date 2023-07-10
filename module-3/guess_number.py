@@ -22,7 +22,12 @@ def game_loop():
     global attempt
 
     while input_number != case:
-        input_number = int(input("Угадай число: "))
+        try:
+            input_number = int(input("Угадай число: "))
+        except Exception:
+            print("Ошибка ввода!")
+            continue
+
         attempt += 1
 
         if input_number < case:
