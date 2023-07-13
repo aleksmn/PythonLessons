@@ -2,7 +2,7 @@
 
 import os
 
-os.system('clear')
+os.system('clear || cls')
 
 book_phones = {'Алексей': 23345, 'Дмитрий': 456433, 'Юлия': 3732345}
 
