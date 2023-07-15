@@ -19,6 +19,21 @@
 
 
 
+# a = int(input("a = "))
+# b = int(input("b = "))
+
+
+# counter = 0
+# while a > b:
+#     a = a - b
+#     print(a)
+#     counter += 1
+
+# print("Деление нацело:", counter)
+# print("Остаток:", a)
+
+
+
 
 
 
