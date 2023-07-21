@@ -88,7 +88,7 @@ res = count_words(text)[:5]
 
 # Фильтруем результат с использованием стоп листа
 
-with open('stoplist.txt', 'r') as f:
+with open('stoplist.txt', 'r', encoding='utf-8') as f:
     stoplist = f.read().split()
 
 
