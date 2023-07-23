@@ -204,3 +204,19 @@ while counter <= 100:
     counter += 1
 
 print("Сумма всех чисел, кратных", number, ", от 1 до 100 равна:", sum_of_multiples)
+
+
+
+# Напишите программу, которая запрашивает у пользователя число и находит сумму всех положительных чисел, кратных 3 или 5, до этого числа, с использованием цикла while.
+
+
+number = int(input("Введите число: "))
+sum_of_multiples = 0
+counter = 1
+
+while counter < number:
+    if counter % 3 == 0 or counter % 5 == 0:
+        sum_of_multiples += counter
+    counter += 1
+
+print("Сумма всех положительных чисел, кратных 3 или 5, до", number, "равна:", sum_of_multiples)
