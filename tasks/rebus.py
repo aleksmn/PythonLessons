@@ -40,24 +40,25 @@ print('Количество ВСЕХ проходов:', kp)
 
 flag = False # пока цифры для букв не найдены
 kp = 0 # счётчик количества проходов
-
 k = 1
 while k < 10 and not flag:
     t = 1 
     while t < 10 and not flag: 
         o = 0 
         while o < 10 and not flag: 
-            kp += 1
+            kp += 1 #счетчик проходов
+            
             kto = k * 100 + t * 10 + o
             kot = k * 100 + o * 10 + t
             tok = t * 100 + o * 10 + k
+            # Проверяем условие (во внутреннем цикле)
             if k != t != o != k and kto + kot == tok:
                 flag = True
                 kp_rebus = kp
             o += 1 
-        t += 1 
+        t += 1     
     k += 1 
-
+# Вывод ответа после цикла:
 print('Решение ребуса:  ', kto, '+', kot, '=', tok)
 print('Количество проходов ДО того, как цифры нашли:', kp_rebus)
 print('Количество всех проходов:', kp)  
