@@ -6,10 +6,10 @@ import time
 # Объявляем цвета
 
 colorama.init()
-white = colorama.Fore.WHITE
 green = colorama.Fore.GREEN
 red = colorama.Fore.RED
 blue = colorama.Fore.BLUE
+reset = colorama.Fore.RESET
 
 
 
@@ -34,7 +34,8 @@ win_coords = (
     (0, 4, 8), (2, 4, 6)
 )
 
-
+# Список токенов игроков
+tokens_list = [red + 'X' + reset, green + 'O' + reset]
 
 
 
@@ -43,7 +44,7 @@ def draw_board():
 
     os.system('cls||clear')
 
-    print(green + "\n* Игра Крестики-нолики *\n"+white)
+    print(green + "\n* Игра Крестики-нолики *\n"+reset)
     for i in range(3):
         shift = i * 3
         print(spaces * ' ', end="")
@@ -57,8 +58,6 @@ def draw_board():
 
 
 
-
-
 # Игровой цикл
 
 while not is_win:
@@ -66,24 +65,30 @@ while not is_win:
     draw_board()
 
     if counter % 2 == 0:
-        player_token = red + 'X' + white
+        player_token = tokens_list[0]
     else:
-        player_token = blue + 'O' + white
+        player_token = tokens_list[1]
 
-    player_answer = input(f'{white}Куда ставим {player_token}?: ')
+    player_answer = input(f'{reset}Куда ставим {player_token}?: ')
 
     # Получаем ход от игрока, делаем поправку "-1" для учета индексации с 0.
     try:
         player_answer = int(player_answer) - 1
     except:
-        print(red + 'Неверный ввод')
+        print(red + 'Неверный ввод: нужно ввести число')
+        time.sleep(0.6)
+        continue
+    
+    if  not 8 >= player_answer >= 0:
+        print(red + 'Неверный ввод: нужно ввести число от 1 до 9')
         time.sleep(0.6)
         continue
 
-    if str(board[player_answer]) not in [red + 'X' + white, green + 'O' + white]:
+
+    if str(board[player_answer]) not in tokens_list:
         board[player_answer] = player_token
     else:
-        print(red + 'Эта ячейка уже занята!' + white)
+        print(red + 'Эта ячейка уже занята!' + reset)
         time.sleep(0.6)
         continue
 
