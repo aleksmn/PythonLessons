@@ -224,17 +224,13 @@ while counter < number:
 print("Сумма всех положительных чисел, кратных 3 или 5, до", number, "равна:", sum_of_multiples)
 
 
-
-# Напишите программу, которая запрашивает у пользователя число и находит 
-# сумму всех чисел от 1 до 100, кратных этому числу, с использованием цикла while.
+# Напишите программу, которая запрашивает у пользователя 
+# число и находит его наименьший делитель с использованием цикла while.
 
 number = int(input("Введите число: "))
-sum_of_multiples = 0
-counter = 1
+divisor = 2
 
-while counter <= 100:
-    if counter % number == 0:
-        sum_of_multiples += counter
-    counter += 1
+while number % divisor != 0:
+    divisor += 1
 
-print("Сумма всех чисел, кратных", number, ", от 1 до 100 равна:", sum_of_multiples)
+print("Наименьший делитель числа", number, "равен:", divisor)
