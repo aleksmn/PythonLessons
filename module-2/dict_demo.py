@@ -1,11 +1,49 @@
 # # Словарь (dict)
 
 
-# my_dictionary = {
-#     'один': 'one',
-#     'два': 'two',
-#     'три': 'three'
-# }
+my_dictionary = {
+    'один': 'one',
+    'два': 'two',
+    'три': 'three'
+}
+
+print(my_dictionary['один'])
+print(my_dictionary['два'])
+print(my_dictionary['три'])
+
+# Изменение записи
+my_dictionary['один'] = '1'
+
+# Добавление записи
+my_dictionary['четыре'] = 'four'
+
+
+# Удаление
+del my_dictionary['один']
+
+
+print("Вывод словаря")
+
+for rus, eng in my_dictionary.items():
+    print(f'Слово: {rus}, перевод: {eng}')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # print(my_dictionary['один'])
@@ -70,32 +108,32 @@
 
 
 
-book_phones = {
-    'Квам-Дамн': '-79899899889',
-    'Лук Скамворкер': '112',
-    'Петард Вейпер': '1',
-    'Лия Моргала': '+09998765432',
-    'Эдуард Скамворкер': '0',
-}
+# book_phones = {
+#     'Квам-Дамн': '-79899899889',
+#     'Лук Скамворкер': '112',
+#     'Петард Вейпер': '1',
+#     'Лия Моргала': '+09998765432',
+#     'Эдуард Скамворкер': '0',
+# }
 
 
-name = input("Имя: ")
+# name = input("Имя: ")
 
-number = input("Номер телефона: ")
+# number = input("Номер телефона: ")
 
 
-if name and number:
-    # Добавляем или изменяем запись
-    book_phones[name] = number
-    # Выводим 
-    for key in book_phones:
-        print(f'{key}: {book_phones[key]}')
+# if name and number:
+#     # Добавляем или изменяем запись
+#     book_phones[name] = number
+#     # Выводим 
+#     for key in book_phones:
+#         print(f'{key}: {book_phones[key]}')
 
-elif name in book_phones:
-    print(book_phones[name])
+# elif name in book_phones:
+#     print(book_phones[name])
 
-else:
-    print('Нет в телефонной книге')
+# else:
+#     print('Нет в телефонной книге')
 
 
 
