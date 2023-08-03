@@ -1,42 +1,46 @@
 
 # # Функция с необязательным аргументом
 # def sayHello(age, name="Пользователь"):
-
 #     print("Привет," , name)
 #     print("Возраст:", age)
 
 
-# # sayHello(21)
-# # sayHello(18, name="Дима")
-# # # Именованные аргументы
-# # sayHello(age=10, name="Дима")
-# # # Позиционные аргументы
-# # sayHello(22)
+# sayHello(12)
+# # Позиционные агрументы
+# sayHello(18, "Дима")
+# # Именованные аргументы
+# sayHello(name="Юлия", age=15)
 
-
-
-# # sayHello(name='Мария', age=14)
 
 
 # # # Аргументы переменной длины
 
-# def multiply(*args):
-#   result = 1
-#   for arg in args:
-#     result *= arg
-#   return result
+# def multiply(*nums):
+#     '''Перемножаем все аргументы'''
+#     res = 1
+#     for i in nums:
+#         res *= i
+#     return res
 
 
 
 # print(multiply(1, 5, 8, 8, 11))
+# print(multiply(1, 5, 8))
+# print(multiply(1, 5, 8, 99, 0, 5, 1, 1, 1, 2))
 
 
 
 
 
 
+# Аргументы переменной длины в формате ключ=значение
+
+# def create_user(**params):
+    
+#     return(params)
 
 
+# print(create_user(fname="Виталий", lname="Иванов", job='Учитель'))
 
 
 
@@ -46,9 +50,17 @@
 # Исходные данные (список строк, которые нужно преобразовать с числа)
 nums =  ['14', '51', '23', '43', '87']
 
-new_data = list(map(int, nums))
+# Вызываем функцию int для каждого элемента в списке nums
+new_data = map(int, nums)
+
+# Получаем список 
+new_data = list(new_data)
 
 print(new_data)   # [14, 51, 23, 43, 87]
+
+
+
+
 
 
 # Используем свою функцию в функции map
@@ -60,14 +72,16 @@ print(new_data)   # [14, 51, 23, 43, 87]
 
 
 
-# Используем анонимную функцию (lambda)
+# # Используем анонимную функцию (lambda)
 
-new_data = list(map(lambda a: int(a)**2, nums))
+new_data = list(map(lambda num: int(num)**2, nums))
 print(new_data) 
 
 
 
-# Фильтруем данные с помощью функции filter
+
+
+# # Фильтруем данные с помощью функции filter
 
 numbers = [-1, -2, 5, 4, -1, 100, 99]
 
