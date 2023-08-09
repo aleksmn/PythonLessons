@@ -121,7 +121,7 @@ def attack_enemy(enemy1: dict, enemy2: dict) -> None:
 
     print(f"{enemy1['имя']} атакует {enemy2['имя']}!")
 
-    time.sleep(2)
+    time.sleep(3)
 
     apply_skill(enemy2)
 
@@ -136,7 +136,7 @@ def attack_enemy(enemy1: dict, enemy2: dict) -> None:
 
 def fight(attacker: dict, defender:dict) -> None:
     while True:
-        time.sleep(1)
+        time.sleep(2)
 
         if attacker['характеристики']['здоровье'] > 0:
             attack_enemy(attacker, defender)
@@ -152,7 +152,7 @@ def fight(attacker: dict, defender:dict) -> None:
         
         
         
-        clear()
+        # clear()
     
         # enter_to_continue()
 
@@ -163,7 +163,7 @@ def fight(attacker: dict, defender:dict) -> None:
 
 
 
-clear()
+# clear()
 
 player = init_person(get_player_name())
 enemy = init_person(get_random_name(), is_enemy=True)
