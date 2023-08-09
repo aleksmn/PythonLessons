@@ -1,18 +1,19 @@
 import random
 
-min_number = 0
-max_number = 255
 
-attempt = 0 # Количество попыток
-input_number = 0 # Число, которое вводит пользователь
 
 def start_game():
-    # attempt = 0 # Количество попыток
-    # input_number = 0 # Число, которое вводит пользователь
+    global min_number, max_number, attempt, input_number
+    
+    min_number = 0
+    max_number = 255
+    attempt = 0 # Количество попыток
+    input_number = 0 # Число, которое вводит пользователь
     print(f'Я загадал число от {min_number} до {max_number}')
 
     # Локальное пространство имен
     # print(locals())
+    print(globals())
 
 
 def game_loop():
