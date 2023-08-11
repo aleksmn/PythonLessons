@@ -1,30 +1,32 @@
+
+
 # # Словарь (dict)
 
 
-my_dictionary = {
+rus_to_eng = {
     'один': 'one',
     'два': 'two',
     'три': 'three'
 }
 
-print(my_dictionary['один'])
-print(my_dictionary['два'])
-print(my_dictionary['три'])
+print(rus_to_eng['один'])
+print(rus_to_eng['два'])
+print(rus_to_eng['три'])
 
 # Изменение записи
-my_dictionary['один'] = '1'
+rus_to_eng['один'] = '1'
 
 # Добавление записи
-my_dictionary['четыре'] = 'four'
+rus_to_eng['четыре'] = 'four'
 
 
 # Удаление
-del my_dictionary['один']
+del rus_to_eng['один']
 
 
 print("Вывод словаря")
 
-for rus, eng in my_dictionary.items():
+for rus, eng in rus_to_eng.items():
     print(f'Слово: {rus}, перевод: {eng}')
 
 
