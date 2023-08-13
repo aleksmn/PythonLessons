@@ -2,12 +2,17 @@ from tkinter import *
 
 
 def move_task(event, source_list, target_list):
-    # Получение выбранной задачи
-    task = source_list.get(source_list.curselection())
 
-    # Перемещение задачи из одной доски в другую
-    source_list.delete(source_list.curselection())
-    target_list.insert(END, task)
+    try:
+        # Получение выбранной задачи
+        task = source_list.get(source_list.curselection())
+        print(task)
+        # Перемещение задачи из одной доски в другую
+        source_list.delete(source_list.curselection())
+        target_list.insert(END, task)
+    except Exception as e:
+        # print("Ошибка ", e)
+        print("Listbox пуст!")
 
 def create_task(event):
     # Добавление новой задачи в список "To Do"
@@ -42,9 +47,9 @@ add_button.grid(row=1, column=2, pady=5)
 add_button.bind("<Button-1>", create_task)
 
 # Привязка событий перемещения задачи между списками
-todo_list.bind("<Button-1>", lambda e: move_task(e, todo_list, in_progress_list))
-in_progress_list.bind("<Button-1>", lambda e: move_task(e, in_progress_list, done_list))
-done_list.bind("<Button-1>", lambda e: move_task(e, done_list, todo_list))
+todo_list.bind("<<ListboxSelect>>", lambda e: move_task(e, todo_list, in_progress_list))
+in_progress_list.bind("<<ListboxSelect>>", lambda e: move_task(e, in_progress_list, done_list))
+done_list.bind("<<ListboxSelect>>", lambda e: move_task(e, done_list, todo_list))
 
 # Запуск главного цикла событий
 root.mainloop()
