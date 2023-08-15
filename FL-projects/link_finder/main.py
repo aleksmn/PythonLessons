@@ -12,13 +12,13 @@ def find_matching_links(file1_links, file2_links):
     non_matching_links = set()
 
     for link in file1_links:
-        if link in file2_links or link.rstrip('!') in file2_links:
+        if link in file2_links or link.replace('!', '') in file2_links:
             matching_links.add(link)
         else:
             non_matching_links.add(link)
 
     for link in file2_links:
-        if link not in file1_links and link.rstrip('!') not in file1_links:
+        if link not in file1_links and link.replace('!', '') not in file1_links:
             non_matching_links.add(link)
 
     return matching_links, non_matching_links
