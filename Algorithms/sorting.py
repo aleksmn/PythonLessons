@@ -1,3 +1,7 @@
+from timeit import timeit
+import random
+
+
 def bubble_sort(arr):
     n = len(arr)
     # Повторяем проходы по массиву, пока не будет выполнено условие сортировки
@@ -13,15 +17,6 @@ def bubble_sort(arr):
         if not swapped:
             break
     return arr
-
-# Пример использования
-array = [64, 34, 25, 12, 22, 11, 90]
-sorted_array = bubble_sort(array)
-print(sorted_array)
-
-
-
-
 
 def merge_sort(arr):
     if len(arr) <= 1:
@@ -65,13 +60,6 @@ def merge(left, right):
     
     return merged
 
-# Пример использования
-array = [64, 34, 25, 12, 22, 11, 90]
-sorted_array = merge_sort(array)
-print(sorted_array)
-
-
-
 def quicksort(arr):
     if len(arr) <= 1:
         return arr
@@ -83,7 +71,30 @@ def quicksort(arr):
         # Рекурсивное применение быстрой сортировки к обоим подмассивам
         return quicksort(less) + [pivot] + quicksort(greater)
 
-# Пример использования
-array = [64, 34, 25, 12, 22, 11, 90]
-sorted_array = quicksort(array)
-print(sorted_array)
+
+
+if __name__ == "__main__":
+
+    
+    # Создаем случайный массив
+    array_length = 1000
+    array = [random.randint(0, 1000) for i in range(array_length)]
+    # print(array)
+
+    # sorted_array = quicksort(array)
+    # print(sorted_array)
+ 
+    # sorted_array = merge_sort(array)
+    # print(sorted_array)
+
+    # sorted_array = bubble_sort(array)
+    # print(sorted_array)
+
+    reps = 1
+
+    print(f'{reps=}')
+    print(f'{array_length=}')
+
+    print('bubble_sort:', timeit(lambda: bubble_sort(array), number=reps))
+    print('quicksort:', timeit(lambda: quicksort(array), number=reps))
+    print('merge_sort:', timeit(lambda: merge_sort(array), number=reps))
