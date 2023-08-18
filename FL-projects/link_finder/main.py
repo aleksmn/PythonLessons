@@ -36,7 +36,7 @@ def find_matching_links(file1_links: list, file2_links: list) -> (set, set):
     второе - элементы, которые встречаются только в одном из списков.
     """
     file1_links = set(file1_links)
-    file1_links = set(file1_links)
+    file2_links = set(file2_links)
 
     matching_links = file1_links.intersection(file2_links)
     non_matching_links = file1_links.symmetric_difference(file2_links)
