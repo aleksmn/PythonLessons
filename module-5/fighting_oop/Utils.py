@@ -1,5 +1,5 @@
 import os
-
+import speech_recognition as sr
 
 class Utils:
     def clear(self):
@@ -21,3 +21,31 @@ class Utils:
             return False
         else:
             return True
+
+
+    def speech_recognition(self) -> str:
+        recognizer = sr.Recognizer()
+
+        text = ""
+
+        with sr.Microphone() as source:
+            print("Слушаю...")
+
+            while not text:
+                audio = recognizer.listen(source)
+            
+                try:
+                    text = recognizer.recognize_google(audio, language='ru-RU').capitalize()
+                    print(f'Вы сказали: {text}')
+                    return text
+                except sr.UnknownValueError:
+                    print("Не понял вас.")
+                except sr.RequestError as e:
+                    print(f"Ошибка сервиса распознавания речи: {e}.")
+
+
+
+if __name__ == "__main__":
+    # Проверка функций
+    Utils = Utils()
+    Utils.speech_recognition()
