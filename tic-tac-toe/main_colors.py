@@ -71,18 +71,20 @@ while not is_win:
 
     player_answer = input(f'{reset}Куда ставим {player_token}?: ')
 
-    # Получаем ход от игрока, делаем поправку "-1" для учета индексации с 0.
-    try:
-        player_answer = int(player_answer) - 1
-    except:
-        print(red + 'Неверный ввод: нужно ввести число')
+    # Выполняем валидацию (проверку) ввода
+    if not player_answer.isdigit():
+        print("Ошибка ввода. Можно вводить только числа")
         time.sleep(0.6)
         continue
-    
-    if  not 8 >= player_answer >= 0:
-        print(red + 'Неверный ввод: нужно ввести число от 1 до 9')
+
+    if not 0 < int(player_answer) < 10:
+        print("Ошибка ввода. Введите число от 1 до 9")
         time.sleep(0.6)
-        continue
+        continue     
+
+
+    # Делаем поправку "-1" для учета индексации с 0.
+    player_answer = int(player_answer) - 1
 
 
     if str(board[player_answer]) not in tokens_list:
