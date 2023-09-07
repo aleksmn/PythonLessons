@@ -12,7 +12,7 @@ from aiogram.utils.markdown import hbold
 import requests
 from datetime import datetime
 
-from config import bot_token, open_weather_token
+from config import bot_token
 from weather import get_weather
 
 
@@ -35,7 +35,7 @@ async def command_start_handler(message: Message) -> None:
 @dp.message()
 async def weather_message(message: types.Message) -> None: 
     
-    await message.answer(get_weather(message.text, open_weather_token))
+    await message.answer(get_weather(message.text))
 
 
 
