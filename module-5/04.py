@@ -44,18 +44,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 # class Animal:
 #     def __init__(self, name, age):
 #         self.name = name
@@ -72,7 +60,7 @@
 # class Cat(Animal):
 
 #     def __init__(self, name, age):
-#         Animal.__init__(self, name, age)
+#         super().__init__(name, age)
 
 
 #     def __str__(self) -> str:
@@ -81,10 +69,13 @@
 #     def speak(self):
 #         print("Мяу-мяу!")
 
+#     def scratch(self):
+#         print("Точу когти!")
+
 
 # class Dog(Animal):
 #     def __init__(self, name, age):
-#         Animal.__init__(self, name, age)
+#         super().__init__(name, age)
 
 #     def __str__(self) -> str:
 #         return f"Собака по имени {self.name}. Возраст: {self.age}."
@@ -94,6 +85,10 @@
 #         print("Гав-гав!")
 
 
+
+# class Tiger(Cat):
+#     def __init__(self, name, age):
+#         super().__init__(name, age)
 
 
 # my_cat = Cat("Мурка", 2.5)
@@ -107,6 +102,10 @@
 # my_dog.speak()
 # my_dog.sleep()
 
+
+# tiger_1 = Tiger("Тигра", 8)
+# print(tiger_1)
+# tiger_1.scratch()
 
 
 # for animal in (my_cat, my_dog):
