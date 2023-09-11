@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-with open("index.html", "r") as f:
+with open("index.html", "r", encoding="utf-8") as f:
     doc = BeautifulSoup(f, "html.parser")
 
 
@@ -22,11 +22,16 @@ with open("index.html", "r") as f:
 
 # links = []
 
+# links_dictionary = {}
+
 # for t in tags:
 #     links.append(t.attrs['href'])
 
+#     links_dictionary[t.text] = t.attrs['href']
+
 
 # print(links)
+# print(links_dictionary)
 
 # Выбор по классу
 
