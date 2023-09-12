@@ -17,10 +17,11 @@ def get_largest_2(a: list):
             largest = i
     return largest
 
-
 reps = 1000000
+
 
 print('get_largest:', timeit.timeit(lambda: get_largest(nums), number=reps))
 print('get_largest_2:', timeit.timeit(lambda: get_largest_2(nums), number=reps))
+print('max:', timeit.timeit(lambda: max(nums), number=reps))
 
 
