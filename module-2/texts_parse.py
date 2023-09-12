@@ -19,6 +19,24 @@ for word in words:
     if len(word) < len(shortest_word):
         shortest_word = word
 
+
+# Частота слов
+
+word_frequency = {} 
+
+for word in words:
+    # Если слово есть в словаре, увличиваем значение на 1
+    if word in word_frequency:
+        word_frequency[word] += 1    
+    else:
+        word_frequency[word] = 1
+
+
+# Вывод результата
 print("Количество разных слов:", len(set(words)))
 print("Самое длинное слово:", longest_word)
 print("Самое короткое слово:", shortest_word)
+
+print("Частота слов:")
+for w, f in word_frequency.items():
+    print(f'{w}: {f}')
