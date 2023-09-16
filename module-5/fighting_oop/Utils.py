@@ -1,6 +1,10 @@
 import os
 import speech_recognition as sr
 
+# Установка:
+# pip install SpeechRecognition
+# pip install pyaudio
+
 class Utils:
     def clear(self):
         return os.system('cls||clear')     # os.system('clear') для Linux и MacOS
