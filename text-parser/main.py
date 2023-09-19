@@ -8,7 +8,6 @@ def count_words(text):
     Функция возвращает словарь, в котором ключи это слова,
     а значения - это число, сколько раз слово встречается в тексте
     """
-
     word_freq = {}
     text = text.lower()
 
@@ -20,25 +19,31 @@ def count_words(text):
 
     return word_freq
 
-def sort_dict(d:dict, reverse=True) -> list:
+def sort_dict(d: dict) -> list:
     """Функция сортирует словарь по значениям"""
-    return sorted(d.items(), key=lambda w: w[1], reverse=reverse)
+    return sorted(d.items(), key=lambda x: x[1], reverse=True)
+
 
 def filter_words(words):
-    return [w for w in words if len(w[0]) > 2]
+    stoplist = ''
+    try:
+        with open('text-parser/stoplist.txt', 'r', encoding='utf-8') as f:
+            stoplist = f.read().split()
+    except:
+        print("Стоплист не найден")
+    # print(stoplist)
+    return [w for w in words if len(w[0]) > 2 and w[0] not in stoplist]
+
 
 def main():
-
-    # user_url = input("Введите URL: ")
     url = "https://rvb.ru/pushkin/01text/04onegin/01onegin/0836-full.htm"
-
     txt = load_page(url)
+
     word_freq = count_words(txt)
     word_freq = sort_dict(word_freq)
     word_freq = filter_words(word_freq)
-    print(word_freq[:10])
 
-    # print(max(word_freq.items(), key=lambda w: w[1]))
+    print(word_freq[:10])  
 
 
 
