@@ -6,7 +6,15 @@ def suggestions():
     print(text)
 
 def complain():
-    print("Оставить жалобу")
+    text = input("Введите текст жалобы: ")
+
+    with open("complains.txt", 'a', encoding="utf-8") as file:
+        file.write("\n" + text)
+
+    print("Ваша жалоба будет рассмотрена в скором времени.")
+
+
+
 
 
 
@@ -14,4 +22,5 @@ def complain():
 
 if __name__ == "__main__":
 
-    suggestions()
+    # suggestions()
+    complain()
