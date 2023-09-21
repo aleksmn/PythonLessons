@@ -1,4 +1,4 @@
-def read_lines_from_file(filename: str) -> list:
+def read_lines_from_file(filename: str) -> set:
     """
     Функция считывает строки из файла и возвращает их в виде списка.
 
@@ -6,7 +6,7 @@ def read_lines_from_file(filename: str) -> list:
     filename (str): Имя файла для чтения.
 
     Возвращаемое значение:
-    list: Список строк, считанных из файла.
+    set: Множество строк, считанных из файла.
 
     Пример использования:
     >>>read_lines_from_file('data.txt') 
