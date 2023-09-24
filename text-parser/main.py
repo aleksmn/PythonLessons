@@ -1,5 +1,8 @@
 import string
+import time
+
 from load import load_file, load_page
+
 
 
 def count_words(text):
@@ -35,15 +38,31 @@ def filter_words(words):
     return [w for w in words if len(w[0]) > 2 and w[0] not in stoplist]
 
 
+def output(word_freq):
+    title = "Результат частотного анализа\n"
+    print(len(title) * "=")
+    print(title)
+
+    for word, count in word_freq[:20]:
+        h = "#" * (count // 10)
+        time.sleep(0.1)
+        print(h, count, word)
+
+    print(len(title) * "=")
+
+    
+
+
 def main():
-    url = "https://rvb.ru/pushkin/01text/04onegin/01onegin/0836-full.htm"
+    url = "https://rvb.ru/tolstoy/01text/vol_4/0030_1-full.htm"
     txt = load_page(url)
 
     word_freq = count_words(txt)
     word_freq = sort_dict(word_freq)
     word_freq = filter_words(word_freq)
 
-    print(word_freq[:10])  
+    # print(word_freq[:10])  
+    output(word_freq)
 
 
 
