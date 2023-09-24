@@ -43,7 +43,7 @@ def output(word_freq):
     print(len(title) * "=")
     print(title)
 
-    for word, count in word_freq[:20]:
+    for word, count in word_freq[:10]:
         h = "#" * (count // 10)
         time.sleep(0.1)
         print(h, count, word)
@@ -54,7 +54,7 @@ def output(word_freq):
 
 
 def main():
-    url = "https://rvb.ru/tolstoy/01text/vol_4/0030_1-full.htm"
+    url = "https://rvb.ru/pushkin/01text/04onegin/01onegin/0836-full.htm"
     txt = load_page(url)
 
     word_freq = count_words(txt)
