@@ -5,11 +5,14 @@ prog = {'CSS', 'Python', 'HTML', 'C++', 'Go'}
 
 lang = {'Python', 'Java','Go', 'CSS', 'Rust'}
 
+# Добавление
 prog.add('C#')
 print('SET prog:', prog)
 
+# Удаление
 lang.remove('Go')
 print('SET lang:', lang)
+
 '''
 
 1. Создать множество, которое включает значения из первого и второго множества.
@@ -21,48 +24,36 @@ print('SET lang:', lang)
 '''
 
 
-
-
-
-
-
-
 # Union (объединение)
-my_stack_1 = prog.union(lang)
-my_stack_2 = prog | lang
 
-print('Union:', my_stack_1)
-print('Union:', my_stack_2)
+print('Union:', prog.union(lang))
+print('Union:', prog | lang)
 
 
-# # Intersection (пересечение)
-my_stack_1 = prog.intersection(lang)
-my_stack_2 = prog & lang
+# Intersection (пересечение)
 
-print('Intersection:', my_stack_1)
-print('Intersection:', my_stack_2)
+print("Intersection", prog.intersection(lang))
+print("Intersection", prog & lang)
 
 
-# # Difference (разность)
-my_stack_1 = lang.difference(prog)
-my_stack_2 = lang - prog
+# Difference (разность)
 
-print('Difference:', my_stack_1)
-print('Difference:', my_stack_2)
+print('Difference:', lang.difference(prog))
+print('Difference:', lang - prog)
 
 
+# Symmetric difference (Симметричная разность)
 
-# # Symmetric difference (Симметричная разность)
-my_stack_1 = prog.symmetric_difference(lang)
-my_stack_2 = prog ^ lang
+print('Symmetric difference:', prog.symmetric_difference(lang))
+print('Symmetric difference:', prog ^ lang)
 
-print('Symmetric difference:', my_stack_1)
-print('Symmetric difference:', my_stack_2)
+
+print("Union минус Intersection")
+print( (prog | lang) - (prog & lang) )
 
 
 
-
-# # Update
+# Update
 print(prog)
 prog.update(lang)
 print(prog)
