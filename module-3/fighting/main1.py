@@ -45,7 +45,7 @@ def is_valid(text: str, is_role: bool = False) -> bool:
         print('Ошибка ввода. Вы ввели пустую строку.')
         return False
     
-    elif text not in '123' and is_role == True:
+    elif text not in list(role.keys()) and is_role == True:
         print('Ошибка ввода. Вы ввели неправильное значение. Введите числа от 1 до 3.')
         return False
     
