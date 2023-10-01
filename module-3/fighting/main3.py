@@ -78,7 +78,7 @@ def get_random_name() -> str:
 
 
 def clear():
-    return os.system('cls||clear')
+    return os.system('cls')
 
 
 def enter_to_continue():
@@ -100,8 +100,9 @@ def init_person(name: str, is_enemy: bool = False) -> dict:
     person.update({'характеристики': classes[person['класс']]})
     person.update({'имя': name})
 
-    print(
-        f"{person['имя']} - {person['класс']}, имеет характеристики: {person['характеристики']}")
+    print(f"{person['имя']} - {person['класс']}, имеет характеристики: {person['характеристики']}")
+
+    time.sleep(2)
     return person
 
 
@@ -118,7 +119,6 @@ def apply_skill(enemy):
 
 def attack_enemy(enemy1: dict, enemy2: dict) -> None:
 
-
     print(f"{enemy1['имя']} атакует {enemy2['имя']}!")
 
     time.sleep(3)
@@ -130,29 +130,32 @@ def attack_enemy(enemy1: dict, enemy2: dict) -> None:
         damage = 1
 
     enemy2['характеристики']['здоровье'] -= damage
-    print(f"{enemy1['имя']} наносит {damage} урона и у {enemy2['имя']} остается {enemy2['характеристики']['здоровье']} здоровья!")
+
+    print(f"{enemy1['имя']} наносит {damage} урона и", end=" ")
+
+    if enemy2['характеристики']['здоровье'] <= 0:
+        print(f"{enemy2['имя']} потерпел поражение!")
+    else:
+        print(f"у {enemy2['имя']} остается {enemy2['характеристики']['здоровье']} здоровья!")
 
 
 
 def fight(attacker: dict, defender:dict) -> None:
     while True:
-        time.sleep(2)
+        # clear()
 
         if attacker['характеристики']['здоровье'] > 0:
             attack_enemy(attacker, defender)
         else:
-            print(f"{attacker['имя']} потерпел поражение!")
             return
-        
+
         if defender['характеристики']['здоровье'] > 0:
             attack_enemy(defender, attacker)
         else:
-            print(f"{defender['имя']} потерпел поражение!")
             return
+
+        time.sleep(2)
         
-        
-        
-        # clear()
     
         # enter_to_continue()
 

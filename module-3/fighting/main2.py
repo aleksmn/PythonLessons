@@ -95,23 +95,20 @@ def init_person(name: str, is_enemy: bool = False) -> dict:
     return person
 
 
-def apply_skill(enemy):
-    rand = random.randint(0, 9)
-    if rand > 6:
+def apply_skill(enemy: dict) -> None:
+    rand = random.randint(0, 10)
+    if rand < 4:
         skill = random.choice(list(enemy['характеристики']['навыки'].keys()))
         enemy['характеристики']['здоровье'] += enemy['характеристики']['навыки'][skill]
 
-        print(
-            f"{enemy['имя']} применяет способность {skill}!")
-
+        print(f"{enemy['имя']} применяет способность {skill}!")
 
 
 def attack_enemy(enemy1: dict, enemy2: dict) -> None:
 
-
     print(f"{enemy1['имя']} атакует {enemy2['имя']}!")
 
-    time.sleep(2)
+    time.sleep(3)
 
     apply_skill(enemy2)
 
@@ -120,7 +117,11 @@ def attack_enemy(enemy1: dict, enemy2: dict) -> None:
         damage = 1
 
     enemy2['характеристики']['здоровье'] -= damage
-    print(f"{enemy1['имя']} наносит {damage} урона и у {enemy2['имя']} остается {enemy2['характеристики']['здоровье']} здоровья!")
+
+    if enemy2['характеристики']['здоровье'] <= 0:
+        print(f"{enemy1['имя']} наносит {damage} урона и {enemy2['имя']} потерпел поражение!")
+    else:
+        print(f"{enemy1['имя']} наносит {damage} урона и у {enemy2['имя']} остается {enemy2['характеристики']['здоровье']} здоровья!")
 
 
 
@@ -129,4 +130,7 @@ player = init_person(get_player_name())
 enemy = init_person(get_random_name(), is_enemy=True)
 
 
+attack_enemy(player, enemy)
+attack_enemy(player, enemy)
+attack_enemy(player, enemy)
 attack_enemy(player, enemy)
