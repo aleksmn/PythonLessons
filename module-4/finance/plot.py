@@ -23,12 +23,7 @@ def plot_rub_usd():
     yf.pdr_override()
     df = pdr.DataReader("USDRUB=X", datetime.datetime.today() - datetime.timedelta(days=365))
 
-    # print(df[df['Close'] > 110])
-
-    df = df[df['Close'] > 10]
-    df = df[df['Close'] < 110]
-
-    plt.plot(df.index, df.Close, color='green')
+    plt.plot(df.index, df.Open, color='green')
 
     plt.title("Курс рубля к доллару")
     plt.show()
@@ -38,9 +33,10 @@ def plot_rub_usd():
 def plot_usd_btc():
     yf.pdr_override()
     df = pdr.DataReader("BTC-USD", datetime.datetime.today() - datetime.timedelta(days=365))
-    plt.plot(df.index, df["Close"], color='red')
+    plt.plot(df.index, df["Open"], color='red')
 
     plt.title("Курс биткоина")
+    plt.ylabel("USD")
 
     plt.show()
 
@@ -52,7 +48,7 @@ def plot_usd_btc():
 if __name__ == "__main__":
 
     # тесты
-    plot_rub_usd()
-    # plot_usd_btc()
+    # plot_rub_usd()
+    plot_usd_btc()
 
 
