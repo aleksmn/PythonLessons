@@ -29,7 +29,7 @@
 
 def solution(args):
 
-    ranges = []
+    ranges = [args[0]]
     for i in range(0, len(args)-1):
         if args[i+1] - args[i] != 1:
             ranges.append(args[i])
@@ -40,7 +40,14 @@ def solution(args):
     result = ''
     print(ranges)
     
-    ranges = [x for x in ranges if ]
+    temp = [ranges[0]]
+
+    for i in ranges:
+        if len(temp) > 0 and temp[-1] != i:
+            temp.append(i)
+
+
+    ranges = temp
 
     print(ranges)
     for i in range(len(ranges)-1):
