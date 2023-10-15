@@ -2,9 +2,7 @@ import random
 
 role = {'1': 'Воин', '2': 'Лучник', '3': 'Маг'}
 
-
 classes = {
-
     'Воин': {
         'здоровье': 100,
         'атака': 30,
@@ -35,15 +33,16 @@ classes = {
 }
 
 
-
 # Инициализация персонажа (создание)
 
-def init_person(name: str, is_enemy: bool = False):
+def init_person(name, is_enemy = False):
+    class_names = list(classes.keys())
+
     if is_enemy:
-        person = {'класс': random.choice(list(role.values()))}
+        person = {'класс': random.choice(class_names)}
     else:
-        choice = input('Введите класс: 1-Воин, 2-Лучник, 3-Маг\n')
-        person = {'класс': role[choice]}
+        choice = int(input('Введите класс: 1-Воин, 2-Лучник, 3-Маг\n'))
+        person = {'класс': class_names[choice-1]}
 
     person.update({'характеристики': classes[person['класс']]})
     person.update({'имя': name})
