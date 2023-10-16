@@ -2,18 +2,29 @@
 def snail(m):
     n = len(m)
     result = []
-    start_x, start_y = 0, 0
-    end_x, end_y = n - 1, n - 1
+    x, y = 0, 0
+    
 
-    x = start_x
-    while x <= end_x:
-        result.append(m[start_y][x])
+    while x < n and y < n:
+        # print first row
+        for i in range(y, n):
+            result.append(m[x][i])
         x += 1
 
-    y = start_y + 1
-    while y <= end_y:
-        result.append(m[y][end_x])
-        y += 1
+        # print last column
+        for i in range(x, n):
+            result.append(m[i][n-1])
+
+        n -= 1
+
+        print(x, y)
+
+        if y < n:
+            for i in range(n-1, x-1, -1):
+                result.append(m[n-1][i])
+
+            n -= 1
+
 
 
     return result
