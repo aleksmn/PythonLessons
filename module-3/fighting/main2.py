@@ -56,7 +56,6 @@ def get_player_name() -> str:
 
 
 def get_random_name() -> str:
-    from random import choice
 
     first_names = [
         'Доктор', 'Летающий', 'Профессор', 'Скучный',
@@ -72,7 +71,7 @@ def get_random_name() -> str:
         'пингвин', 'викинг', 'паук', 'плащ'
     ]
 
-    return f"{choice(first_names)} {choice(second_names)}"
+    return f"{random.choice(first_names)} {random.choice(second_names)}"
 
 
 # Инициализация персонажа (создание)
