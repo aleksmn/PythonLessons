@@ -1,6 +1,4 @@
 import random
-import time
-
 
 
 classes = {
@@ -35,24 +33,22 @@ classes = {
 }
 
 
-def is_valid(text: str, is_role: bool = False) -> bool:
 
-    if len(text) == 0:
+# Валидация
+def is_valid(text, is_role: bool = False) -> bool:
+
+    if len(text.strip()) == 0:
         print('Ошибка ввода. Вы ввели пустую строку.')
         return False
-    elif text not in list(classes.keys()) and is_role == True:
-        print('Ошибка ввода. Вы ввели не правильное значение. Введите числа от 1 до 3.')
-        return False
-    else:
-        return True
+
+    if is_role:
+        if not text.isdigit() or int(text) < 1 or int(text) > len(list(classes.keys())):
+            print('Ошибка ввода. Вы ввели неправильный номер класса')
+            return False
 
 
-def get_player_name() -> str:
-    while True:
-        player_name = input(f'Как зовут твоего героя?\n')
-        if is_valid(player_name):
-            break
-    return player_name
+    return True
+
 
 
 def get_random_name() -> str:
@@ -74,8 +70,15 @@ def get_random_name() -> str:
     return f"{random.choice(first_names)} {random.choice(second_names)}"
 
 
-# Инициализация персонажа (создание)
+def get_player_name() -> str:
+    while True:
+        player_name = input(f'Как зовут твоего героя?\n')
+        if is_valid(player_name):
+            break
+    return player_name
 
+
+# Инициализация персонажа (создание)
 def init_person(name: str, is_enemy: bool = False):
     class_names = list(classes.keys())
     if is_enemy:
@@ -94,39 +97,7 @@ def init_person(name: str, is_enemy: bool = False):
     return person
 
 
-def apply_skill(enemy: dict) -> None:
-    rand = random.randint(0, 10)
-    if rand < 4:
-        skill = random.choice(list(enemy['характеристики']['навыки'].keys()))
-        enemy['характеристики']['здоровье'] += enemy['характеристики']['навыки'][skill]
-
-        print(f"{enemy['имя']} применяет способность {skill}!")
-
-
-def attack_enemy(enemy1: dict, enemy2: dict) -> None:
-
-    print(f"{enemy1['имя']} атакует {enemy2['имя']}!")
-
-    time.sleep(3)
-
-    apply_skill(enemy2)
-
-    damage = enemy1['характеристики']['атака'] - enemy2['характеристики']['защита']
-    if damage < 0:
-        damage = 1
-
-    enemy2['характеристики']['здоровье'] -= damage
-
-    if enemy2['характеристики']['здоровье'] <= 0:
-        print(f"{enemy1['имя']} наносит {damage} урона и {enemy2['имя']} потерпел поражение!")
-    else:
-        print(f"{enemy1['имя']} наносит {damage} урона и у {enemy2['имя']} остается {enemy2['характеристики']['здоровье']} здоровья!")
-
-
-
-
-player = init_person(get_player_name())
-enemy = init_person(get_random_name(), is_enemy=True)
-
-
-attack_enemy(player, enemy)
+# Точка входа в игру
+if __name__ == "__main__":
+    player = init_person(get_player_name())
+    enemy = init_person(get_random_name(), True)
