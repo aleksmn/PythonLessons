@@ -57,14 +57,15 @@ def is_valid(text: str, is_role: bool = False) -> bool:
 # Инициализация персонажа (создание)
 
 def init_person(name: str, is_enemy: bool = False):
+    class_names = list(classes.keys())
     if is_enemy:
-        person = {'класс': random.choice(list(role.values()))}
+        person = {'класс': random.choice(class_names)}
     else:
         while True:
             choice = input('Введите класс: 1-Воин, 2-Лучник, 3-Маг\n')
             if is_valid(text=choice, is_role=True):
                 break
-        person = {'класс': role[choice]}
+        person = {'класс': class_names[int(choice)-1]}
 
     person.update({'характеристики': classes[person['класс']]})
     person.update({'имя': name})
