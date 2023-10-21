@@ -29,10 +29,7 @@ book_phones = {
     'Эдуард Скамворкер': '0'
 }
 
-
-action = input(
-    "Выбери действие: 1 — показать, 2 — добавить, 3 — изменить, 4 — удалить,  5 — Показать все имена в книге, 6 — Показать все номера в книге \n")
-
+action = input("Выбери действие: 1 — показать, 2 — добавить, 3 — изменить, 4 — удалить\n")
 
 if action == '1':
     name = input('Имя: ')
@@ -41,37 +38,22 @@ if action == '1':
     else:
         print("Нет в телефонной книге")
 
-# Добавление номера
-elif action == '2':
+# Добавление номера или изменение номера
+elif action == '2' or action == "3":
     name = input('Имя: ')
+    phone = input('Телефон: ')
+    # Добавляем запись
+    book_phones[name] = phone
+    # Вывод телефонной книги
+    for k, v in book_phones.items():
+        print(f'{k}: {v}')
 
-    if name in book_phones:
-        print("Контакт существует")
-    else:
-        phone = input('Телефон: ')
-        book_phones[name] = phone
-        # Вывод телефонной книги
-        for k, v in book_phones.items():
-            print(f'{k}: {v}')
-
-# Изменение номера
-elif action == '3':
-    name = input('Имя: ')
-    if name not in book_phones:
-        print("Контакта нет в книге")
-    else:
-        phone = input('Телефон: ')
-        book_phones[name] = phone
-
-        # Вывод телефонной книги
-        for k, v in book_phones.items():
-            print(f'{k}: {v}')
-
-
+# Удаление 
 elif action == '4':
     name = input('Имя для удаления: ')
     if name in book_phones:
-        book_phones.pop(name)
+        # Удаляем
+        del book_phone[name]
         # Вывод телефонной книги
         for k, v in book_phones.items():
             print(f'{k}: {v}')
