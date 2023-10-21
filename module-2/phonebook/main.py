@@ -53,7 +53,7 @@ elif action == '4':
     name = input('Имя для удаления: ')
     if name in book_phones:
         # Удаляем
-        del book_phone[name]
+        del book_phones[name]
         # Вывод телефонной книги
         for k, v in book_phones.items():
             print(f'{k}: {v}')
