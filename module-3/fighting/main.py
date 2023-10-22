@@ -35,30 +35,23 @@ classes = {
 
 
 def apply_skill(enemy: dict) -> None:
-    rand = random.randint(0, 10)
+    rand = random.randint(0, 9)
     if rand < 4:
         skill = random.choice(list(enemy['характеристики']['навыки'].keys()))
-        enemy['характеристики']['здоровье'] += enemy['характеристики']['навыки'][skill]
+        enemy['характеристики']['защита'] += enemy['характеристики']['навыки'][skill]
 
         print(f"{enemy['имя']} применяет способность {skill}!")
 
 
 def attack_enemy(enemy1: dict, enemy2: dict) -> None:
-
     print(f"{enemy1['имя']} атакует {enemy2['имя']}!")
-
     time.sleep(2)
-
     apply_skill(enemy2)
-
     damage = enemy1['характеристики']['атака'] - enemy2['характеристики']['защита']
     if damage < 0:
         damage = 1
-
     enemy2['характеристики']['здоровье'] -= damage
-
     print(f"{enemy1['имя']} наносит {damage} урона и", end=" ")
-
     if enemy2['характеристики']['здоровье'] <= 0:
         print(f"{enemy2['имя']} потерпел поражение!")
     else:
