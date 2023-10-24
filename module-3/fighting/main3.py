@@ -2,7 +2,7 @@ import random
 import time
 import os
 
-role = {'1': 'Воин', '2': 'Лучник', '3': 'Маг'}
+# role = {'1': 'Воин', '2': 'Лучник', '3': 'Маг'}
 
 
 classes = {
@@ -39,14 +39,16 @@ classes = {
 
 def is_valid(text: str, is_role: bool = False) -> bool:
 
-    if len(text) == 0:
+    if len(text.strip()) == 0:
         print('Ошибка ввода. Вы ввели пустую строку.')
         return False
-    elif int(text) not in list(classes.keys()) and is_role == True:
-        print('Ошибка ввода. Вы ввели не правильное значение. Введите числа от 1 до 3.')
-        return False
-    else:
-        return True
+
+    if is_role:
+        if not text.isdigit() or int(text) < 1 or int(text) > len(list(classes.keys())):
+            print('Ошибка ввода. Вы ввели неправильный номер класса')
+            return False
+
+    return True
 
 
 def get_player_name() -> str:

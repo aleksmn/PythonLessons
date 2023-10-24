@@ -1,6 +1,11 @@
 import random
 import time
+import colorama
+import os
 
+colorama.init()
+
+red = colorama.Fore.RED
 
 classes = {
 
@@ -33,6 +38,27 @@ classes = {
     }
 }
 
+def clear():
+    return os.system('cls')
+
+def fight(attacker: dict, defender:dict) -> None:
+    time.sleep(2)
+
+    clear()
+
+    while True:
+
+        if attacker['характеристики']['здоровье'] > 0:
+            attack_enemy(attacker, defender)
+        else:
+            return
+
+        if defender['характеристики']['здоровье'] > 0:
+            attack_enemy(defender, attacker)
+        else:
+            return
+
+        time.sleep(2)
 
 def apply_skill(enemy: dict) -> None:
     rand = random.randint(0, 9)
@@ -123,4 +149,5 @@ if __name__ == "__main__":
     player = init_person(get_player_name())
     enemy = init_person(get_random_name(), True)
 
-    attack_enemy(player, enemy)
+    fight(player, enemy)   
+ 
