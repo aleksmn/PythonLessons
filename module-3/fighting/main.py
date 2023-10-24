@@ -12,7 +12,7 @@ classes = {
     'Воин': {
         'здоровье': 100,
         'атака': 30,
-        'защита': 25,
+        'защита': 20,
         'навыки': {
             'щит': 10
         }
@@ -21,7 +21,7 @@ classes = {
     'Лучник': {
         'здоровье': 50,
         'атака': 40,
-        'защита': 20,
+        'защита': 15,
         'навыки': {
             'убежать': 10
         }
@@ -42,7 +42,7 @@ def clear():
     return os.system('cls')
 
 def fight(attacker: dict, defender:dict) -> None:
-    time.sleep(2)
+    input("Нажмите Enter, чтобы продолжить")
 
     clear()
 
@@ -64,7 +64,7 @@ def apply_skill(enemy: dict) -> None:
     rand = random.randint(0, 9)
     if rand < 4:
         skill = random.choice(list(enemy['характеристики']['навыки'].keys()))
-        enemy['характеристики']['защита'] += enemy['характеристики']['навыки'][skill]
+        enemy['характеристики']['здоровье'] += enemy['характеристики']['навыки'][skill]
 
         print(f"{enemy['имя']} применяет способность {skill}!")
 
