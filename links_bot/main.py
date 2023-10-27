@@ -36,6 +36,9 @@ async def command_start_handler(message: Message) -> None:
 async def links_message(message: types.Message) -> None: 
     
     await message.answer(get_links(message.text))
+    await message.answer("Спасибо за использование приложения!")
+    print(get_links(message.text))
+
 
 
 

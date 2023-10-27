@@ -23,15 +23,14 @@ def get_links_dictionary(url):
 
     return links_dictionary
 
-
 def get_links_message_long(links_dict):
     message = ''
 
-    message += f"Количество ссылок: {len(links_dict)}\n"
-
     for k, v in sorted(links_dict.items()):
         message += f'{k} {v}\n'
-    message += "===============================\n"
+
+    message += '======================\n'
+    message += f"Количество ссылок: {len(links_dict)}\n"
 
     return message
 
@@ -50,12 +49,13 @@ def get_links_message(links_dict):
 
 
 def get_links(url):
-    return get_links_message(get_links_dictionary(url))
+    return get_links_message_long(get_links_dictionary(url))
 
     
 if __name__ == "__main__":    
     
-    url = input("Введите URL для поиска ссылок: ")
+    # url = input("Введите URL для поиска ссылок: ")
+    url = 'https://skysmart.ru/'
 
     # links = get_links_dictionary(url)
 
