@@ -49,7 +49,7 @@ def get_weather(city):
 
 def main():
     city = input("Введите город: ")
-    weather = get_weather(city, open_weather_token)
+    weather = get_weather(city)
     print(weather)
 
 
