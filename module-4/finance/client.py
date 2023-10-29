@@ -2,9 +2,7 @@ import json
 import os
 import datetime
 
-currentYear = datetime.datetime.now().year
-
-script_dir = os.path.dirname(os.path.abspath(__file__))
+# script_dir = os.path.dirname(os.path.abspath(__file__))
 
 client_info = {}
 
@@ -12,14 +10,14 @@ client_info = {}
 def load():
     """Загружаем информацию о пользователе из файла"""
     global client_info
-    with open(script_dir + '/client_info.json', "r", encoding='utf-8') as json_file:
+    with open('client_info.json', "r", encoding='utf-8') as json_file:
         client_info = json.load(json_file)
 
 
 def save():
     """Сохраняем данные о пользователе в файл"""
     global client_info
-    with open(script_dir + '/client_info.json', "w", encoding='utf-8') as json_file:
+    with open('client_info.json', "w", encoding='utf-8') as json_file:
         json.dump(client_info, json_file, ensure_ascii=False)
 
 
@@ -61,6 +59,10 @@ def predict():
 
 def make_transaction():
     global client_info
+    # Находим текущий год и месяц
+    currentYear = datetime.datetime.now().year
+    currentMonth = datetime.datetime.now().month
+
     print("Доступные счета")
     i = 1
     for account in client_info["accounts"]:
@@ -107,8 +109,12 @@ def make_transaction():
         month = int(input("Введите месяц: "))
     except:
         print("Ошибка ввода. Прерываю транзакцию....")
+        return
 
     if year > currentYear or month > 12 or month < 1:
+        print("Неверная дата. Прерываю транзакцию...")
+        return
+    if year == currentYear and month > currentMonth:
         print("Неверная дата. Прерываю транзакцию...")
         return
 
@@ -117,6 +123,7 @@ def make_transaction():
         amount = int(input("Введите сумму: "))
     except:
         print("Ошибка ввода. Прерываю транзакцию...")
+        return
 
     if amount < 1:
         print("Сумма не может быть меньше 1. Прерываю транзакцию...")
@@ -136,8 +143,6 @@ def make_transaction():
         "amount": amount
     }
 
-    # print(new_data)
-
     # Добавляем транзакцию
     client_info["transactions"].append(new_data)
 
@@ -152,8 +157,8 @@ def make_transaction():
 if __name__ == "__main__":
 
     load()
-    show_info()
-    predict()
+    # show_info()
+    # predict()
 
     make_transaction()
 
