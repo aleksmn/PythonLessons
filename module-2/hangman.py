@@ -1,10 +1,10 @@
 import os
 import random
-import time
+
 
 
 # Очищаем консоль:
-os.system('clear || cls')
+os.system('cls')
 
 
 print('Привет! Я загадал слово, твоя задача - угадать его по буквам.')
@@ -23,7 +23,7 @@ letters = []
 hp = 10
 
 while hp > 0:
-    os.system('clear || cls')
+    os.system('cls')
 
     isWin = True
 
@@ -48,9 +48,9 @@ while hp > 0:
         hp -= 1
         if hp < 1:
             print("Ты проиграл!")
-            print("Ответ: ", word)
+            print("Было загадано слово: ", word)
             break
         else:
             print(f'Осталось попыток: {hp}')
-            time.sleep(0.5)
+            input("*Нажми Enter, чтобы продолжить*")
 
