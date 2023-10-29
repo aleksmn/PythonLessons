@@ -29,6 +29,15 @@ def plot_rub_usd():
     plt.show()
 
 
+def plot_euro_usd():
+    yf.pdr_override()
+    df = pdr.DataReader("EURUSD=X", datetime.datetime.today() - datetime.timedelta(days=365))
+
+    plt.plot(df.index, df.Open, color='purple')
+
+    plt.title("Курс евро к доллару")
+    plt.show()
+
 
 def plot_usd_btc():
     yf.pdr_override()
@@ -44,11 +53,11 @@ def plot_usd_btc():
 
 
 
-
+# Точка входа в программу
 if __name__ == "__main__":
 
     # тесты
-    # plot_rub_usd()
+    plot_rub_usd()
     plot_usd_btc()
 
 

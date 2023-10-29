@@ -1,15 +1,14 @@
 from client import *
 from bank import *
 from plot import *
+
 import os
 
-if __name__ == "__main__":
-
+def main():
     load()
-
     command = ""
     while command != "10":
-        os.system("cls||clear")
+        os.system("cls")
         print("Доступные действия: ")
         print("1 - посмотреть предложения банка")
         print("2 - отправить жалобу")
@@ -18,6 +17,8 @@ if __name__ == "__main__":
         print("5 - добавить транзакцию")
         print("6 - график доллара к рублю")
         print("7 - график доллара к биткоину ")
+        print("8 - график евро к доллару ")
+
         print("10 - выйти")
 
         command = input("Выберите действие: ")
@@ -46,3 +47,7 @@ if __name__ == "__main__":
             print("Действие не распознано. Попробуйте еще раз.")
 
         input("Enter чтобы продолжить")
+
+
+if __name__ == "__main__":
+    main()
