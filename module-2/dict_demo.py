@@ -1,32 +1,34 @@
-
-
 # # Словарь (dict)
+# Состоит из пар ключ : значение
+# например слово : определение, имя : номер телефона
 
 
-rus_to_eng = {
+# Пример словаря
+
+words = {
     'один': 'one',
     'два': 'two',
     'три': 'three'
 }
 
-print(rus_to_eng['один'])
-print(rus_to_eng['два'])
-print(rus_to_eng['три'])
+print(words['один'])
+print(words['два'])
+print(words['три'])
 
 # Изменение записи
-rus_to_eng['один'] = '1'
+words['один'] = '1'
 
 # Добавление записи
-rus_to_eng['четыре'] = 'four'
+words['четыре'] = 'four'
 
 
 # Удаление
-del rus_to_eng['один']
+del words['один']
 
 
 print("Вывод словаря")
 
-for rus, eng in rus_to_eng.items():
+for rus, eng in words.items():
     print(f'Слово: {rus}, перевод: {eng}')
 
 
