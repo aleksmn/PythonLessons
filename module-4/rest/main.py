@@ -6,8 +6,6 @@ def receipt():
             summa = summa + int(price)
     print('Итого:', summa)
 
-# receipt()
-
 def show_food():
     food = []
     with open('receipt.txt', 'r', encoding='utf-8') as f:    
@@ -17,7 +15,6 @@ def show_food():
             food.append(line.split()[0])
 
     print(food) 
-
 
 def restaurant_data():
     restaurant = {"details": []}
@@ -36,6 +33,9 @@ def restaurant_data():
     # Вывод словаря
     return restaurant
 
-# print(restaurant_data())
 
 
+if __name__ == "__main__":
+
+    receipt()
+    show_food()
