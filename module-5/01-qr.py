@@ -9,14 +9,20 @@ img.save('test.png')
 
 
 # с настройками:
-
+# Cоздаем объект
 qr = qrcode.QRCode(box_size=22, border=8)
+
+data = "https://skysmart.ru/"
 
 qr.add_data(data)
 
 img2 = qr.make_image(fill_color='navy')
 
 img2.save('test2.png')
+
+
+
+
 
 
 
