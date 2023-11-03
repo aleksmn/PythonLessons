@@ -22,4 +22,4 @@ resized_image = image.resize((new_w, new_h))
 
 print(w, h, new_w, new_h)
 
-resized_image.save('dog-mini.jpeg')
+resized_image.save('dog_min.jpeg')
