@@ -18,24 +18,24 @@ def show_food():
 
 def restaurant_data():
     restaurant = {"details": []}
-    with open("restaurant.txt", 'r', encoding='utf-8') as f:
-        for item in f.read().split('***\n'):
-            item_list = item.split('\n')
+    # Открываем файл для чтения
+    with open("restaurant.txt", "r", encoding="utf-8") as file:
+        for item in file.read().split("***"):
+            item_list = item.strip().split("\n")
 
             restaurant['details'].append({
-                "administrator":item_list[0],
-                "workers":item_list[1].split(", "),
-                "turnover":item_list[2],
-                "revenue":item_list[3],
-                "tips":item_list[4],
+                "administrator": item_list[0],
+                "workers": item_list[1].split(', '),
+                "turnover": int(item_list[2]),
+                "revenue": int(item_list[3]),
+                "tips": int(item_list[4])
             })
-
-    # Вывод словаря
+    
     return restaurant
 
 
 
 if __name__ == "__main__":
-
-    receipt()
-    show_food()
+    # receipt()
+    # show_food()
+    print(restaurant_data())
