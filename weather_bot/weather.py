@@ -38,8 +38,8 @@ def get_weather(city):
 
     weather_output = (
         f"--- {datetime.now().strftime('%Y-%m-%d %H:%M')} ---\n"
-        f"Погода в городе {city}\nТемпература: {temp}С\nОписание: {description}\nВлажность: {humidity}%"
-        f"\nСкорость ветра: {wind} м/с\nВосход: {sunrise}\nЗакат: {sunset}\nДолгота дня: {day_length}"
+        f"Погода в городе {city}\nТемпература: {temp} °C\nОписание: {description}\nВлажность: {humidity}%"
+        f"\nСкорость ветра: {wind} м/с\nВосход: {sunrise.strftime('%H:%M')}\nЗакат: {sunset.strftime('%H:%M')}\nДолгота дня: {day_length}"
     )
 
     return weather_output
