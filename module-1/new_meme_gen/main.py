@@ -1,10 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
-print("Генератор мемов запущен!")
+print("Добро пожаловать в генератор мемов!")
 
-text_type = int(input("Введите 1, если нужен только нижний текст, и 2, если и верхний, и нижний: "))
-
-top_text = ""
-bottom_text = ""
+text_type = int(input("Сколько добавить текстов, 1 или 2: "))
 
 if text_type == 1:
     top_text = ""
@@ -28,6 +25,8 @@ meme_number = int(input("Введите номер картинки: "))
 
 image = Image.open(memes[meme_number])
 width, height = image.size
+
+# print(width, height)
 
 draw = ImageDraw.Draw(image)
 
