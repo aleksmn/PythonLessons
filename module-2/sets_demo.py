@@ -1,5 +1,6 @@
 # Множества 
 # Set
+# Операции со множествами
 
 prog = {'CSS', 'Python', 'HTML', 'C++', 'Go'}
 
@@ -24,39 +25,49 @@ print('SET lang:', lang)
 '''
 
 
-# Union (объединение)
-
-print('Union:', prog.union(lang))
-print('Union:', prog | lang)
-
-
-# Intersection (пересечение)
-
-print("Intersection", prog.intersection(lang))
-print("Intersection", prog & lang)
+# Объединение
+print("union:")
+print(prog.union(lang))
+print(prog | union)
 
 
-# Difference (разность)
-
-print('Difference:', lang.difference(prog))
-print('Difference:', lang - prog)
-
-
-# Symmetric difference (Симметричная разность)
-
-print('Symmetric difference:', prog.symmetric_difference(lang))
-print('Symmetric difference:', prog ^ lang)
+# Пересечение
+print('intersection')
+print(prog.intersection(lang))
+print(prog & lang)
 
 
-print("Union минус Intersection")
-print( (prog | lang) - (prog & lang) )
+# Разность
+print('difference')
+print(lang.difference(prog))
+print(lang - prog)
+
+
+# Симметричная разность
+print('symmetric difference',)
+print(prog.symmetric_difference(lang))
+print(prog ^ lang)
 
 
 
-# Update
-print(prog)
-prog.update(lang)
-print(prog)
+
+
+
+
+
+
+
+
+
+# print("Union минус Intersection")
+# print( (prog | lang) - (prog & lang) )
+
+
+
+# # Update
+# print(prog)
+# prog.update(lang)
+# print(prog)
 
 
 
