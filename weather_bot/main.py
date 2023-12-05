@@ -41,9 +41,7 @@ async def weather_message(message: types.Message) -> None:
 
 
 async def main() -> None:
-    # Initialize Bot instance with a default parse mode which will be passed to all API calls
     bot = Bot(TOKEN, parse_mode=ParseMode.HTML)
-    # And the run events dispatching
     await dp.start_polling(bot)
 
 
