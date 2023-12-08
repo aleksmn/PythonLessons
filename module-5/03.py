@@ -1,4 +1,3 @@
-
 class Cat:
     def __init__(self, name, breed, coat_color, character):
         self.name = name
@@ -8,10 +7,12 @@ class Cat:
         print('Котик родился!')
         print(f'Теперь его зовут {self.name}!')
 
-    def speak(self, text: str):
-        """Метод класса"""
-        print(f"Кот по имени {self.name} говорит Мяу! {text.capitalize()}.")
+    # Метод (функция)
+    def speak(self, text):
+        print(f"Кот по имени {self.name} говорит: Мяу! {text.capitalize()}. Мяу-мяу!")
 
 
 
 murzik = Cat("Мурзик", "персидский", "рыжий", "веселый")
+
+murzik.speak("всем привет")
