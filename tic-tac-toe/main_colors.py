@@ -1,6 +1,5 @@
 import colorama
 import os
-import time
 
 
 # Объявляем цвета
@@ -10,8 +9,6 @@ green = colorama.Fore.GREEN
 red = colorama.Fore.RED
 blue = colorama.Fore.BLUE
 reset = colorama.Fore.RESET
-
-
 
 board = list(range(1, 10))
 
@@ -42,9 +39,9 @@ tokens_list = [red + 'X' + reset, green + 'O' + reset]
 def draw_board():
     '''Отрисовка поля в консоли'''
 
-    os.system('cls||clear')
+    os.system('cls')
 
-    print(green + "\n* Игра Крестики-нолики *\n"+reset)
+    print(green + "\n* Игра Крестики-нолики *\n" + reset)
     for i in range(3):
         shift = i * 3
         print(spaces * ' ', end="")
@@ -74,12 +71,12 @@ while not is_win:
     # Выполняем валидацию (проверку) ввода
     if not player_answer.isdigit():
         print("Ошибка ввода. Можно вводить только числа")
-        time.sleep(0.6)
+        input("Нажмите Enter")
         continue
 
     if not 0 < int(player_answer) < 10:
         print("Ошибка ввода. Введите число от 1 до 9")
-        time.sleep(0.6)
+        input("Нажмите Enter")
         continue     
 
 
@@ -90,8 +87,8 @@ while not is_win:
     if str(board[player_answer]) not in tokens_list:
         board[player_answer] = player_token
     else:
-        print(red + 'Эта ячейка уже занята!' + reset)
-        time.sleep(0.6)
+        print(f'{red}Эта ячейка уже занята{reset}')
+        input("Нажмите Enter")
         continue
 
     counter += 1
