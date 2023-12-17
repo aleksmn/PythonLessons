@@ -1,5 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
-print("Добро пожаловать в генератор мемов!")
+
+print("Генератор мемов запущен!")
 
 text_type = int(input("Сколько добавить текстов, 1 или 2: "))
 
