@@ -40,10 +40,12 @@ draw = ImageDraw.Draw(image)
 font = ImageFont.truetype('arial.ttf', size=70)
 
 text = draw.textbbox((0, 0), top_text, font)
-draw.text(((width - text[2]) / 2, 30), top_text, font=font, fill="black")
+text_width, text_height = text[2], text[3]
+draw.text(((width - text_width) / 2, 30), top_text, font=font, fill="black")
 
 text = draw.textbbox((0, 0), bottom_text, font)
-draw.text(((width - text[2]) / 2, height - text[3] - 30), bottom_text, font=font, fill="black")
+text_width, text_height = text[2], text[3]
+draw.text(((width - text_width) / 2, height - text_height - 30), bottom_text, font=font, fill="black")
 
 
 image.save("new_meme.jpg")
