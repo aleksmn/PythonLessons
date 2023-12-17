@@ -42,22 +42,9 @@ draw = ImageDraw.Draw(image)
 font = ImageFont.truetype('arial.ttf', size=70)
 
 
-draw.text((100, 30), top_text, font=font, fill="black")
-draw.text((100, height - 200), bottom_text, font=font, fill="black")
+draw.text((width / 2, 60), top_text, font=font, fill="black", anchor="mt")
+
+draw.text((width / 2, height - 60), bottom_text, font=font, fill="black", anchor="mb")
 
 
 image.save("new_meme.jpg")
-
-
-
-
-
-
-
-# Текст по центру:
-# text = draw.textbbox((0, 0), top_text, font)
-# draw.text(((width - text[2]) / 2, 30), top_text, font=font, fill="black")
-
-# text = draw.textbbox((0, 0), bottom_text, font)
-# draw.text(((width - text[2]) / 2, height - text[3] - 30), bottom_text, font=font, fill="black")
-
