@@ -5,10 +5,10 @@ authors = ['Chekhov', 'Dostoevski', 'Tolstoy', 'Nekrasov', 'Bulgakov', 'Pushkin'
 # Изменяем элемент
 authors[3] = "Gogol"
 
-# Добавляем элемент
+# Добавляем элемент - метод append
 authors.append('Turgenev')
 
-# Удаление
+# Удаление - оператор del
 del authors[0]
 
 # Вырезаем элемент
