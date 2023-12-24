@@ -1,4 +1,4 @@
-# Методы списка
+# Операции над списками
 
 authors = ['Chekhov', 'Dostoevski', 'Tolstoy', 'Nekrasov', 'Bulgakov', 'Pushkin', 'Esenin', 'Blok']
 
@@ -24,15 +24,16 @@ print(authors.index("Tolstoy"))
 
 # Проверка, есть ли элемент в списке
 if 'Esenin' in authors:
-    print("Есть в списке")
+    print("Есть в списке под индексом", authors.index("Esenin"))
 else:
     print("Нет в списке")
 
 
 # Перебираем список с помощью цикла For
-
+counter = 1
 for a in authors:
-    print(a)
+    print(counter, a)
+    counter += 10
 
 
 
