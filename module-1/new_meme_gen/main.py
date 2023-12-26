@@ -5,12 +5,12 @@ from PIL import Image, ImageDraw, ImageFont
 
 print("Генератор мемов запущен!")
 
-text_type = int(input("Сколько добавить текстов, 1 или 2: "))
+text_type = input("Сколько добавить текстов, 1 или 2: ")
 
-if text_type == 1:
+if text_type == "1":
     top_text = ""
     bottom_text = input("Введите нижний текст: ")
-elif text_type == 2:
+elif text_type == "2":
     top_text = input("Введите верхний текст: ")
     bottom_text = input("Введите нижний текст: ")
 else:
