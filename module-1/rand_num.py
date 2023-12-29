@@ -1,22 +1,20 @@
 import random
-number = random.randint(0, 100)
-print("Попробуй угадать число от 0 до 100!")
+number = random.randint(0, 5)
+print("Попробуй угадать число от 0 до 5!")
 
 # Количество попыток
-attempts = 7
+attempts = 3
 
 while attempts > 0:
     user_number = int(input("Введи число:\n"))
     attempts -= 1
+
     if user_number == number:
+        print("Число угадано! Молодец!")
+        # выход из цикла
         break
-    elif user_number < number:
-        print("Загадано число больше")
+    elif attempts == 0:
+        print("Ты проиграл!")
+
     else:
-        print("Загадано число меньше")
-
-
-if user_number == number:
-    print("Это верно, я загадал число", number)
-else:
-    print("Ты проиграл")
+        print("Не угадал!")
