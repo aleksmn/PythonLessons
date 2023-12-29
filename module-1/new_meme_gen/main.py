@@ -21,6 +21,7 @@ else:
 print(top_text, bottom_text)
 
 # Шаг 2
+# Список картинок
 memes = ["Кот в ресторане.png", "Кот в очках.png"]
 
 print("Выберите картинку для мема:")
@@ -29,6 +30,7 @@ count = 1
 for m in memes:
     print(count, m)
     count += 1
+
 
 meme_number = int(input("Введите номер картинки: "))
 
@@ -41,6 +43,8 @@ print(width, height)
 
 draw = ImageDraw.Draw(image)
 
+#for macOS:  "Keyboard.ttf"
+
 font = ImageFont.truetype('arial.ttf', size=70)
 
 # Добавим текст на картинку
@@ -50,6 +54,7 @@ draw.text(xy=(width / 2, 60),
           font=font, 
           fill="black", 
           anchor="mt")
+
 # нижний текст
 draw.text(xy=(width / 2, height - 60), 
           text=bottom_text, 
@@ -59,4 +64,4 @@ draw.text(xy=(width / 2, height - 60),
 
 
 image.save("new_meme.jpg")
-
+print("Картинка сохранена!")
