@@ -63,5 +63,5 @@ draw.text(xy=(width / 2, height - 60),
           anchor="mb")
 
 
-image.save("new_meme.jpg")
+image.save("new_meme.png")
 print("Картинка сохранена!")
