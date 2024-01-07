@@ -58,12 +58,11 @@ def predict():
 def make_transaction():
     global client_info
 
-
     print("Доступные счета")
     i = 1
     for account in client_info["accounts"]:
         print(i, account["name"], account["number"])
-        i += 1
+        i += 1  
 
     try:
         account_num = int(input("Введите счет: "))
@@ -71,11 +70,7 @@ def make_transaction():
         print("Ошибка ввода. Прерываю транзакцию...")
         return
 
-    for i in range(len(client_info["accounts"])):
-        if i + 1 == account_num:
-            account = client_info["accounts"][i]["number"]
-            break
-    else:
+    if account_num < 1 or account_num > len(client_info["accounts"]):
         print("Такого счета не существует. Прерываю транзакцию...")
         return
 
