@@ -1,8 +1,6 @@
 import json
-import os
 import datetime
 
-# script_dir = os.path.dirname(os.path.abspath(__file__))
 
 client_info = {}
 
@@ -59,9 +57,7 @@ def predict():
 
 def make_transaction():
     global client_info
-    # Находим текущий год и месяц
-    currentYear = datetime.datetime.now().year
-    currentMonth = datetime.datetime.now().month
+
 
     print("Доступные счета")
     i = 1
@@ -110,6 +106,10 @@ def make_transaction():
     except:
         print("Ошибка ввода. Прерываю транзакцию....")
         return
+    
+    # Находим текущий год и месяц
+    currentYear = datetime.datetime.now().year
+    currentMonth = datetime.datetime.now().month
 
     if year > currentYear or month > 12 or month < 1:
         print("Неверная дата. Прерываю транзакцию...")
