@@ -10,23 +10,20 @@ class Field:
         self.ships_alive = ships
 
     def display(self, show_ships=False):
-        letters = "ABCDEFGHIJ"
-        letter_string = "    "
-        for letter in letters:
-            letter_string += letter + " "
-
+        letter_string = "    A B C D E F G H I J"
         print(letter_string)
         for i, row in enumerate(self.grid):
             display_row = ""
             for cell in row:
-                if cell is None or (cell is not None and not show_ships):
+                if cell is None or not show_ships:
                     display_row += "O "
                 else:
                     display_row += "■ "
-            if i + 1 != 10:
-                print(i + 1, " ", display_row)
-            else:
+
+            if i > 8:
                 print(i + 1, "", display_row)
+            else:
+                print(i + 1, " ", display_row)
 
 
 class BattleshipGame:
@@ -47,6 +44,7 @@ class BattleshipGame:
                     field.grid[coords[0]][coords[1]] = "S"
                     placed = True
 
+
     def is_valid_ship_placement(self, field, coords, ship_length=1, ):
         x, y = coords
 
@@ -57,12 +55,11 @@ class BattleshipGame:
                     new_x, new_y = x + j, y + k
                     if 0 <= new_x < self.size and 0 <= new_y < self.size and field.grid[new_x][new_y] == "S":
                         return False
-
         return True
-
+    
     def player_turn(self, x, y):
 
-        x = "ABCDEFGHIJ".index(x)
+        x = "ABCDEFGHIJ".index(x.upper())
         y -= 1
 
         if self.computer_field.grid[y][x] == "S":
@@ -82,6 +79,7 @@ class BattleshipGame:
         else:
             print("Компьютер промахнулся!")
 
+    # Начало игры
     def play(self):
         print("Расстановка кораблей компьютера:")
         self.place_ships_randomly(self.computer_field, self.ships)
@@ -106,6 +104,7 @@ class BattleshipGame:
                 break
 
 
+# Запуск программы
 if __name__ == "__main__":
     game = BattleshipGame()
     game.play()
