@@ -17,6 +17,8 @@ class Field:
             for cell in row:
                 if cell is None or not show_ships:
                     display_row += "O "
+                elif cell == 'X':
+                    display_row += "X "
                 else:
                     display_row += "■ "
 
@@ -83,7 +85,7 @@ class BattleshipGame:
     def play(self):
         print("Расстановка кораблей компьютера:")
         self.place_ships_randomly(self.computer_field, self.ships)
-        self.computer_field.display()
+        self.computer_field.display(show_ships=True)
 
         print("Ваша расстановка кораблей:")
         self.place_ships_randomly(self.player_field, self.ships)
@@ -102,6 +104,10 @@ class BattleshipGame:
             if self.player_field.ships_alive == 0:
                 print("Вы проиграли! Все ваши корабли потоплены.")
                 break
+            print("Расстановка кораблей компьютера:")
+            self.computer_field.display(show_ships=True)
+            print("Ваша расстановка кораблей:")
+            self.player_field.display(show_ships=True)
 
 
 # Запуск программы
