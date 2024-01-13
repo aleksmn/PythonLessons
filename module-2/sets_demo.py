@@ -6,14 +6,6 @@ prog = {'CSS', 'Python', 'HTML', 'C++', 'Go'}
 
 lang = {'Python', 'Java','Go', 'CSS', 'Rust'}
 
-# Добавление
-prog.add('C#')
-print('SET prog:', prog)
-
-# Удаление
-lang.remove('Go')
-print('SET lang:', lang)
-
 '''
 
 1. Создать множество, которое включает значения из первого и второго множества.
@@ -28,7 +20,7 @@ print('SET lang:', lang)
 # Объединение
 print("union:")
 print(prog.union(lang))
-print(prog | union)
+print(prog | lang)
 
 
 # Пересечение
