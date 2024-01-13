@@ -7,15 +7,12 @@ prog = {'CSS', 'Python', 'HTML', 'C++', 'Go'}
 lang = {'Python', 'Java','Go', 'CSS', 'Rust'}
 
 '''
-
 1. Создать множество, которое включает значения из первого и второго множества.
 2. Вывести только элементы, которые встречаются в обоих множествах.
 3. Удалить из первого множества все элементы, которые есть во втором множестве.
 4. Вывести из двух множеств элементы, которые встречаются в одном, но не встречаются в другом множестве.
 
-
 '''
-
 
 # Объединение
 print("union:")
@@ -41,25 +38,28 @@ print(prog.symmetric_difference(lang))
 print(prog ^ lang)
 
 
-
-
-
-
-
-
-
-
-
-
 # print("Union минус Intersection")
 # print( (prog | lang) - (prog & lang) )
 
 
 
 # # Update
-# print(prog)
-# prog.update(lang)
-# print(prog)
+print(prog)
+prog.update(lang)
+print(prog)
+
+# Добавление
+prog.add("JavaScript")
+
+# Удаление
+prog.remove("Rust")
+
+
+
+
+
+
+
 
 
 
