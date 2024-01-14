@@ -15,12 +15,12 @@ class Field:
         for i, row in enumerate(self.grid):
             display_row = ""
             for cell in row:
-                if cell is None or not show_ships:
-                    display_row += "O "
+                if cell == "S" and show_ships:
+                    display_row += "■ "
                 elif cell == 'X':
                     display_row += "X "
                 else:
-                    display_row += "■ "
+                    display_row += "O "
 
             if i > 8:
                 print(i + 1, "", display_row)
@@ -31,7 +31,7 @@ class Field:
 class BattleshipGame:
     def __init__(self):
         self.size = 10
-        self.ships = 5
+        self.ships = 15
 
         self.player_field = Field(self.size, self.ships)
         self.computer_field = Field(self.size, self.ships)
