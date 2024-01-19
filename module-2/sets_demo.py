@@ -1,5 +1,3 @@
-# Множества 
-# Set
 # Операции со множествами
 
 prog = {'CSS', 'Python', 'HTML', 'C++', 'Go'}
@@ -28,12 +26,12 @@ print(prog & lang)
 
 # Разность
 print('difference')
-print(lang.difference(prog))
-print(lang - prog)
+print(prog.difference(lang))
+print(prog - lang)
 
 
 # Симметричная разность
-print('symmetric difference',)
+print('symmetric difference')
 print(prog.symmetric_difference(lang))
 print(prog ^ lang)
 
