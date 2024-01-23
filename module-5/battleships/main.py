@@ -22,10 +22,8 @@ class Field:
                 else:
                     display_row += "O "
 
-            if i > 8:
-                print(i + 1, "", display_row)
-            else:
-                print(i + 1, " ", display_row)
+            # Выводим строку поля
+            print(f"{(i+1):2d}  {display_row}")
 
 
 class BattleshipGame:
