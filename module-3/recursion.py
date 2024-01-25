@@ -38,3 +38,14 @@ print(recursion(7))
 #         return 1
 #     else:
 #         return fib(n-1) + fib(n-2)
+
+
+
+def recursion(n):
+    print(n)
+    if n == 1: 
+      return 1
+    return recursion(n-1)
+
+
+recursion(int(input("Введите число: ")))
