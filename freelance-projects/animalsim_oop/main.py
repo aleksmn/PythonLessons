@@ -51,45 +51,56 @@ class Rabbit:
         return f"З (заяц): ({self.x}, {self.y})"
 
 
-def print_field(tiger, rabbits):
-    field = []
-    for _ in range(5):
-        row = []
-        for _ in range(5):
-            row.append(".")
-        field.append(row)
+class Field:
+    def __init__(self, tiger, rabbits=[]):
+        self.tiger = tiger
+        self.rabbits = rabbits
+        self.size = 5
 
-    field[tiger.x][tiger.y] = "Т"
-    for rabbit in rabbits:
-        if not rabbit.captured:
-            field[rabbit.x][rabbit.y] = "З"
-    for row in field:
-        print(" ".join(row))
-    print()
+        self.field = []
+        for _ in range(self.size):
+            row = ["."] * self.size
+            self.field.append(row)
+
+        
+    def print_field(self):
+        self.field[self.tiger.x][self.tiger.y] = "Т"
+        for rabbit in self.rabbits:
+            if not rabbit.captured:
+                self.field[rabbit.x][rabbit.y] = "З"
+        for row in self.field:
+            print(" ".join(row))
+        print()
 
 
+ 
 def main():
     tiger = Tiger()
     rabbit1 = Rabbit(random.randint(1, 4), random.randint(1, 4))
     rabbit2 = Rabbit(random.randint(1, 4), random.randint(1, 4))
-    rabbits = [rabbit1, rabbit2]
+    rabbits = (rabbit1, rabbit2)
 
-    while tiger.state != "Бежать домой":
-        print(tiger)
-        for rabbit in rabbits:
-            print(rabbit)
-        print_field(tiger, rabbits)
+    # Тестовый вывод поля
+    field = Field(tiger, rabbits)
+    field.print_field()
 
-        tiger.update_state(rabbits)
+    # -------------------------------
+    # while tiger.state != "Бежать домой":
+    #     print(tiger)
+    #     for rabbit in rabbits:
+    #         print(rabbit)
+    #     field.print_field(tiger, rabbits)
 
-    print(tiger)
-    for rabbit in rabbits:
-        print(rabbit)
+    #     tiger.update_state(rabbits)
 
-    tiger.update_state(rabbits)
-    print_field(tiger, rabbits)
-    if tiger.state == "Бежать домой":
-        print("Тигр вернулся домой.")
+    # print(tiger)
+    # for rabbit in rabbits:
+    #     print(rabbit)
+
+    # tiger.update_state(rabbits)
+    # field.print_field(tiger, rabbits)
+    # if tiger.state == "Бежать домой":
+    #     print("Тигр вернулся домой.")
 
 
 if __name__ == "__main__":
