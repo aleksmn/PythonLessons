@@ -8,13 +8,13 @@ print(res)
 
 
 # Рекурсия
-def recursion(n):
+def sum_range(n):
 	if n == 1:
 		return 1
-	return n + recursion(n - 1)
+	return n + sum_range(n - 1)
 
 
-print(recursion(7))
+print(sum_range(7))
 
 
 
