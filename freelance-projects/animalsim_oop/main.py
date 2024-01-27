@@ -12,7 +12,6 @@ class Tiger:
             self.move_randomly()
             if any(self.is_near_rabbit(rabbit) for rabbit in rabbits):
                 self.state = "Атаковать добычу"
-
         elif self.state == "Атаковать добычу":
             if random.random() < self.successful_attack_prob:
                 print("Тигр успешно атаковал зайца!")
@@ -24,7 +23,6 @@ class Tiger:
                 self.state = "Бежать домой"
             else:
                 print("Тигр промахнулся!")
-
         elif self.state == "Бежать домой":
             self.x, self.y = 0, 0
 
@@ -53,44 +51,34 @@ class Rabbit:
         return f"З (заяц): ({self.x}, {self.y})"
 
 
-class Field:
-    def __init__(self):
-        # self.tiger = tiger
-        # self.rabbits = rabbits
-        self.size = 5
+def print_field(tiger, rabbits):
+    field = []
+    for _ in range(5):
+        row = []
+        for _ in range(5):
+            row.append(".")
+        field.append(row)
 
-        self.field = []
-        for _ in range(self.size):
-            row = ["."] * self.size
-            self.field.append(row)
-
-        
-    def print_field(self, tiger, rabbits=[]):
-        self.field[tiger.x][tiger.y] = "Т"
-        for rabbit in rabbits:
-            if not rabbit.captured:
-                self.field[rabbit.x][rabbit.y] = "З"
-        for row in self.field:
-            print(" ".join(row))
-        print()
+    field[tiger.x][tiger.y] = "Т"
+    for rabbit in rabbits:
+        if not rabbit.captured:
+            field[rabbit.x][rabbit.y] = "З"
+    for row in field:
+        print(" ".join(row))
+    print()
 
 
- 
 def main():
     tiger = Tiger()
     rabbit1 = Rabbit(random.randint(1, 4), random.randint(1, 4))
     rabbit2 = Rabbit(random.randint(1, 4), random.randint(1, 4))
     rabbits = [rabbit1, rabbit2]
 
-    # Тестовый вывод поля
-    field = Field()
-    field.print_field(tiger, rabbits)
-
     while tiger.state != "Бежать домой":
         print(tiger)
         for rabbit in rabbits:
             print(rabbit)
-        field.print_field(tiger, rabbits)
+        print_field(tiger, rabbits)
 
         tiger.update_state(rabbits)
 
@@ -99,7 +87,7 @@ def main():
         print(rabbit)
 
     tiger.update_state(rabbits)
-    field.print_field(tiger, rabbits)
+    print_field(tiger, rabbits)
     if tiger.state == "Бежать домой":
         print("Тигр вернулся домой.")
 
