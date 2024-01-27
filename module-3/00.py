@@ -1,14 +1,43 @@
-
 # Объявляем новую функцию
 # с параметром name
-
-def sayHello(name):
-    print("Привет ", name) 
+def say_hello(name):
+    print("Привет", name) 
 
 
 # Вызов функции
 # с аргументом
-sayHello("Михаил")
+say_hello("Саша")
+
+
+
+
+# Функция с двумя параметрами
+def sum_nums(a, b):
+    print(a + b)
+
+
+print(5, 9)
+print(25, 39)
+print(53425, 9345)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
