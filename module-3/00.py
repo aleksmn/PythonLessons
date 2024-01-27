@@ -16,7 +16,7 @@ def sum_nums(a, b):
     print(a + b)
 
 
-print(sum_nums(5, 9))
-print(sum_nums(345, 3465))
+sum_nums(5, 9)
+sum_nums(345, 3465)
 
 
