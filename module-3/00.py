@@ -16,43 +16,7 @@ def sum_nums(a, b):
     print(a + b)
 
 
-print(5, 9)
-print(25, 39)
-print(53425, 9345)
+print(sum_nums(5, 9))
+print(sum_nums(345, 3465))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def getSum(a=0, b=0):
-
-    return a + b
-
-
-
-res = getSum(7, 8) * getSum(10, 42) 
-
-
-print(res)
-
-print(getSum(234,345))
