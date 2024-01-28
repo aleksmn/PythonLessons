@@ -51,12 +51,10 @@ class Rabbit:
         return f"З (заяц): ({self.x}, {self.y})"
 
 
-def print_field(tiger, rabbits):
+def print_field(tiger, rabbits=[]):
     field = []
     for _ in range(5):
-        row = []
-        for _ in range(5):
-            row.append(".")
+        row = ["."] * 5
         field.append(row)
 
     field[tiger.x][tiger.y] = "Т"
