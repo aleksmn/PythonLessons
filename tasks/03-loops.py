@@ -1,12 +1,29 @@
 
 
 '''
-Игра FizzBuz. Напишите приложение, которое проходит по целым числам от 1 до 50. 
+Игра FizzBuzz. Напишите приложение, которое проходит по целым числам от 1 до 50. 
 Если число делится без остатка на 3, то вместо этого числа выведите «Fizz». 
 Если число делится без остатка на 5, выведите «Buzz». 
 Если число делится без остатка и на 3, и на 5, то выведите «FizzBuzz».
 
 '''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -130,6 +147,52 @@ Steps: 5
 #     for k in range(2 * i - 1):
 #         print('*', end='')
 #     print()
+
+
+
+# n = 5
+
+# for i in range(1, n+1):
+#     for j in range(n - i):
+#         print(' ', end='')
+#     for k in range(2 * i - 1):
+#         print('*', end='')
+#     print()
+
+# print()
+
+# # треугольник
+# size = 5
+# for i in range(size):
+#     for j in range(1, size - i):
+#         print(" ", end="")
+#     for k in range(0, i + 1):
+#         print("*", end="")
+#     print()
+
+
+# print()
+
+# size = 5
+# for i in range(size):
+#     for j in range(size):
+#         if i == 0 or i == size - 1 or j == 0 or j == size - 1:
+#             print('*', end='')
+#         else:
+#             print(' ', end='')
+#     print()
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
