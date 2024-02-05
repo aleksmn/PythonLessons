@@ -1,8 +1,9 @@
 # Операции со множествами
 
-prog = {'CSS', 'Python', 'HTML', 'C++', 'Go'}
+set_1 = {'CSS', 'Python', 'HTML', 'C++', 'Go'}
 
-lang = {'Python', 'Java','Go', 'CSS', 'Rust'}
+set_2 = {'Python', 'Java','Go', 'CSS', 'Rust'}
+
 
 '''
 1. Создать множество, которое включает значения из первого и второго множества.
@@ -12,45 +13,66 @@ lang = {'Python', 'Java','Go', 'CSS', 'Rust'}
 
 '''
 
+
 # Объединение
 print("union:")
-print(prog.union(lang))
-print(prog | lang)
+print(set_1.union(set_2))
+print(set_1 | set_2)
 
 
 # Пересечение
 print('intersection')
-print(prog.intersection(lang))
-print(prog & lang)
+print(set_1.intersection(set_2))
+print(set_1 & set_2)
 
 
 # Разность
 print('difference')
-print(prog.difference(lang))
-print(prog - lang)
+print(set_1.difference(set_2))
+print(set_1 - set_2)
 
 
 # Симметричная разность
 print('symmetric difference')
-print(prog.symmetric_difference(lang))
-print(prog ^ lang)
+print(set_1.symmetric_difference(set_2))
+print(set_1 ^ set_2)
+
+
+# Объединение минус пересечение
+print( (set_1 | set_2) - (set_1 & set_2) )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # print("Union минус Intersection")
-# print( (prog | lang) - (prog & lang) )
+# print( (set_1 | set_2) - (set_1 & set_2) )
 
 
 
 # # Update
-print(prog)
-prog.update(lang)
-print(prog)
+print(set_1)
+set_1.update(set_2)
+print(set_1)
 
 # Добавление
-prog.add("JavaScript")
+set_1.add("JavaScript")
 
 # Удаление
-prog.remove("Rust")
+set_1.remove("Rust")
 
 
 
