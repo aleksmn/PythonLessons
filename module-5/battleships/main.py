@@ -44,7 +44,6 @@ class BattleshipGame:
                     field.grid[coords[0]][coords[1]] = "S"
                     placed = True
 
-
     def is_valid_ship_placement(self, field, coords, ship_length=1, ):
         x, y = coords
 
@@ -57,7 +56,9 @@ class BattleshipGame:
                         return False
         return True
     
-    def player_turn(self, x, y):
+    def player_turn(self):
+        x = input("Введите координату выстрела x: ")
+        y = int(input("Введите координату выстрела y: "))
 
         x = "ABCDEFGHIJ".index(x.upper())
         y -= 1
@@ -69,9 +70,9 @@ class BattleshipGame:
         else:
             print("Промах!")
 
+
     def computer_turn(self):
-        x, y = random.randint(
-            0, self.size - 1), random.randint(0, self.size - 1)
+        x, y = random.randint(0, self.size - 1), random.randint(0, self.size - 1)
         if self.player_field.grid[y][x] == "S":
             print("Компьютер попал!")
             self.player_field.grid[y][x] = "X"
@@ -81,19 +82,16 @@ class BattleshipGame:
 
     # Начало игры
     def play(self):
-        print("Расстановка кораблей компьютера:")
         self.place_ships_randomly(self.computer_field, self.ships)
-        self.computer_field.display(show_ships=True)
-
-        print("Ваша расстановка кораблей:")
         self.place_ships_randomly(self.player_field, self.ships)
-        self.player_field.display(show_ships=True)
 
         while True:
+            print("Расстановка кораблей компьютера:")
+            self.computer_field.display(show_ships=True)
+            print("Ваша расстановка кораблей:")
+            self.player_field.display(show_ships=True)
 
-            x = input("Введите координату выстрела x: ")
-            y = int(input("Введите координату выстрела y: "))
-            self.player_turn(x, y)
+            self.player_turn()
             if self.computer_field.ships_alive == 0:
                 print("Вы победили! Все корабли компьютера потоплены.")
                 break
@@ -102,13 +100,10 @@ class BattleshipGame:
             if self.player_field.ships_alive == 0:
                 print("Вы проиграли! Все ваши корабли потоплены.")
                 break
-            print("Расстановка кораблей компьютера:")
-            self.computer_field.display(show_ships=True)
-            print("Ваша расстановка кораблей:")
-            self.player_field.display(show_ships=True)
 
 
 # Запуск программы
 if __name__ == "__main__":
+
     game = BattleshipGame()
     game.play()
