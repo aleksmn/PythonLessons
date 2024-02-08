@@ -69,14 +69,12 @@ def make_transaction():
     except:
         print("Ошибка ввода. Прерываю транзакцию...")
         return
-
+    
     if account_num < 1 or account_num > len(client_info["accounts"]):
         print("Такого счета не существует. Прерываю транзакцию...")
         return
 
-    # new_data = {"account": account}
-
-    # print(new_data)
+    # print(client_info["accounts"][account_num-1])
 
     print("Типы транзакций:")
     print("1 - списание")
@@ -152,8 +150,6 @@ def make_transaction():
 if __name__ == "__main__":
 
     load()
-    # show_info()
-    # predict()
 
     make_transaction()
 
