@@ -26,9 +26,7 @@ def draw_board():
     print("-" * 13)
 
 
-
 while not is_win:
-
     draw_board()
 
     if counter % 2 == 0:
@@ -36,15 +34,40 @@ while not is_win:
     else:
         player_token = "O"
 
-
     player_answer = input(f'Куда ставим {player_token}?: ')
 
     # Делаем поправку на -1
     player_answer = int(player_answer) - 1
 
+    # Проверяем, что ячейка свободна
+    if board[player_answer] in ["X", "O"]:
+        print("Эта ячейка занята!")
+        # переходим к началу цикла
+        continue
+
     # Делаем ход
     board[player_answer] = player_token
     counter += 1
+
+    # Проверяем на выигрыш
+    for coords in win_coords:
+        if board[coords[0]] == board[coords[1]] == board[coords[2]]:
+            is_win = True
+            break
+
+    if is_win:
+        draw_board()
+        print(f'Победил {player_token}! Поздравляем!\n')
+        break
+
+    # Проверка на ничью
+    if counter == 9:
+        draw_board()
+        print('Победила дружба :)\n')
+        break
+
+
+
 
 
 
