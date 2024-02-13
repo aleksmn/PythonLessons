@@ -88,9 +88,6 @@ def make_transaction():
         print("Такого типа не существует. Прерываю транзакцию...")
         return
 
-    new_data = {"account": account,
-                "type": transaction_type}
-
     print("Дата транзакции")
 
     try:
@@ -107,6 +104,7 @@ def make_transaction():
     if year > currentYear or month > 12 or month < 1:
         print("Неверная дата. Прерываю транзакцию...")
         return
+    
     if year == currentYear and month > currentMonth:
         print("Неверная дата. Прерываю транзакцию...")
         return
@@ -130,16 +128,17 @@ def make_transaction():
 
     # Формируем транзакцию
     new_data = {
-        "account": account,
+        "account": client_info["accounts"][account_num-1]["number"],
         "type": transaction_type,
         "date": {"year": year, "month": month},
         "amount": amount
     }
 
+    print(new_data)
+
     # Добавляем транзакцию
     client_info["transactions"].append(new_data)
 
-    print(client_info['transactions'][-1])
     print("Транзакция записана. Текущий баланс:",
           client_info["accounts"][account_num-1]["balance"])
 
