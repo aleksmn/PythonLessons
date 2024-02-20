@@ -74,7 +74,8 @@ def make_transaction():
         print("Такого счета не существует. Прерываю транзакцию...")
         return
 
-    # print(client_info["accounts"][account_num-1])
+    # Выбранный пользователем счет
+    user_account = client_info["accounts"][account_num-1]
 
     print("Типы транзакций:")
     print("1 - списание")
@@ -122,13 +123,13 @@ def make_transaction():
 
     # Изменяем баланс на счете
     if transaction_type == "списание":
-        client_info["accounts"][account_num-1]["balance"] -= amount
+        user_account["balance"] -= amount
     elif transaction_type == "зачисление":
-        client_info["accounts"][account_num-1]["balance"] += amount
+        user_account["balance"] += amount
 
     # Формируем транзакцию
     new_data = {
-        "account": client_info["accounts"][account_num-1]["number"],
+        "account": user_account["number"],
         "type": transaction_type,
         "date": {"year": year, "month": month},
         "amount": amount
@@ -140,7 +141,7 @@ def make_transaction():
     client_info["transactions"].append(new_data)
 
     print("Транзакция записана. Текущий баланс:",
-          client_info["accounts"][account_num-1]["balance"])
+          user_account["balance"])
 
 
 
