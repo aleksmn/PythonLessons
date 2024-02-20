@@ -37,6 +37,8 @@ def main():
             plot_rub_usd()
         elif command == "7":
             plot_usd_btc()
+        elif command == "8":
+            plot_euro_usd()
         elif command == "10":
             print("Сохранение изменений")
             save()
@@ -48,6 +50,6 @@ def main():
 
         input("Enter чтобы продолжить")
 
-
+# точка входа
 if __name__ == "__main__":
     main()
