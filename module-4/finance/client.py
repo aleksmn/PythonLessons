@@ -140,8 +140,7 @@ def make_transaction():
     # Добавляем транзакцию
     client_info["transactions"].append(new_data)
 
-    print("Транзакция записана. Текущий баланс:",
-          user_account["balance"])
+    print("Транзакция записана. Текущий баланс:", user_account["balance"])
 
 
 
