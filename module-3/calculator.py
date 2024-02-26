@@ -1,4 +1,43 @@
-from operators import sum_nums, sub_nums, multiply_nums, divide_nums
+# Создадим функцию деления с обработкой ошибок (исключений)
+def divide_nums(a, b):
+    result = 0
+    try:
+        result = float(a) / float(b)
+    except ZeroDivisionError:
+        print("Ошибка: на ноль делить нельзя")
+    except ValueError:
+        print("Ошибка: функция работает только с числами")
+
+    return result
+
+# Умножение
+def multiply_nums(a, b):
+    result = 0
+    try:
+        result = float(a) * float(b)
+    except ValueError:
+        print("Ошибка: функция работает только с числами")        
+    return result
+
+
+# Сложение
+def sum_nums(a, b):
+    result = 0
+    try:
+        result = float(a) + float(b)
+    except ValueError:
+        print("Ошибка: функция работает только с числами")        
+    return result
+
+
+# вычитание
+def sub_nums(a, b):
+    result = 0
+    try:
+        result = float(a) - float(b)
+    except ValueError:
+        print("Ошибка: функция работает только с числами")        
+    return result
 
 while True:
     choice = input('Введите действие (q - выход): ')
