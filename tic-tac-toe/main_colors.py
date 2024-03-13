@@ -61,10 +61,7 @@ while not is_win:
 
     draw_board()
 
-    if counter % 2 == 0:
-        player_token = tokens_list[0]
-    else:
-        player_token = tokens_list[1]
+    player_token = tokens_list[counter % 2]
 
     player_answer = input(f'{reset}Куда ставим {player_token}?: ')
 
