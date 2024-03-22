@@ -23,7 +23,7 @@
 
 
 
-def f(stones, move): 
+def game(stones, move): 
     if move == 3 and stones >= 68:
         return 1
     elif move == 3 and stones < 68:
@@ -37,6 +37,6 @@ def f(stones, move):
              return f(stones + 1, move + 1) or f(stones + 4, move + 1) or f(stones * 5, move + 1)  # проигравший
  
 for stones in range(1, 68):
-    if f(stones, 1) == 1: 
+    if game(stones, 1) == 1: 
         print(stones)
         break
