@@ -40,3 +40,33 @@ for stones in range(1, 68):
     if game(stones, 1) == 1: 
         print(stones)
         break
+
+
+
+
+
+# Задача 2
+
+def f(x, h, m):
+    if h == 3 and x >= 50:
+        return 1
+    elif h == 3 and x < 50:
+        return 0
+    elif x >= 50 and h < 3:
+        return 0
+    else:
+        if h % 2 == 0:
+            if h == 2:
+                if m == 1:
+                    return f(x + 2, h + 1, m) or f(x * 2, h + 1, m)
+                elif m == 2:
+                    return f(x + 1, h + 1, m) or f(x * 2, h + 1, m)
+                elif m == 3:
+                    return f(x + 1, h + 1, m) or f(x + 2, h + 1, m)
+        else:
+            return f(x + 1, h + 1, 1) and f(x + 2, h + 1, 2) and f(x * 2, h + 1, 3)
+ 
+for x in range(1, 50):
+    if f(x, 1, 0) == 1:
+        print(x)
+        break
