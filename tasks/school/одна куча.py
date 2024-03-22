@@ -32,9 +32,9 @@ def game(stones, move):
         return 0
     else:
         if move % 2 == 0:
-            return f(stones + 1, move + 1) or f(stones + 4, move + 1) or f(stones * 5, move + 1)   # победитель
+            return game(stones + 1, move + 1) or game(stones + 4, move + 1) or game(stones * 5, move + 1)   # победитель
         else:
-             return f(stones + 1, move + 1) or f(stones + 4, move + 1) or f(stones * 5, move + 1)  # проигравший
+             return game(stones + 1, move + 1) or game(stones + 4, move + 1) or game(stones * 5, move + 1)  # проигравший
  
 for stones in range(1, 68):
     if game(stones, 1) == 1: 
