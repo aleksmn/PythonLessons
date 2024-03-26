@@ -1,10 +1,16 @@
 def receipt():
     summa = 0
-    with open('receipt.txt', 'r', encoding='utf-8') as f:
-        for line in f:
-            price = line.strip().split()[1]
-            summa = summa + int(price)
-    print('Итого:', summa)
+    # (название файла, для чтения (r), кодировка)
+    with open('receipt.txt', 'r', encoding='utf-8') as file:
+        # перебираем файл построчно
+        for line in file:
+            # Разбиваем по пробелам, получаем список слов
+            # print(line.split())
+            price = line.split()[1]
+            summa += int(price)
+
+    print("Итого:", summa)
+
 
 def show_food():
     food = []
@@ -34,8 +40,7 @@ def restaurant_data():
     return restaurant
 
 
-
+# точка входа в программу
+# проверка, что файл не ипортирован, а запущен сам
 if __name__ == "__main__":
-    # receipt()
-    # show_food()
-    print(restaurant_data())
+    receipt()
