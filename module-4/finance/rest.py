@@ -14,9 +14,9 @@ def receipt():
 
 def show_food():
     food = []
-    with open('receipt.txt', 'r', encoding='utf-8') as f:    
+    with open('receipt.txt', 'r', encoding='utf-8') as file:    
         # Вывод построчно
-        for line in f:
+        for line in file:
             # print(line.split())
             food.append(line.split()[0])
 
@@ -43,4 +43,4 @@ def restaurant_data():
 # точка входа в программу
 # проверка, что файл не ипортирован, а запущен сам
 if __name__ == "__main__":
-    receipt()
+    show_food()
