@@ -4,6 +4,13 @@ from plot import *
 
 import os
 
+# Запаковка в исполняемый файл exe
+# 1) установка модуля (1 раз)
+# pip install auto-py-to-exe
+
+# 2) выполняем команду auto-py-to-exe
+
+
 def main():
     load()
     command = ""
