@@ -24,7 +24,7 @@ def main():
         print("5 - добавить транзакцию")
         print("6 - график доллара к рублю")
         print("7 - график доллара к биткоину ")
-        print("8 - график евро к доллару ")
+        print("8 - график китайского юаня к доллару ")
 
         print("10 - выйти")
 
@@ -45,7 +45,7 @@ def main():
         elif command == "7":
             plot_usd_btc()
         elif command == "8":
-            plot_euro_usd()
+            plot_cny_usd()
         elif command == "10":
             print("Сохранение изменений")
             save()
