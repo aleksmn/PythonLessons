@@ -3,7 +3,7 @@
 #         self.name = name
 #         self.age = age
 
-#     def __str__(self) -> str:
+#     def __str__(self):
 #         return f"Кошка по имени {self.name}. Возраст: {self.age}."
 
 #     def speak(self):
@@ -16,7 +16,7 @@
 #         self.name = name
 #         self.age = age
 
-#     def __str__(self) -> str:
+#     def __str__(self):
 #         return f"Собака по имени {self.name}. Возраст: {self.age}."
 
 #     # Полиморфизм: название метода одинаковое - разные действия
@@ -63,7 +63,7 @@
 #         super().__init__(name, age)
 
 
-#     def __str__(self) -> str:
+#     def __str__(self):
 #         return f"Кошка по имени {self.name}. Возраст: {self.age}."
 
 #     def speak(self):
@@ -77,7 +77,7 @@
 #     def __init__(self, name, age):
 #         super().__init__(name, age)
 
-#     def __str__(self) -> str:
+#     def __str__(self):
 #         return f"Собака по имени {self.name}. Возраст: {self.age}."
 
 #     # Полиморфизм: один метод - разные действия
