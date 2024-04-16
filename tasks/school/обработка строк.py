@@ -62,17 +62,11 @@ print(max_counter)
 
 
 # 3
-f = open("string_1.txt").readline()
-k = mx = 0
+k = m = 0
 for i in range(len(f)):
-    if f[i-1:i+1] in 'XYZX' and k:
+    if (f[i] == 'X' and k%3 == 0) or (f[i] == 'Y' and k%3 == 1) or (f[i] == 'Z' and k%3 == 2):
         k += 1
-    elif f[i] == 'X':
-        k = 1
-    else:
-        k = 0
-    mx = max(mx, k)
-print(mx)
-
-
-
+        m = max(m, k)
+    elif f[i] == 'X': k = 1
+    else: k = 0
+print(m)
