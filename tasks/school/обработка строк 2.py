@@ -23,23 +23,26 @@ print(a)
 
 
 
-f = open('string_2.txt').readline()
-j=''
+# 2
+
+
+f = open('string_2.txt')
+
+f = "".join(f)
+
+symb = ''
+
 for i in range(len(f)-1):
     if f[i] == 'A':
-        j += f[i+1]
-print(max(set(j),key = j.count))
+        symb += f[i+1]
+
+print(max(set(symb),key = symb.count))
 
 
 
-s = f.readline()
-a = [0] * 26
-maxi = 0
-for i in range(len(s) - 1):
-    if s[i] == 'A':
-        a[ord(s[i + 1]) - 65] += 1
-for i in range(26):
-    if a[i] > maxi:
-        maxi = a[i]
-        index = i
-print(chr(index + 65))
+
+
+
+
+
+
