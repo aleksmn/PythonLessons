@@ -14,14 +14,14 @@
 # 1
 
 f=open('string_3.txt').readline()
-maxi=count=1
+maximum = count = 1
 for i in range(1,len(f)):
     if f[i-1] > f[i]:
         count+=1
     else:
-        maxi=max(count,maxi)
-        count=1
-print(maxi)
+        maximum = max(count, maximum)
+        count = 1
+print(maximum)
 
 
 
