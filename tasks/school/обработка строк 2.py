@@ -20,6 +20,11 @@
 
 '''
 
+#  Максимум в словаре по значению 
+#  max(dct, key=lambda k: dct[k])
+#  Сортировка словаря по значению
+#  dict(sorted(dct.items(), key=lambda kv: kv[1]))
+
 
 
 f = open('string_2.txt')
