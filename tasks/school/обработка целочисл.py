@@ -24,21 +24,35 @@
 50
 40
 
-При таких исходных данных можно сохранить файлы максимум двух пользователей. Возможные объёмы этих двух файлов 30 и 40, 30 и 50 или 40 и 50. Наибольший объём файла из перечисленных пар  — 50, поэтому ответ для приведённого примера:
+
+
+
+При таких исходных данных можно сохранить файлы максимум двух пользователей. 
+Возможные объёмы этих двух файлов 30 и 40, 30 и 50 или 40 и 50. Наибольший объём 
+файла из перечисленных пар — 50, поэтому ответ для приведённого примера:
 
 2 50
 
 '''
 
 
-s = [i for i in open('numbers_1.txt').readlines()]
-size = int(s[0].split()[0])
-files = [int(i) for i in s[1:]]
-selectedFiles = []
-files = sorted(files) # Список файлов отсортирован от меньших значений к большим значениям
-while (size - sum(selectedFiles)) >= files[0]:
-    selectedFiles.append(files[0])
-    files = files[1:] # Удаляем из списка файлов выбранный файл
-lastFileMaxSize = size - sum(selectedFiles[:-1])
-biggestPossibleLastFile = max([file for file in files if file <= lastFileMaxSize])
-print(len(selectedFiles), biggestPossibleLastFile)
+
+f = open('numbers_1.txt')
+
+data = f.readlines()
+size = data[0].split()
+size = int(size[0])
+del (data[0])  # первая строка больше не нужна, удаляем ее
+for i in range(0, len(data)):
+    data[i] = int(data[i])
+data = sorted(data)
+summa = 0
+for count in range(0, len(data)):
+    if summa + data[count] > size: break
+    summa += data[count]
+print(count)
+remainder = size - summa
+for i in range(0, len(data)):
+    if data[i] - data[count - 1] <= remainder:
+        result = data[i]
+print(result)
