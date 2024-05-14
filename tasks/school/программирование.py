@@ -8,7 +8,7 @@
 
 """
 
-f = open("nums-A.txt")  # для файла A замените название
+f = open("nums-C.txt")  # для файла A замените название
 s = f.readlines()
 n = int(s[0])  # количество пар
 summa = 0
@@ -18,7 +18,7 @@ for i in range(1, n + 1):
     summa += max(x, y)
     if abs(x - y) % 3 != 0:
         d = min(d, abs(x - y))
-        
+
 if summa % 3 != 0:
     print(summa)
 else:
