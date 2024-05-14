@@ -8,7 +8,7 @@
 
 """
 
-f = open("nums-C.txt")  # для файла A замените название
+f = open("nums-B.txt")  # для файла A замените название
 s = f.readlines()
 n = int(s[0])  # количество пар
 summa = 0
