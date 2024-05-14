@@ -40,8 +40,9 @@ class Tiger:
 
 
 class Rabbit:
-    def __init__(self, x, y):
-        self.x, self.y = x, y
+    def __init__(self):
+        self.x = random.randint(1, 4)
+        self.y = random.randint(1, 4)
         self.captured = False  # схвачен или нет
 
     def to_capture(self):
@@ -58,18 +59,36 @@ def print_field(tiger, rabbits=[]):
         field.append(row)
 
     field[tiger.x][tiger.y] = "Т"
-    for rabbit in rabbits:
-        if not rabbit.captured:
-            field[rabbit.x][rabbit.y] = "З"
+
+    # for rabbit in rabbits:
+    #     if not rabbit.captured:
+    #         field[rabbit.x][rabbit.y] = "З"
+
     for row in field:
         print(" ".join(row))
     print()
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def main():
     tiger = Tiger()
-    rabbit1 = Rabbit(random.randint(1, 4), random.randint(1, 4))
-    rabbit2 = Rabbit(random.randint(1, 4), random.randint(1, 4))
+    rabbit1 = Rabbit()
+    rabbit2 = Rabbit()
     rabbits = [rabbit1, rabbit2]
 
     while tiger.state != "Бежать домой":
