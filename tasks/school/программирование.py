@@ -11,14 +11,15 @@
 f = open("nums-A.txt")  # для файла A замените название
 s = f.readlines()
 n = int(s[0])  # количество пар
-summi = 0
+summa = 0
 d = 10**6
 for i in range(1, n + 1):
     x, y = map(int, s[i].split())
-    summi += max(x, y)
+    summa += max(x, y)
     if abs(x - y) % 3 != 0:
         d = min(d, abs(x - y))
-if summi % 3 != 0:
-    print(summi)
+        
+if summa % 3 != 0:
+    print(summa)
 else:
-    print(summi - d)
+    print(summa - d)
