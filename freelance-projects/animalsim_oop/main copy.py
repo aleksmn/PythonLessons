@@ -15,8 +15,8 @@ class Tiger:
             # если рядом заяц, то меняем state на "Атаковать добычу"
             # ...
 
-        elif self.state == "Атаковать добычу":
-            ...
+        # elif self.state == "Атаковать добычу":
+        #     ...
 
 
     def move_randomly(self):
@@ -84,6 +84,6 @@ if __name__ == "__main__":
     rabbits = [rabbit1, rabbit2]
 
     while tiger.state != "Бежать домой":
-        tiger.move_randomly()
+        tiger.update_state(rabbits)
 
         print_field(tiger, rabbits)
