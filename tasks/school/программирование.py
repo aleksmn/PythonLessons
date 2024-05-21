@@ -87,3 +87,16 @@ for i in range(1, n + 1):
         k_0 += 1
 k = k_62 * k_0 + k_31 * k_2 + k_62 * k_31 + k_62 * k_2 + (k_62 * (k_62 - 1)) // 2
 print(k)
+
+
+f=open('28130_B.txt')
+n=int(f.readline())
+numbers=[int(x) for x in f]
+i=0
+k=0
+while i!=n:
+    for h in range(i+1,n):
+        if (numbers[i]+numbers[h])%80==0 and (numbers[i]>50 or numbers[h]>50):
+            k=k+1
+    i=i+1
+print(k)
