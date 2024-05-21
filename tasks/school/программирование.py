@@ -63,3 +63,27 @@ for i in range(1, n + 1):
         k_0 += 1
 k = k_26 * k_0 + k_13 * k_2 + k_26 * k_13 + k_26 * k_2 + (k_26 * (k_26 - 1)) // 2
 print(k)
+
+
+
+
+f = open("27989_B.txt")  # для файла A укажите его название 
+s = f.readlines()
+n = int(s[0])
+k = 0
+k_0 = 0
+k_62 = 0
+k_2 = 0
+k_31 = 0
+for i in range(1, n + 1):
+    s[i] = int(s[i])
+    if s[i] % 62 == 0:
+        k_62 += 1
+    elif s[i] % 31 == 0:
+        k_31 += 1
+    elif s[i] % 2 == 0:
+        k_2 += 1
+    else:
+        k_0 += 1
+k = k_62 * k_0 + k_31 * k_2 + k_62 * k_31 + k_62 * k_2 + (k_62 * (k_62 - 1)) // 2
+print(k)
