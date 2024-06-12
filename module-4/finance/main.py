@@ -18,7 +18,7 @@ def main():
         os.system("cls")
         print("Доступные действия: ")
         print("1 - посмотреть предложения банка")
-        print("2 - отправить жалобу")
+        print("2 - оставить отзыв")
         print("3 - информация о счетах")
         print("4 - посмотреть прогноз доходов и расходов")
         print("5 - добавить транзакцию")
@@ -33,7 +33,7 @@ def main():
         if command == "1":
             suggestions()
         elif command == "2":
-            complain()
+            feedback()
         elif command == "3":
             show_info()
         elif command == "4":
