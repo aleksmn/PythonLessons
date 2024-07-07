@@ -1,42 +1,17 @@
 # Пример инкапсуляции
 
-# class Kettle:
-#     def turn_on(self):
-#         print('Чайник включился')
-#         self.boil()
-#         self.check_t()
-#         self.beep()
-#         self.turn_off()
-
-#     def boil(self):
-#         print('Вода греется...')
-
-#     def check_t(self):
-#         print('Проверяется температура')
-
-#     def beep(self):
-#         print('Вода нагрелась, дается сигнал')
-
-#     def turn_off(self):
-#         print('Чайник выключился')
-
-
-# chaynik = Kettle()
-# chaynik.turn_on()
-
-
-
-# Пример инкапсуляции
-
 class Kettle:
+    def __init__(self):
+         self.__brand = "Скайсмарт"
+
     def turn_on(self):
-        print('Чайник включился')
+        print(f'Чайник {self.__brand} включился')
         self.__boil()
         self.__check_t()
         self.__beep()
-        self._turn_off()
+        self.__turn_off()
 
-    # Private
+    # Private - скрытый метод
     def __boil(self):
         print('Вода греется...')
 
@@ -45,10 +20,15 @@ class Kettle:
 
     def __beep(self):
         print('Вода нагрелась, дается сигнал')
-    # Protected
-    def _turn_off(self):
+
+    def __turn_off(self):
         print('Чайник выключился')
 
 
 chaynik = Kettle()
 chaynik.turn_on()
+
+
+
+
+
