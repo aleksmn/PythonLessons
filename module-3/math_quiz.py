@@ -6,7 +6,11 @@ def generate_math_question(a, b):  # a не может быть 0
     num1 = random.randint(a, b)
     num2 = random.randint(a, b)
     operator = random.choice(['+', '-', '*', '/'])
-    question = f"{num1} {operator} {num2}"
+
+    if operator == "/":
+        question = f"{num1*num2} {operator} {num2}"
+    else:
+        question = f"{num1} {operator} {num2}"
     return question
 
 
