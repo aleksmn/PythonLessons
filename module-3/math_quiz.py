@@ -8,9 +8,10 @@ def generate_math_question(a, b):  # a не может быть 0
     operator = random.choice(['+', '-', '*', '/'])
 
     if operator == "/":
-        question = f"{num1*num2} {operator} {num2}"
+        question = f"{num1*num2} / {num2}"
     else:
         question = f"{num1} {operator} {num2}"
+
     return question
 
 
