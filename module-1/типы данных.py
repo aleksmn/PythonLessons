@@ -20,6 +20,11 @@ print(str(a) + " " + str(b))
 # Булев тип данных - логический тип данных (bool)
 x = a > 10
 y = b > 10
-
+print("Числа больше 10?")
 print(x)
 print(y)
+
+
+# Список (list)
+numbers = [5, 2, 1, 8, 10]
+print(numbers)
