@@ -6,7 +6,7 @@ import datetime
 
 # Установка модулей
 # pip install matplotlib
-# pip install yfinance
+# pip install yfinance==0.2.35
 # pip install pandas_datareader
 
 # если ошибка:
