@@ -1,113 +1,51 @@
-class Cat():
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-    def __str__(self):
-        return f"Кошка по имени {self.name}. Возраст: {self.age}."
-
-    def speak(self):
-        print("Мяу-мяу!")
-
-
-
-class Dog():
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-    def __str__(self):
-        return f"Собака по имени {self.name}. Возраст: {self.age}."
-
-    # Полиморфизм: название метода одинаковое - разные действия
-    def speak(self):
-        print("Гав-гав!")
-
-
-
-
-
-my_cat = Cat("Мурка", 2.5)
-
-print(my_cat.sleep())
-
-
-
-my_dog = Dog("Барбос", 4)
-
-print(my_cat)
-my_cat.speak()
-
-
-print(my_dog)
-my_dog.speak()
-
-
+# Наследование
 
 class Animal:
     def __init__(self, name, age):
         self.name = name
         self.age = age
 
-    def run(self):
-        print("Бегаю!!!")
-
     def sleep(self):
         print("Сплю...")
 
+    def run(self):
+        print("Бегаю!")
 
 
 class Cat(Animal):
-
     def __init__(self, name, age):
-        super().__init__(name, age)
-
-
-    def __str__(self):
-        return f"Кошка по имени {self.name}. Возраст: {self.age}."
+        # Вызываем конструктор родительского класса
+        Animal.__init__(self, name, age)
 
     def speak(self):
-        print("Мяу-мяу!")
+        print(f"Кошка по имени {self.name} говорит Мяу!")
 
-    def scratch(self):
-        print("Точу когти!")
 
 
 class Dog(Animal):
-    def __init__(self, name, age):
-        super().__init__(name, age)
+    def __init__(self, name, age, toy):
+        # Вызываем конструктор родительского класса
+        Animal.__init__(self, name, age)
 
-    def __str__(self):
-        return f"Собака по имени {self.name}. Возраст: {self.age}."
+        self.toy = toy
 
-    # Полиморфизм: один метод - разные действия
+    def play(self):
+        print(f"Играю с любимой игрушкой: {self.toy}")
+
+    # Полиморфизм - название метода одинаковое, но разные действия
     def speak(self):
-        print("Гав-гав!")
+        print(f"Собака по имени {self.name} говорит Гав!")
+
+
+# Создадим объекты
+cat1 = Cat("Мурка", 2)
+cat1.speak()  
+cat1.sleep()  
+cat1.run()  
 
 
 
-class Tiger(Cat):
-    def __init__(self, name, age):
-        super().__init__(name, age)
-
-
-my_cat = Cat("Мурка", 2.5)
-my_dog = Dog("Барбос", 4)
-
-print(my_cat)
-my_cat.speak()
-my_cat.sleep()
-
-print(my_dog)
-my_dog.speak()
-my_dog.sleep()
-
-
-tiger_1 = Tiger("Тигра", 8)
-print(tiger_1)
-tiger_1.scratch()
-
-
-for animal in (my_cat, my_dog):
-    print(animal)
-    animal.speak()
+dog1 = Dog("Шарик", 4, "мяч")
+dog1.speak()
+dog1.sleep()
+dog1.run()
