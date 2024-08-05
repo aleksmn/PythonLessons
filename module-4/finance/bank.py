@@ -9,16 +9,16 @@ def suggestions():
             print(line.strip())
 
 
+
 def feedback():
     text = input("Пожалуйста, введите свой отзыв: ")
-    # Открываем файл для дозаписи - "a"
-    with open("feedback.txt", "a", encoding="utf-8") as file:
-        file.write(text + "\n")
-    print("Спасибо за отзыв!")
 
+    with open("feedback.txt", "a+", encoding="utf-8") as file:
+        file.write(text + "\n")
+        # file.seek(0)
+        # print(file.read())
 
 
 # Точка входа в программу
 if __name__ == "__main__":
-    # suggestions()
-    feedback()
+    suggestions()
