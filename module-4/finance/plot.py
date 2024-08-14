@@ -18,6 +18,12 @@ import datetime
 # plt.title("График возраста и роста")
 # plt.show()
 
+# Настройка размера окна
+# plt.rcParams["figure.figsize"] = (10,6)
+
+# Стили
+# print(plt.style.available)
+# plt.style.use('dark_background')
 
 def plot_rub_usd():
     yf.pdr_override()
