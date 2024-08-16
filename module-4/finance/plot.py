@@ -1,13 +1,11 @@
 import matplotlib.pyplot as plt
 import yfinance as yf
-import pandas_datareader.data as pdr
 import datetime
 
 
 # Установка модулей
 # pip install matplotlib
-# pip install yfinance==0.2.35
-# pip install pandas_datareader
+# pip install yfinance
 
 # если ошибка:
 # pip install setuptools
@@ -18,46 +16,44 @@ import datetime
 # plt.title("График возраста и роста")
 # plt.show()
 
-# Настройка размера окна
-# plt.rcParams["figure.figsize"] = (10,6)
 
-# Стили
-# print(plt.style.available)
-# plt.style.use('dark_background')
+
+# Даты начала и конца отсчета
+start_date = datetime.datetime.today() - datetime.timedelta(days=365)
+end_date = datetime.datetime.today()
+
 
 def plot_rub_usd():
-    yf.pdr_override()
-    df = pdr.DataReader("USDRUB=X", datetime.datetime.today() - datetime.timedelta(days=365))
-
-    plt.plot(df.index, df.Open, color="green")
-
-    plt.title("Курс рубля к доллару")
+    ticker = yf.Ticker("RUB=X")
+    data = ticker.history(interval='1d', start=start_date, end=end_date)
+    plt.figure(figsize=(10, 5), layout="constrained")
+    plt.plot(data.index, data.Open)
+    plt.title("График курса рубля к доллару")
     plt.show()
 
 
-
 def plot_cny_usd():
-    yf.pdr_override()
-    df = pdr.DataReader("USDCNY=X", datetime.datetime.today() - datetime.timedelta(days=365))
-
-    plt.plot(df.index, df.Open, color="red")
-
+    ticker = yf.Ticker("USDCNY=X")
+    data = ticker.history(interval='1d', start=start_date, end=end_date)
+    plt.figure(figsize=(10, 5), layout="constrained")
+    plt.plot(data.index, data.Open, color="red")
     plt.title("Курс юаня к доллару")
     plt.show()
 
 
 def plot_usd_btc():
-    yf.pdr_override()
-    df = pdr.DataReader("BTC-USD", datetime.datetime.today() - datetime.timedelta(days=365))
-    plt.plot(df.index, df["Open"], color='gold')
-
+    ticker = yf.Ticker("BTC-USD")
+    data = ticker.history(interval='1d', start=start_date, end=end_date)
+    plt.figure(figsize=(10, 5), layout="constrained")
+    plt.plot(data.index, data.Open, color="gold")
     plt.title("Курс биткоина")
     plt.ylabel("USD")
-
     plt.show()
 
 
-
+# Стили
+# print(plt.style.available)
+# plt.style.use('dark_background')
 
 # Точка входа в программу
 if __name__ == "__main__":
