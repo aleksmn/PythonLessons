@@ -1,32 +1,34 @@
+
+
 # Игра "Замок дракона"
 
 print("Ты в темной комнате в загадочном замке.")
 
 print("Перед тобой три двери. Ты должен выбрать одну.")
 
-playerChoice = input("Твой выбор: 1, 2 или 3...\n")
+player_choice = input("Твой выбор: 1, 2 или 3...\n")
 
-if playerChoice == "1":
+if player_choice == "1":
     print("Ты нашел комнату с сокровищами!")
     print("* Конец игры! Ты выиграл! *")
 
-elif playerChoice == "2":
+elif player_choice == "2":
     print("Из двери выбежал гоблин и ударил тебя дубиной по голове!")
     print("* Конец игры! Ты проиграл! *")
 
-elif playerChoice == "3":
+elif player_choice == "3":
     print("В этой комнате спит дракон.")
     print("Твои действия?")
     print("1) Украсть немного золота, пока дракон не проснулся")
     print("2) Прокрасться мимо дракона и убежать.")
 
-    dragonChoice = input("Выбери 1 или 2...\n")
+    dragon_choice = input("Выбери 1 или 2...\n")
   
-    if dragonChoice == "1":
+    if dragon_choice == "1":
         print("Дракон проснулся и съел тебя!")
         print("* Конец игры! Ты проиграл! *")
 
-    elif dragonChoice == "2":
+    elif dragon_choice == "2":
         print("Тебе удалось убежать от дракона!")
 
     else:
