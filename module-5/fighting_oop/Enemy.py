@@ -18,14 +18,3 @@ class Enemy(Person):
         second_names = ['слесарь', 'мухомор', 'лемур', 'шаман', 'пельмень', 'слизень',
                         'алхимик', 'крот', 'фикус', 'господин', 'кролик', 'танцор', 'пингвин', 'викинг', 'паук', 'плащ']
         self.name = f"{random.choice(first_names)} {random.choice(second_names)}"
-
-
-
-
-# Проверка
-# enemy = Enemy()
-# print(enemy.name)
-# print(enemy.person_class)
-# enemy2 = Enemy()
-# print(enemy2.name)
-# print(enemy2.person_class)

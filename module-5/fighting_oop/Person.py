@@ -12,7 +12,6 @@ class Person:
         self.skills = {}
         self.is_alive = True
         
-
     def set_class_properties(self):
         self.health = classes[self.person_class]['здоровье']
         self.attack = classes[self.person_class]['атака']
@@ -25,11 +24,16 @@ class Person:
         time.sleep(2)
 
         damage = enemy1.attack - enemy2.defence
-        if damage < 0: damage = 1
+
+        if damage < 0: 
+            damage = 1
+
         enemy2.health -= damage
 
-        print(
-            f"{enemy1.name} наносит {damage} урона и у {enemy2.name} остается {enemy2.health} здоровья!")
+        if enemy2.health < 0: 
+            enemy2.health = 0
+
+        print(f"{enemy1.name} наносит {damage} урона и у {enemy2.name} остается {enemy2.health} здоровья!")
         time.sleep(2)
 
     def fight_for_the_win(self, attacker, defender):

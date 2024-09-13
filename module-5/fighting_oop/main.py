@@ -18,7 +18,7 @@ class Game:
         if not self.enemy.is_alive:
             money = self.enemy.attack // 2
             self.player.money += money
-            print(f"{self.player.name} победил и заработал {money}. Теперь у него {self.player.money}")
+            print(f"{self.player.name} победил и заработал {money}. Теперь у него в кошельке {self.player.money}")
 
 
     def shop_handler(self):
@@ -71,8 +71,4 @@ class Game:
 
 
 if __name__ == "__main__":
-    try:
-        Game()
-    except KeyboardInterrupt:
-        print("Выход из игры...")
-        quit()
+    Game()
