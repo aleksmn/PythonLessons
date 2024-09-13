@@ -11,13 +11,14 @@ class Person:
         self.defence = 0
         self.skills = {}
         self.is_alive = True
-        self.max_health = self.health
+        
 
     def set_class_properties(self):
         self.health = classes[self.person_class]['здоровье']
         self.attack = classes[self.person_class]['атака']
         self.defence = classes[self.person_class]['защита']
         self.skills = classes[self.person_class]['навыки']
+        self.max_health = self.health
 
     def attack_enemy(self, enemy1, enemy2):
         print(f"{enemy1.name} атакует {enemy2.name}!")

@@ -18,13 +18,13 @@ class Player(Person):
 
         Utils.go_on()
         print(f"{self.name} - {self.person_class}.")
-        print("(～￣▽￣)～ У него такие характеристики:")
-        print(f" здоровье - {self.health},\n атака - {self.attack},\n защита - {self.defence}.")
+        print("У него такие характеристики:")
+        print(f" здоровье - {self.health},\n атака - {self.attack},\n защита - {self.defence}, \nденьги - {self.money}")
         Utils.go_on()
 
     def set_name(self):
         while True:
-            player_name = input(f'(☞ﾟヮﾟ)☞ Как зовут твоего героя?\n')
+            player_name = input(f'Как зовут твоего героя?\n')
             if Utils.is_valid(player_name):
                 break
 
@@ -49,3 +49,4 @@ class Player(Person):
             self.money -= value
             print(f"Потрачено {value} руб. Осталось: {self.money} руб.")
             return True
+        
