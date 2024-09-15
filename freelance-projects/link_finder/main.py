@@ -29,7 +29,7 @@ def write_links_to_file(links: list, filename: str) -> None:
     with open(filename, 'w', encoding='utf-8') as file:
         file.write("\n".join(links))
 
-def find_matching_links(file1_links: list, file2_links: list) -> (set, set):
+def find_matching_links(file1_links: list, file2_links: list) -> tuple[set, set]:
     """
     Функция принимает два списка и возвращает два множества: 
     первое - это повторяющиеся элементы в обоих списках,
