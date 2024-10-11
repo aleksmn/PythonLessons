@@ -2,6 +2,8 @@ import random
 import time
 import os
 
+os.system("cls")
+
 class Tiger:
     def __init__(self):
         self.state = "Выследить добычу"
@@ -87,8 +89,8 @@ if __name__ == "__main__":
         os.system("cls")
 
 
-    tiger.update_state(rabbits)
-    print_field(tiger, rabbits)
-
     if tiger.state == "Бежать домой":
         print("Тигр вернулся домой.")
+
+    tiger.update_state(rabbits)
+    print_field(tiger, rabbits)
