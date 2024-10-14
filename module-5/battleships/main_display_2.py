@@ -10,6 +10,7 @@ class Field:
         self.ships_alive = ships
 
     def display_lines(self, show_ships=False):
+        # Возвращает список строк
         lines = []
 
         letter_string = "    A B C D E F G H I J"
