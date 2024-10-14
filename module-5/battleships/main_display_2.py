@@ -92,7 +92,7 @@ class BattleshipGame:
         while True:
             player_lines = self.player_field.display_lines(show_ships=True)
             comp_lines = self.computer_field.display_lines(show_ships=True)
-            for i in range(11):
+            for i in range(self.size + 1):
                 print(player_lines[i], "\t", comp_lines[i])
 
             self.player_turn()
