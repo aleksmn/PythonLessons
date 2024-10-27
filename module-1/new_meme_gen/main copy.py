@@ -1,3 +1,9 @@
+from PIL import Image, ImageDraw, ImageFont
+
+# Как установить библиотеку (модуль)
+# выполнить в терминале команду
+# pip install pillow
+
 print("Генератор мемов запущен!")
 
 
@@ -22,3 +28,25 @@ else:
     quit()
 
 print(image)
+
+#  Открываем картинку
+image = Image.open(image)
+
+width, height = image.size
+
+print(width, height)
+
+draw = ImageDraw.Draw(image)
+
+font = ImageFont.truetype('arial.ttf', size=70)
+
+
+# Добавим верхний текст на картинку
+
+draw.text(xy=(width // 2, 60), text=top_text, font=font, fill="black", anchor="mt")
+
+draw.text(xy=(width // 2, height - 60), text=bottom_text, font=font, fill="black", anchor="mb")
+
+# Сохраняем картинку
+image.save("new_meme.png")
+print("Картинка сохранена!")
