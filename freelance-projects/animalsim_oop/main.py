@@ -1,4 +1,8 @@
 import random
+import time
+import os
+
+os.system("cls")
 
 class Tiger:
     def __init__(self):
@@ -35,8 +39,7 @@ class Tiger:
     def is_near_rabbit(self, rabbit):
         return abs(self.x - rabbit.x) <= 1 and abs(self.y - rabbit.y) <= 1
 
-    def __str__(self):
-        return f"T (тигр): ({self.x}, {self.y})"
+
 
 
 class Rabbit:
@@ -48,66 +51,46 @@ class Rabbit:
     def to_capture(self):
         self.captured = True
 
-    def __str__(self):
-        return f"З (заяц): ({self.x}, {self.y})"
-
 
 def print_field(tiger, rabbits=[]):
     field = []
-    for _ in range(5):
+    for i in range(5):
         row = ["."] * 5
         field.append(row)
 
     field[tiger.x][tiger.y] = "Т"
 
-    # for rabbit in rabbits:
-    #     if not rabbit.captured:
-    #         field[rabbit.x][rabbit.y] = "З"
+    for rabbit in rabbits:
+        if not rabbit.captured:
+            field[rabbit.x][rabbit.y] = "З"
 
+    # Выводим поле на экран
     for row in field:
         print(" ".join(row))
-    print()
+    
+    print() # пустая строка
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def main():
+# Точка входа в программу
+if __name__ == "__main__":
+    # Объект тигр
     tiger = Tiger()
     rabbit1 = Rabbit()
     rabbit2 = Rabbit()
     rabbits = [rabbit1, rabbit2]
 
     while tiger.state != "Бежать домой":
-        print(tiger)
-        for rabbit in rabbits:
-            print(rabbit)
-        print_field(tiger, rabbits)
 
         tiger.update_state(rabbits)
+        print_field(tiger, rabbits)
 
-    print(tiger)
-    for rabbit in rabbits:
-        print(rabbit)
+        time.sleep(1)
+        os.system("cls")
 
-    tiger.update_state(rabbits)
-    print_field(tiger, rabbits)
+
     if tiger.state == "Бежать домой":
         print("Тигр вернулся домой.")
 
-
-if __name__ == "__main__":
-    main()
+    tiger.update_state(rabbits)
+    print_field(tiger, rabbits)
