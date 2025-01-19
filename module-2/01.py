@@ -28,14 +28,13 @@ print(items)
 #     'залипнуть в летсплеях по роблоксу',
 # ]
 # while True:
-#     a = input('Индекс: \n')
-#     if a == '':
+#     index = input('Какой элемент удалить?: ')
+#     if index == '':
 #         break
 #     else:
-#         try:
-#             deals.pop(int(a))
-#         except:
-#             pass
+#         index = int(index)
+#         del deals[index]
+
 # print(deals)
 
 
