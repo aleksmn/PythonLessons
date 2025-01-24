@@ -73,9 +73,10 @@ def make_transaction():
     if account_num < 1 or account_num > len(client_info["accounts"]):
         print("Такого счета не существует. Прерываю транзакцию...")
         return
-
+    
     # Выбранный пользователем счет
     user_account = client_info["accounts"][account_num-1]
+
 
     print("Типы транзакций:")
     print("1 - списание")
@@ -102,14 +103,6 @@ def make_transaction():
     currentYear = datetime.datetime.now().year
     currentMonth = datetime.datetime.now().month
 
-    if year > currentYear or month > 12 or month < 1:
-        print("Неверная дата. Прерываю транзакцию...")
-        return
-    
-    if year == currentYear and month > currentMonth:
-        print("Неверная дата. Прерываю транзакцию...")
-        return
-
     # Спрашиваем сумму
     try:
         amount = int(input("Введите сумму: "))
@@ -131,7 +124,7 @@ def make_transaction():
     new_data = {
         "account": user_account["number"],
         "type": transaction_type,
-        "date": {"year": year, "month": month},
+        "date": {"year": currentYear, "month": currentMonth},
         "amount": amount
     }
 
