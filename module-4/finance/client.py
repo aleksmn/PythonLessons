@@ -90,15 +90,6 @@ def make_transaction():
         print("Такого типа не существует. Прерываю транзакцию...")
         return
 
-    print("Дата транзакции")
-
-    try:
-        year = int(input("Введите год: "))
-        month = int(input("Введите месяц: "))
-    except:
-        print("Ошибка ввода. Прерываю транзакцию....")
-        return
-    
     # Находим текущий год и месяц
     currentYear = datetime.datetime.now().year
     currentMonth = datetime.datetime.now().month
