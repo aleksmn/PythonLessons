@@ -17,6 +17,10 @@ import datetime
 # plt.show()
 
 
+# Тикеры
+# https://uk.finance.yahoo.com/markets/currencies/
+
+
 
 # Даты начала и конца отсчета
 start_date = datetime.datetime.today() - datetime.timedelta(days=365)
@@ -26,6 +30,7 @@ end_date = datetime.datetime.today()
 def plot_rub_usd():
     ticker = yf.Ticker("RUB=X")
     data = ticker.history(interval='1d', start=start_date, end=end_date)
+
     plt.figure(figsize=(10, 5), layout="constrained")
     plt.plot(data.index, data.Open)
     plt.title("График курса рубля к доллару")
@@ -59,5 +64,3 @@ def plot_usd_btc():
 if __name__ == "__main__":
 
     plot_rub_usd()
-    plot_cny_usd()
-    plot_usd_btc()
