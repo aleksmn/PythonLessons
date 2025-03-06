@@ -1,17 +1,6 @@
-# # 1 1 2 3 5 8 13 21
+n = 7
 
-n = int(input("Введите число: "))
-
-fib1 = 1
-fib2 = 1
-
-while fib1 <= n:
-    print(fib1)
-    temp = fib1
-    fib1 = fib2
-    fib2 = temp + fib2
-
-print(fib1)
-
-
-
+f1, f2 = 0, 1
+for i in range(n-1):
+    f1, f2 = f2, f1 + f2
+    print(f2)
