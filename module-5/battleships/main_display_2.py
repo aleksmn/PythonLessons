@@ -60,18 +60,31 @@ class BattleshipGame:
         return True
     
     def player_turn(self):
-        x = input("Введите координату выстрела x: ")
-        y = int(input("Введите координату выстрела y: "))
+        while True:
+            try:
+                x = input("Введите координату выстрела x: ")
+                y = int(input("Введите координату выстрела y: "))
 
-        x = "ABCDEFGHIJ".index(x.upper())
-        y -= 1
+                x = "ABCDEFGHIJ".index(x.upper())
+                y -= 1
 
-        if self.computer_field.grid[y][x] == "S":
-            print("Вы попали!")
-            self.computer_field.grid[y][x] = "X"
-            self.computer_field.ships_alive -= 1
-        else:
-            print("Промах!")
+                if 0 > y or y > 9:
+                    print("Ошибка: неправильная координата y")
+                    print("Попробуйте снова")
+                    continue
+
+                if self.computer_field.grid[y][x] == "S":
+                    print("Вы попали!")
+                    self.computer_field.grid[y][x] = "X"
+                    self.computer_field.ships_alive -= 1
+                else:
+                    print("Промах!")
+
+                break
+
+            except:
+                print("Ошибка!")
+                print("Попробуйте снова")
 
 
     def computer_turn(self):
