@@ -4,44 +4,33 @@ from PIL import Image, ImageDraw, ImageFont
 # выполнить в терминале команду
 # pip install pillow
 
-
 print("Генератор мемов запущен!")
 
-text_type = input("Сколько добавить текстов, 1 или 2: ")
 
-if text_type == "1":
-    top_text = ""
-    bottom_text = input("Введите текст: ")
+top_text = input("Введите верхний текст: ")
+bottom_text = input("Введите нижний текст: ")
 
-elif text_type == "2":
-    top_text = input("Введите верхний текст: ")
-    bottom_text = input("Введите нижний текст: ")
+print(top_text, bottom_text)
 
-else:
-    print("Введён неправильный режим. Перезапустите программу.")
-    # Выход из программы
-    quit()
-
-print("Выберите картинку для мема:")
-
+print("Список картинок:")
 print("1. Кот в ресторане")
 print("2. Кот в очках")
 
+image_number = int(input("Введите номер картинки: "))
 
-meme_number = input("Введите номер картинки: ")
-
-if meme_number == "1":
-    meme = "Кот в ресторане.png"
-elif meme_number == "2":
-    meme = "Кот в очках.png"
+if image_number == 1:
+    image = "Кот в ресторане.png"
+elif image_number == 2:
+    image = "Кот в очках.png"
 else:
     print("Введён неправильный номер картинки. Перезапустите программу.")
     # Выход из программы
     quit()
 
+print(image)
 
 #  Открываем картинку
-image = Image.open(meme)
+image = Image.open(image)
 
 width, height = image.size
 
