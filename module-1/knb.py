@@ -2,31 +2,31 @@ import random
 
 print("1 - камень, 2 - ножницы, 3 - бумага")
 # Выбор игрока
-a = input("Введите выбор: ")
+human = input("Введите выбор: ")
 
 
 # Выбор компьютера
-b = str(random.randint(1, 3))
+robot = str(random.randint(1, 3))
 
 
-if a == "1" and b == "1":
+if human == "1" and robot == "1":
     print("Компьютер выбрал камень: ничья")
 
-elif a == "1" and b == "2":
+elif human == "1" and robot == "2":
     print("Компьютер выбрал ножницы: ваша победа")
 
-elif a == "1" and b == "3":
+elif human == "1" and robot == "3":
     print("Компьютер выбрал бумагу: компьютер победил")
 
-elif a == "2" and b == "1":
+elif human == "2" and robot == "1":
     print("Компьютер выбрал камень: компьютер победил")
 
-elif a == "2" and b == "2":
+elif human == "2" and robot == "2":
     print("Компьютер выбрал ножницы: ничья")
 
-elif a == "2" and b == "3":
+elif human == "2" and robot == "3":
     print("Компьютер выбрал бумагу: ваша победа")
 
 
-elif a == "3" and b == "1":
+elif human == "3" and robot == "1":
     ...
