@@ -11,11 +11,14 @@ authors.append('Turgenev')
 # Удаление - оператор del
 del authors[0]
 
+
 # Вырезаем элемент
 element = authors.pop(3)
 print("Удален:", element)
 
-print(authors)
+
+# Удаление элемента
+authors.remove("Gogol")
 
 
 # Получаем индекс элемента
@@ -24,7 +27,7 @@ print(authors.index("Tolstoy"))
 
 # Проверка, есть ли элемент в списке
 if 'Esenin' in authors:
-    print("Есть в списке под индексом", authors.index("Esenin"))
+    print("Есть в списке")
 else:
     print("Нет в списке")
 
