@@ -6,10 +6,16 @@ def my_decorator(func):
 
     return wrapper
 
+
+@my_decorator
 def hello():
     print("Hello!")
 
 
-hello = my_decorator(hello)
-
 hello()
+
+
+# Декорированная функция
+# decorated_hello = my_decorator(hello)
+
+# decorated_hello()
