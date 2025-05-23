@@ -30,6 +30,11 @@ del words['один']
 print(words)
 
 
+# Получение значения по ключу, с передачей значения по умолчанию
+some_word = words.get("привет", "нет такого слова")
+print(some_word)
+
+
 print("Вывод словаря используя цикл FOR")
 
 for k, v in words.items():
