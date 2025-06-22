@@ -1,0 +1,16 @@
+{
+    "games": [
+        {
+            "name": "Minecraft",
+            "release_date": "17.05.2009",
+            "creator": "Mojang Studios",
+            "platforms": [
+                "Windows",
+                "macOS",
+                "Linux",
+                "PlayStation"
+            ],
+            "free": false
+        }
+    ]
+}
