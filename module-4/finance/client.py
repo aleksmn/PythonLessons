@@ -2,26 +2,30 @@ import json
 import datetime
 
 
-client_info = {}
-
 
 def load():
-    """Загружаем информацию о пользователе из файла"""
-    global client_info
+    """Загружаем информацию из файла"""
     with open('client_info.json', "r", encoding='utf-8') as json_file:
         client_info = json.load(json_file)
 
+    return client_info
 
-def save():
-    """Сохраняем данные о пользователе в файл"""
-    global client_info
+
+
+def save(data):
+    """Сохраняем данные в файл"""
     with open('client_info.json', "w", encoding='utf-8') as json_file:
-        json.dump(client_info, json_file, ensure_ascii=False)
+        json.dump(data, json_file, ensure_ascii=False, indent=4)
+
 
 
 def show_info():
+
+    client_info = load()
+
     print("Информация о счетах")
     print("----------------------------------")
+
     for account in client_info["accounts"]:
         print("Имя:", account["name"])
         print("Платёжная система:", account["system"])
@@ -32,7 +36,10 @@ def show_info():
         print("----------------------------------")
 
 
+
 def predict():
+
+    client_info = load()
 
     expenses = 0
     income = 0
@@ -56,7 +63,7 @@ def predict():
 # Создание транзакции
 
 def make_transaction():
-    global client_info
+    client_info = load()
 
     print("Доступные счета")
     i = 1
@@ -126,14 +133,10 @@ def make_transaction():
 
     print("Транзакция записана. Текущий баланс:", user_account["balance"])
 
+    save(client_info)
 
 
-
-
+# Точка входа в программу
+# проверка, что скрипт запущен сам, а не импортирован
 if __name__ == "__main__":
-
-    load()
-
     make_transaction()
-
-    save()
