@@ -27,11 +27,12 @@ else:
     # Выход из программы
     quit()
 
-print(image)
+print(image)  
 
 #  Открываем картинку
 image = Image.open(image)
 
+# получим ширину и высоту картинки
 width, height = image.size
 
 print(width, height)
@@ -39,13 +40,14 @@ print(width, height)
 draw = ImageDraw.Draw(image)
 
 font = ImageFont.truetype('arial.ttf', size=70)
+# для MacOS
+# font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", size=70)
 
-
-# Добавим верхний текст на картинку
-
-draw.text(xy=(width // 2, 60), text=top_text, font=font, fill="black", anchor="mt")
-
-draw.text(xy=(width // 2, height - 60), text=bottom_text, font=font, fill="black", anchor="mb")
+# Добавим текст на картинку
+# верхний текст
+draw.text(xy=(width//2, 60), text=top_text, font=font, fill="black", anchor="mt")
+# нижний текст
+draw.text(xy=(width//2, height - 60), text=bottom_text, font=font, fill="black", anchor="mb")
 
 # Сохраняем картинку
 image.save("new_meme.png")
