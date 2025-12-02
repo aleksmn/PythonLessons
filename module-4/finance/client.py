@@ -54,8 +54,8 @@ def predict():
         if transaction["date"] not in months:
             months.append(transaction["date"])
 
-    print("Предполагаемые расходы в следующем месяце:", expenses/len(months))
-    print("Предполагаемые доходы в следующем месяце:", income/len(months))
+    print("Предполагаемые расходы в следующем месяце:", expenses//len(months))
+    print("Предполагаемые доходы в следующем месяце:", income//len(months))
 
     return expenses, income
 

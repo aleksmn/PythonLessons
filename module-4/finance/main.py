@@ -12,7 +12,6 @@ import os
 
 
 def main():
-    load()
     command = ""
     while command != "10":
         os.system("cls")
@@ -47,8 +46,6 @@ def main():
         elif command == "8":
             plot_cny_usd()
         elif command == "10":
-            print("Сохранение изменений")
-            save()
             print("До свидания!")
             break
 
