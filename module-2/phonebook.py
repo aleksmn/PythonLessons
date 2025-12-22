@@ -56,13 +56,3 @@ while True:
         # только номера
         for k, v in book_phones.items():
             print(v)
-
-
-
-
-# сохраним в текстовом файле
-# w - write - открыть файл для записи
-with open("book.txt", "w", encoding="utf-8") as file:
-    for k, v in book_phones.items():
-        file.write(f'{k}: {v}\n')
-    
