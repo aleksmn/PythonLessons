@@ -24,6 +24,6 @@ while attempts > 0 and user_number != number:
 
 if user_number == number:
     print("Ты выиграл!")
-    
+
 else:
     print("Ты проиграл!")

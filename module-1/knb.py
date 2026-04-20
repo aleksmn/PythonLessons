@@ -29,4 +29,4 @@ elif human == "2" and robot == "3":
 
 
 elif human == "3" and robot == "1":
-    ...
+    print("Компьютер выбрал камень: ваша победа")
