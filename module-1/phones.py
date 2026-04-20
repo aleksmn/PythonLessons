@@ -23,8 +23,6 @@ print(contact)
 with open('my-contacts.txt', 'a', encoding='utf-8') as f:
     f.write(contact + '\n')
 
-
-
 # Все контакты
 print("*** Все контакты ***")
 
@@ -32,7 +30,3 @@ with open('my-contacts.txt', 'r', encoding='utf-8') as f:
     lines = f.readlines()
     for line in lines:
         print(line, end='')
-
-
-
-
