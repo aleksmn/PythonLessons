@@ -2,7 +2,6 @@ import json
 import datetime
 
 
-
 def load():
     """Загружаем информацию из файла"""
     with open('client_info.json', "r", encoding='utf-8') as json_file:
@@ -11,12 +10,10 @@ def load():
     return client_info
 
 
-
 def save(data):
     """Сохраняем данные в файл"""
     with open('client_info.json', "w", encoding='utf-8') as json_file:
         json.dump(data, json_file, ensure_ascii=False, indent=4)
-
 
 
 def show_info():
@@ -34,7 +31,6 @@ def show_info():
         print("Баланс:", account["balance"])
         print("Срок действия:", account["validity period"])
         print("----------------------------------")
-
 
 
 def predict():
@@ -61,7 +57,6 @@ def predict():
 
 
 # Создание транзакции
-
 def make_transaction():
     client_info = load()
 
@@ -69,21 +64,20 @@ def make_transaction():
     i = 1
     for account in client_info["accounts"]:
         print(i, account["name"], account["number"])
-        i += 1  
+        i += 1
 
     try:
         account_num = int(input("Введите счет: "))
-    except:
+    except ValueError:
         print("Ошибка ввода. Прерываю транзакцию...")
         return
-    
+
     if account_num < 1 or account_num > len(client_info["accounts"]):
         print("Такого счета не существует. Прерываю транзакцию...")
         return
-    
+
     # Выбранный пользователем счет
     user_account = client_info["accounts"][account_num-1]
-
 
     print("Типы транзакций:")
     print("1 - списание")
@@ -104,7 +98,7 @@ def make_transaction():
     # Спрашиваем сумму
     try:
         amount = int(input("Введите сумму: "))
-    except:
+    except ValueError:
         print("Ошибка ввода. Прерываю транзакцию...")
         return
 
