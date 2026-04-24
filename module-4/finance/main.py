@@ -1,14 +1,8 @@
-from client import *
-from bank import *
-from plot import *
+import client
+import bank
+import plot
 
 import os
-
-# Запаковка в исполняемый файл exe
-# 1) установка модуля (1 раз)
-# pip install auto-py-to-exe
-
-# 2) выполняем команду auto-py-to-exe
 
 
 def main():
@@ -30,29 +24,29 @@ def main():
         command = input("Выберите действие: ")
 
         if command == "1":
-            suggestions()
+            bank.suggestions()
         elif command == "2":
-            feedback()
+            bank.feedback()
         elif command == "3":
-            show_info()
+            client.show_info()
         elif command == "4":
-            predict()        
+            client.predict()
         elif command == "5":
-            make_transaction()
+            client.make_transaction()
         elif command == "6":
-            plot_rub_usd()
+            plot.plot_rub_usd()
         elif command == "7":
-            plot_usd_btc()
+            plot.plot_usd_btc()
         elif command == "8":
-            plot_cny_usd()
+            plot.plot_cny_usd()
         elif command == "10":
             print("До свидания!")
             break
-
         else:
             print("Действие не распознано. Попробуйте еще раз.")
 
         input("Enter чтобы продолжить")
+
 
 # точка входа
 if __name__ == "__main__":
