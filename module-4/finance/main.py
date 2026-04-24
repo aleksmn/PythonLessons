@@ -8,7 +8,7 @@ import os
 def main():
     command = ""
     while command != "10":
-        os.system("cls")
+        os.system("cls")  # очистка терминала
         print("Доступные действия: ")
         print("1 - посмотреть предложения банка")
         print("2 - оставить отзыв")
